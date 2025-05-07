@@ -6,6 +6,8 @@ html, body {
   font-family: Arial, sans-serif;
   background: linear-gradient(#333, black);
   color: #fff;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Fondo con imagen */
