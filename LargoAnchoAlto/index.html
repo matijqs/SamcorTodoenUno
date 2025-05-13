@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Largo, Ancho y Alto para Envio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card shadow-lg p-4">
+            <h1 class="text-center mb-4"><i class="fas fa-car"></i> Calculadora de Largo, Ancho y Alto para Envío</h1>
+
+            <div class="mb-3">
+                <label for="ancho" class="form-label"><strong>Ancho (mm):</strong></label>
+                <select id="ancho" class="form-select"></select>
+            </div>
+
+            <div class="mb-3">
+                <label for="perfil" class="form-label"><strong>Perfil (%):</strong></label>
+                <select id="perfil" class="form-select"></select>
+            </div>
+
+            <div class="mb-3">
+                <label for="aro" class="form-label"><strong>Aro (pulgadas):</strong></label>
+                <select id="aro" class="form-select"></select>
+            </div>
+
+            <div class="mb-3">
+                <label for="cantidad" class="form-label"><strong>Cantidad de neumáticos (1 - 8):</strong></label>
+                <select id="cantidad" class="form-select">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                </select>
+            </div>
+
+            <button class="btn btn-primary w-100" onclick="calcular()">
+                <i class="fas fa-calculator"></i> Calcular
+            </button>
+
+            <div id="resultado" class="mt-4 text-center"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

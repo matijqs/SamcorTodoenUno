@@ -1,0 +1,112 @@
+body {
+    background: linear-gradient(#333333, black);
+    color: #fff;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('files/Fondo.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    opacity: 0.2;
+    z-index: -1;
+}
+
+.container {
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(#333333, black);
+}
+
+input {
+    margin: 5px;
+    padding: 5px;
+    background-color: #333333;
+    color: #fff;
+    border: 1px solid #ff0000;
+}
+
+input::placeholder {
+    color: #747474;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #cc0000;
+}
+
+h2 {
+    color: #ff0000;
+    font-size: 2rem;
+}
+
+h4 {
+    color: #ff0000;
+    font-size: 1.2rem;
+}
+
+/* Estilo base */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px; /* Margen superior ajustado */
+}
+
+.logo {
+    position: relative;
+    z-index: 1;
+    background-color: rgba(110, 110, 110, 0.5);
+    padding: 5px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    max-width: 200px; /* Tamaño base */
+    height: auto;
+}
+
+/* Optimización para móviles */
+@media (max-width: 768px) {
+    .logo-container {
+        margin-top: 10px; /* Menor margen en pantallas pequeñas */
+    }
+
+    .logo {
+        max-width: 120px; /* Reducir el tamaño del logo */
+        padding: 3px; /* Menos espacio alrededor */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Menos sombra */
+    }
+}
+
+/* Optimización para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .logo-container {
+        margin-top: 5px; /* Aún menos margen */
+    }
+
+    .logo {
+        max-width: 100px; /* Aún más pequeño el logo */
+        padding: 2px; /* Muy poco espacio */
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Muy sutil la sombra */
+    }
+}
+
+

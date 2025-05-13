@@ -1,0 +1,488 @@
+[
+  {
+    "MARCA": "AUDI",
+    "PERNOS": 4,
+    "APERNADURA": "4X100",
+    "CENTRADOR": 57.1,
+    "TUERCA/PERNO": "PERNO",
+    "HILO": "14X1.5",
+    "COMENTARIO": ""
+  },
+  {
+    "MARCA": "AUDI",
+    "PERNOS": 5,
+    "APERNADURA": "5X112",
+    "CENTRADOR": 57.1,
+    "TUERCA/PERNO": "PERNO",
+    "HILO": "14X1.5",
+    "COMENTARIO": ""
+  },
+  {
+    "MARCA": "BMW",
+    "PERNOS": 5,
+    "APERNADURA": "5X120",
+    "CENTRADOR": "",
+    "TUERCA/PERNO": "",
+    "HILO": "",
+    "COMENTARIO": ""
+  },
+  {
+    "MARCA": "TOYOTA",
+    "PERNOS": 4,
+    "APERNADURA": "4X100",
+    "CENTRADOR": 54.1,
+    "TUERCA/PERNO": "TUERCA",
+    "HILO": "12X1.5",
+    "COMENTARIO": ""
+  },
+  {
+    "MARCA": "TOYOTA",
+    "PERNOS": 5,
+    "APERNADURA": "100-114-150",
+    "CENTRADOR": 60.1,
+    "TUERCA/PERNO": "TUERCA",
+    "HILO": "12X1.5",
+    "COMENTARIO": ""
+  },
+  {
+    "MARCA": "TOYOTA",
+    "PERNOS": 6,
+    "APERNADURA": "6X139",
+    "CENTRADOR": "",
+    "TUERCA/PERNO": "",
+    "HILO": "",
+    "COMENTARIO": ""
+  },
+  {
+    "MARCA": "CHEVROLET",
+    "PERNOS": 4,
+    "APERNADURA": "4X100",
+    "CENTRADOR": 56.6,
+    "TUERCA/PERNO": "TUERCA",
+    "HILO": "12X1.5",
+    "COMENTARIO": "MODELO OPTRA Y SPARK LT SON 4X114 / 12X1.25 PARA EL SPARK LT"
+  },
+  {
+    "MARCA": "CHEVROLET",
+    "PERNOS": 5,
+    "APERNADURA": "105-114-120-127",
+    "CENTRADOR": "",
+    "TUERCA/PERNO": "TUERCA",
+    "HILO": "12X1.5",
+    "COMENTARIO": ""
+  },
+  {
+    "MARCA": "CHEVROLET",
+    "PERNOS": 6,
+    "APERNADURA": "6X139",
+    "CENTRADOR": "",
+    "TUERCA/PERNO": "TUERCA",
+    "HILO": "12X1.5",
+    "COMENTARIO": ""
+  },
+  {
+    "MARCA": "HYUNDAI",
+    "PERNOS": 4,
+    "APERNADURA": "4X100",
+    "CENTRADOR": 54.1,
+    "TUERCA/PERNO": "TUERCA",
+    "HILO": "12X1.5",
+    "COMENTARIO": "AÑO 200 O - CONSULTAR"
+  },
+  {
+    "MARCA": "HYUNDAI",
+    "PERNOS": 5,
+    "APERNADURA": "5X114",
+    "CENTRADOR": 67.1,
+    "TUERCA/PERNO": "TUERCA",
+    "HILO": "12X1.5",
+    "COMENTARIO": ""
+  },
+  {
+    "MARCA": "KIA",
+    "PERNOS": 4,
+    "APERNADURA": "4X100",
+    "CENTRADOR": 54.1,
+    "TUERCA/PERNO": "TUERCA",
+    "HILO": "12X1.5",
+    "COMENTARIO": "AÑO 200 O - CONSULTAR"
+  },
+  {
+    "MARCA": "KIA",
+    "PERNOS": 5,
+    "APERNADURA": "5X114",
+    "CENTRADOR": 67.1,
+    "TUERCA/PERNO": "TUERCA",
+    "HILO": "12X1.5",
+    "COMENTARIO": ""
+  },
+  {
+    "MARCA": "SSANGYONG",
+    "PERNOS": 5,
+    "APERNADURA": "112-130",
+    "CENTRADOR": 66.1,
+    "TUERCA/PERNO": "TUERCA",
+    "HILO": "14X1.5",
+    "COMENTARIO": "SUV PEGUEÑA 5X112 (12X1.5) SUV GRANDES Y CAMIONETAS 5X130 (14X1.5)"
+  },
+  {
+    "MARCA": "PEUGEOT",
+    "PERNOS": 4,
+    "APERNADURA": "4X108",
+    "CENTRADOR": 65.1,
+    "TUERCA/PERNO": "PERNO",
+    "HILO": "12X1.25",
+    "COMENTARIO": "PROBAR SIEMPRE LA LLANTA POR TODOS LADOS"
+  },
+  {
+    "MARCA": "PEUGEOT",
+    "PERNOS": 5,
+    "APERNADURA": "5X108",
+    "CENTRADOR": 65.1,
+    "TUERCA/PERNO": "PERNO",
+    "HILO": "12X1.25",
+    "COMENTARIO": "PROBAR SIEMPRE LA LLANTA POR TODOS LADOS"
+  },
+  {
+    "MARCA": "PEUGEOT",
+    "PERNOS": 6,
+    "APERNADURA": "6X139",
+    "CENTRADOR": "",
+    "TUERCA/PERNO": "TUERCA",
+    "HILO": "12X1.5",
+    "COMENTARIO": ""
+  },
+  {
+    "MARCA": "CITROEN",
+    "PERNOS": 4,
+    "APERNADURA": "4X108",
+    "CENTRADOR": 65.1,
+    "TUERCA/PERNO": "PERNO",
+    "HILO": "12X1.25",
+    "COMENTARIO": "PROBAR SIEMPRE LA LLANTA POR TODOS LADOS"
+  },
+  {
+    "MARCA": "CITROEN",
+    "PERNOS": 5,
+    "APERNADURA": "5X108",
+    "CENTRADOR": "",
+    "TUERCA/PERNO": "",
+    "HILO": "12X1.25",
+    "COMENTARIO": "PROBAR SIEMPRE LA LLANTA POR TODOS LADOS"
+  },
+  {
+    "MARCA": "MITSUBICHI",
+    "PERNOS": 4,
+    "APERNADURA": "4X100",
+    "CENTRADOR": 56.1,
+    "TUERCA/PERNO": "TUERCA",
+    "HILO": "12X1.5",
+    "COMENTARIO": "MODELOS NUEVOS"
+  },
+  {
+    "MARCA": "MITSUBICHI",
+    "PERNOS": 4,
+    "APERNADURA": "4X114",
+    "CENTRADOR": 67.1,
+    "TUERCA/PERNO": "TUERCA",
+    "HILO": "12X1.5",
+    "COMENTARIO": "MODELOS ANTIGUOS"
+  },
+  {
+    "MARCA": "MITSUBICHI",
+    "PERNOS": 5,
+    "APERNADURA": "5X114",
+    "CENTRADOR": 67.1,
+    "TUERCA/PERNO": "TUERCA",
+    "HILO": "12X1.5",
+    "COMENTARIO": ""
+  },
+  {
+    "MARCA": "MITSUBICHI",
+    "PERNOS": 6,
+    "APERNADURA": "6X139",
+    "CENTRADOR": "",
+    "TUERCA/PERNO": "TUERCA",
+    "HILO": "12X1.5",
+    "COMENTARIO": ""
+  },
+  {
+    "MARCA": "SUBARU",
+    "PERNOS": 5,
+    "APERNADURA": "5X100",
+    "CENTRADOR": 56.1,
+    "TUERCA/PERNO": "TUERCA",
+    "HILO": "12X1.25",
+    "COMENTARIO": ""
+  },
+  {
+    "MARCA": "SUBARU",
+    "PERNOS": 5,
+    "APERNADURA": "5X114",
+    "CENTRADOR": 56.1,
+    "TUERCA/PERNO": "TUERCA",
+    "HILO": "12X1.25",
+    "COMENTARIO": "SUVS: OUTBACK, XV, FORESTER"
+  },
+  {
+    "MARCA": "VOLKSWAGEN",
+    "PERNOS": 4,
+    "APERNADURA": "4X100",
+    "CENTRADOR": 57.1,
+    "TUERCA/PERNO": "PERNO",
+    "HILO": "12X1.5",
+    "COMENTARIO": "CUIDADO CON EL LARGO DE LOS PERNOS, A VECES QUEDAN FRENADOS LOS DISCOS"
+  },
+  {
+    "MARCA": "VOLKSWAGEN",
+    "PERNOS": 5,
+    "APERNADURA": "5X100 5X112",
+    "CENTRADOR": 57.1,
+    "TUERCA/PERNO": "PERNO",
+    "HILO": "14X1.5",
+    "COMENTARIO": "REVISAR POR MODELO Y AÑO LA APERNADURA"
+  },
+  {
+    "MARCA": "VOLKSWAGEN",
+    "PERNOS": 5,
+    "APERNADURA": "5X120",
+    "CENTRADOR": 65.1,
+    "TUERCA/PERNO": "PERNO",
+    "HILO": "14X1.5",
+    "COMENTARIO": "SOLO VOLKSWAGEN AMAROK (CAMIONETA)"
+  },
+  {
+    "MARCA": "RENAULT",
+    "PERNOS": 4,
+    "APERNADURA": "4X100",
+    "CENTRADOR": 60.1,
+    "TUERCA/PERNO": "PERNO",
+    "HILO": "12X1.5",
+    "COMENTARIO": ""
+  },
+  {
+    "MARCA": "RENAULT",
+    "PERNOS": 5,
+    "APERNADURA": "5X114",
+    "CENTRADOR": 66.1,
+    "TUERCA/PERNO": "PERNO",
+    "HILO": "14X1.5",
+    "COMENTARIO": ""
+  },
+  {
+    "MARCA": "RENAULT",
+    "PERNOS": 6,
+    "APERNADURA": "6X114",
+    "CENTRADOR": 66.1,
+    "TUERCA/PERNO": "TUERCA",
+    "HILO": "12X1.25",
+    "COMENTARIO": "RENAULT ALASKAN"
+  },
+  {
+    "MARCA": "FIAT",
+    "PERNOS": 4,
+    "APERNADURA": "4X98",
+    "CENTRADOR": 58.1,
+    "TUERCA/PERNO": "PERNO",
+    "HILO": "12X1.25",
+    "COMENTARIO": "MUCHA GENTE LE INSTALA 4X100, SIEMPRE ES BAJO SU RESPONSABILIDAD"
+  },
+  {
+    "MARCA": "FIAT",
+    "PERNOS": 5,
+    "APERNADURA": "5X98",
+    "CENTRADOR": "",
+    "TUERCA/PERNO": "",
+    "HILO": "",
+    "COMENTARIO": ""
+  },
+  {
+    "MARCA": "FIAT",
+    "PERNOS": 6,
+    "APERNADURA": "6X139",
+    "CENTRADOR": "",
+    "TUERCA/PERNO": "TUERCA",
+    "HILO": "12X1.5",
+    "COMENTARIO": ""
+  },
+  {
+    "MARCA": "FORD",
+    "PERNOS": 4,
+    "APERNADURA": "4X108",
+    "CENTRADOR": 63.4,
+    "TUERCA/PERNO": "TUERCA",
+    "HILO": "12X1.5",
+    "COMENTARIO": "SE INSTALA 65.1 DE CENTRADOR"
+  },
+  {
+    "MARCA": "FORD",
+    "PERNOS": 5,
+    "APERNADURA": "5X108",
+    "CENTRADOR": 63.4,
+    "TUERCA/PERNO": "TUERCA",
+    "HILO": "12X1.5",
+    "COMENTARIO": "FORD PEQUEÑOS"
+  },
+  {
+    "MARCA": "FORD",
+    "PERNOS": 5,
+    "APERNADURA": "5X114",
+    "CENTRADOR": 70.5,
+    "TUERCA/PERNO": "TUERCA",
+    "HILO": "14X1.5",
+    "COMENTARIO": "FORD MAS GRANDES: MUSTANG, EXPLORER, RANGER ANTIGUA. NO HAY CENTRADORES"
+  },
+  {
+    "MARCA": "FORD",
+    "PERNOS": 6,
+    "APERNADURA": "6X135",
+    "CENTRADOR": "",
+    "TUERCA/PERNO": "TUERCA",
+    "HILO": "14X1.5",
+    "COMENTARIO": "LINEA F150"
+  },
+  {
+    "MARCA": "FORD",
+    "PERNOS": 6,
+    "APERNADURA": "6X139",
+    "CENTRADOR": "",
+    "TUERCA/PERNO": "TUERCA",
+    "HILO": "12X1.5",
+    "COMENTARIO": "RANGER, BRONCO"
+  },
+  {
+    "MARCA": "SUZUKI",
+    "PERNOS": 4,
+    "APERNADURA": "4X100",
+    "CENTRADOR": 54.1,
+    "TUERCA/PERNO": "TUERCA",
+    "HILO": "12X1.25",
+    "COMENTARIO": "2005 O - CONSULTAR"
+  },
+  {
+    "MARCA": "SUZUKI",
+    "PERNOS": 5,
+    "APERNADURA": "5X114",
+    "CENTRADOR": 60.1,
+    "TUERCA/PERNO": "TUERCA",
+    "HILO": "12X1.25",
+    "COMENTARIO": ""
+  },
+  {
+    "MARCA": "SUZUKI",
+    "PERNOS": 5,
+    "APERNADURA": "5X139",
+    "CENTRADOR": "",
+    "TUERCA/PERNO": "TUERCA",
+    "HILO": "12X1.25",
+    "COMENTARIO": "MODELOS ANTIGUOS"
+  },
+  {
+    "MARCA": "MERCEDES",
+    "PERNOS": 5,
+    "APERNADURA": "5X112",
+    "CENTRADOR": 66.6,
+    "TUERCA/PERNO": "PERNO",
+    "HILO": "14X1.5",
+    "COMENTARIO": ""
+  },
+  {
+    "MARCA": "MERCEDES",
+    "PERNOS": 6,
+    "APERNADURA": "6X114",
+    "CENTRADOR": 66.1,
+    "TUERCA/PERNO": "TUERCA",
+    "HILO": "12X1.25",
+    "COMENTARIO": "CAMIONETA PICK UP"
+  },
+  {
+    "MARCA": "HONDA",
+    "PERNOS": 4,
+    "APERNADURA": "4X100",
+    "CENTRADOR": 56.1,
+    "TUERCA/PERNO": "TUERCA",
+    "HILO": "12X1.5",
+    "COMENTARIO": "SE INSTALA CENTRADOR 56.6"
+  },
+  {
+    "MARCA": "HONDA",
+    "PERNOS": 5,
+    "APERNADURA": "5X114",
+    "CENTRADOR": 64.1,
+    "TUERCA/PERNO": "TUERCA",
+    "HILO": "12X1.5",
+    "COMENTARIO": "SE INSTALA 65.1 DE CENTRADOR"
+  },
+  {
+    "MARCA": "HONDA",
+    "PERNOS": 5,
+    "APERNADURA": "5X120",
+    "CENTRADOR": 64.1,
+    "TUERCA/PERNO": "TUERCA",
+    "HILO": "14X1.5",
+    "COMENTARIO": "MODELOS: RIDGELINE Y PILOT"
+  },
+  {
+    "MARCA": "MAZDA",
+    "PERNOS": 4,
+    "APERNADURA": "4X100",
+    "CENTRADOR": 54.1,
+    "TUERCA/PERNO": "TUERCA",
+    "HILO": "12X1.5",
+    "COMENTARIO": ""
+  },
+  {
+    "MARCA": "MAZDA",
+    "PERNOS": 4,
+    "APERNADURA": "4X114",
+    "CENTRADOR": 60.1,
+    "TUERCA/PERNO": "TUERCA",
+    "HILO": "12X1.5",
+    "COMENTARIO": "MODELOS ANTIGUOS, 2005 O -"
+  },
+  {
+    "MARCA": "MAZDA",
+    "PERNOS": 5,
+    "APERNADURA": "5X114",
+    "CENTRADOR": 67.1,
+    "TUERCA/PERNO": "TUERCA",
+    "HILO": "12X1.5",
+    "COMENTARIO": ""
+  },
+  {
+    "MARCA": "NISSAN",
+    "PERNOS": 4,
+    "APERNADURA": "4X100",
+    "CENTRADOR": 60.1,
+    "TUERCA/PERNO": "TUERCA",
+    "HILO": "12X1.25",
+    "COMENTARIO": ""
+  },
+  {
+    "MARCA": "NISSAN",
+    "PERNOS": 4,
+    "APERNADURA": "4X114",
+    "CENTRADOR": 66.1,
+    "TUERCA/PERNO": "TUERCA",
+    "HILO": "12X1.25",
+    "COMENTARIO": "MODELO TIIDA Y ANTIGUOS"
+  },
+  {
+    "MARCA": "NISSAN",
+    "PERNOS": 5,
+    "APERNADURA": "5X114",
+    "CENTRADOR": 66.1,
+    "TUERCA/PERNO": "TUERCA",
+    "HILO": "12X1.25",
+    "COMENTARIO": ""
+  },
+  {
+    "MARCA": "NISSAN",
+    "PERNOS": 6,
+    "APERNADURA": "6X114",
+    "CENTRADOR": 66.1,
+    "TUERCA/PERNO": "TUERCA",
+    "HILO": "12X1.25",
+    "COMENTARIO": ""
+  }
+]

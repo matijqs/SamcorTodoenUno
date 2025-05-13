@@ -1,0 +1,25 @@
+body {
+    background-color: #242424;
+}
+
+.card {
+    max-width: 400px;
+    margin: auto;
+    border-radius: 10px;
+    background-color: #8a8a8a;
+}
+
+.btn-primary {
+    background-color: #ff0000;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #343536;
+}
+
+#resultado {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}

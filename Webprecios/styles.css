@@ -1,0 +1,198 @@
+body {
+    background: linear-gradient(#333333, black);
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('files/Fondo.jpeg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    opacity: 0.2; /* Transparencia al 20% */
+    z-index: -1; /* Fondo detrás del contenido */
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.logo {
+    position: relative;
+    z-index: 1;
+    background-color: rgba(110, 110, 110, 0.5);
+    padding: 5px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    max-width: 200px;
+    height: auto;
+}
+
+.container {
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(#333333, black);
+}
+
+h1 {
+    color: #ff0000;
+    font-size: 2.5rem;
+}
+
+.lead, .form-label, .form-group {
+    color: #b9b9b9;
+}
+
+.form-control {
+    background-color: #333333;
+    color: #fff;
+    border: 1px solid #ff0000;
+}
+
+.form-control:focus {
+    color: #fff;
+    border-color: #ff0000;
+    background-color: #444444;
+}
+
+.form-control::placeholder{
+    color: #747474;
+}
+    
+.btn-primary,
+.btn-success {
+    background-color: #ff0000;
+    border-color: #ff0000;
+}
+
+.btn-primary:hover,
+.btn-success:hover {
+    background-color: #cc0000;
+    border-color: #cc0000;
+}
+
+#copyButton:focus, #copyButton:active {
+    background-color: #ff0000;
+    border-color: #ff0000;
+    outline: none;
+}
+#copySelectedButton,#copySelectedButton:active{
+    background-color: #ff0000;
+    border-color: #ff0000;
+    outline: none;
+}
+
+.alert {
+    border-radius: 8px;
+    padding: 15px;
+    font-size: 1.1rem;
+}
+
+.alert-info {
+    background-color: #333333;
+    color: #fff;
+    border-left: 5px solid #ff0000;
+}
+
+.alert-warning {
+    background-color: #ffcc00;
+    color: #121212;
+    border-left: 5px solid #ff0000;
+    border-radius: 8px;
+    padding: 10px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.alert-warning::before {
+    content: "⚠️"; /* Icono de advertencia */
+    font-size: 1.5rem;
+    margin-right: 10px; /* Espacio entre el icono y el texto */
+}
+
+.mt-4 {
+    margin-top: 30px;
+}
+
+a {
+    position: none;
+    display: inline-block;
+    padding: 5px 10px;
+    right: 10px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+    z-index: 1000;
+    
+}
+
+a:hover {
+    right: 10px;
+    color: #ff0000;
+}
+
+#scrollButton {
+    position: fixed;
+    bottom: 20px; /* Lo coloca 20px desde la parte inferior */
+    right: 20px;  /* Lo coloca 20px desde la parte derecha */
+    padding: auto;
+    background-color: red; /* Mismo color que el botón "Buscar" */
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    opacity: 0.9;
+}
+
+#scrollButton:hover {
+    background-color: red;
+    opacity: 1;
+}
+
+/* Contenedor para los enlaces */
+/* Contenedor para los enlaces */
+.enlaces-container {
+    position: absolute; /* Posicionar absolutamente el contenedor */
+    top: 10px; /* Ajustar según sea necesario */
+    right: 10px; /* Ajustar según sea necesario */
+    display: flex; /* Alinear en una fila */
+    gap: 20px; /* Espacio entre los enlaces */
+}
+
+.enlaces-container a {
+    text-decoration: none; /* Eliminar subrayado */
+    color: inherit; /* Mantener el color del texto predeterminado */
+    font-weight: normal; /* Eliminar el estilo de negrita */
+    text-align: center; /* Centrar el texto de los enlaces */
+    padding: 5px 10px; /* Añadir relleno */
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo semitransparente opcional */
+    border-radius: 5px; /* Bordes redondeados opcionales */
+}
+
+
+/* Estilo adicional para los enlaces al pasar el ratón */
+.enlaces-container a:hover {
+    text-decoration: underline; /* Subrayado al pasar el ratón */
+    color: #007bff; /* Color al pasar el ratón */
+}
+
+
+
+
+

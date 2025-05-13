@@ -1,0 +1,40 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparador de Neumáticos</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="logo-container">
+        <img src="files/SAMCORLOGO-COLOR.png" alt="Logo de la Empresa" class="logo">
+    </div>
+    <h2>Comparador de Neumáticos</h2>
+    <p id="mensaje">Verifica si el diametro total es el mismo o semejante</p>
+    <br>
+    <div>
+        <h3>Medida del Neumático 1</h3>
+        <input type="number" id="ancho1" placeholder="Ancho (mm)">
+        <input type="number" id="perfil1" placeholder="Perfil (%)">
+        <input type="number" id="aro1" placeholder="Aro (pulgadas)">
+    </div>
+    <div>
+        <h3>Medida del Neumático 2</h3>
+        <input type="number" id="ancho2" placeholder="Ancho (mm)">
+        <input type="number" id="perfil2" placeholder="Perfil (%)">
+        <input type="number" id="aro2" placeholder="Aro (pulgadas)">
+    </div>
+    <br>
+    <button onclick="compararNeumaticos()">Comparar</button>
+    <h3 id="resultadon1"></h3>
+    <h3 id="resultadon2"></h3>
+    <h3 id="resultado"></h3>
+    <h3>Sugerencias basadas en el Neumático 1</h3>
+    <p id="sugerencia1"></p>
+    <p id="sugerencia2"></p>
+    <h4 id="mensaje2">¡Verificar en la misma calculadora!</h4>    
+</body>
+</html>
