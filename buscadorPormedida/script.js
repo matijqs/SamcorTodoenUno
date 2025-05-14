@@ -184,6 +184,7 @@ function mostrarResultados(resultados, medidaBuscada) {
 
             // Crear el checkbox
             const checkbox = document.createElement('input');
+            checkbox.dataset.instalacion = (fila["INSTALACION"] || '').toString().trim().toLowerCase();
             checkbox.type = 'checkbox';
             checkbox.classList.add('resultado-checkbox');
             checkbox.style.marginRight = '10px';
@@ -221,38 +222,43 @@ function mostrarResultados(resultados, medidaBuscada) {
     }
 }
 
-// Función para copiar todos los resultados
 document.getElementById('copyButton').addEventListener('click', function() {
     const resultadosDiv = document.getElementById('resultados');
     let resultadosTexto = '';
+    let incluirMensajesInstalacion = false;
 
-    // Añadir el texto del encabezado
     const encabezado = resultadosDiv.querySelector('h3');
     if (encabezado) {
         resultadosTexto += encabezado.innerText + '\n\n';
     }
 
-    // Recopilar el contenido de los resultados
-    resultadosDiv.querySelectorAll('.alert').forEach(alert => {
+    const alertElements = resultadosDiv.querySelectorAll('.alert');
+    alertElements.forEach(alert => {
+        const checkbox = alert.querySelector('.resultado-checkbox');
+        if (checkbox && checkbox.dataset.instalacion === 'sí') {
+            incluirMensajesInstalacion = true;
+        }
+
         const lines = alert.innerText.split('\n').map(line => line.trim()).filter(line => line !== '');
         resultadosTexto += lines.join('\n') + '\n\n';
     });
 
-    // Agregar el mensaje final
-    const bajada1 = "Todos los precios incluyen instalación, balanceo y válvulas nuevas.";
-    resultadosTexto += bajada1 + "\n" +"\n";
-    const bajada2= "*No aplica para válvulas con sensor."
-    resultadosTexto += bajada2;
+    if (incluirMensajesInstalacion) {
+        const bajada1 = "Todos los precios incluyen instalación, balanceo y válvulas nuevas.";
+        const bajada2 = "*No aplica para válvulas con sensor.";
+        resultadosTexto += bajada1 + "\n\n" + bajada2;
+    }
 
     navigator.clipboard.writeText(resultadosTexto.trim());
 });
 
-// Función para copiar solo los resultados seleccionados
+
+
 document.getElementById('copySelectedButton').addEventListener('click', function() {
     const resultadosDiv = document.getElementById('resultados');
     let resultadosTexto = '';
+    let incluirMensajesInstalacion = false;
 
-    // Añadir el texto del encabezado
     const encabezado = resultadosDiv.querySelector('h3');
     if (encabezado) {
         resultadosTexto += encabezado.innerText + '\n\n';
@@ -267,21 +273,22 @@ document.getElementById('copySelectedButton').addEventListener('click', function
 
     checkboxes.forEach(checkbox => {
         const resultadoElemento = checkbox.closest('.alert');
-        if (resultadoElemento) {
-            const lines = resultadoElemento.innerText.split('\n').map(line => line.trim()).filter(line => line !== '');
-            resultadosTexto += lines.join('\n') + '\n\n';
+        if (checkbox.dataset.instalacion === 'sí') {
+            incluirMensajesInstalacion = true;
         }
+
+        const lines = resultadoElemento.innerText.split('\n').map(line => line.trim()).filter(line => line !== '');
+        resultadosTexto += lines.join('\n') + '\n\n';
     });
 
-    // Agregar el mensaje final
-    const bajada1 = "Todos los precios incluyen instalación, balanceo y válvulas nuevas.";
-    resultadosTexto += bajada1 + "\n" +"\n";
-    const bajada2= "*No aplica para válvulas con sensor."
-    resultadosTexto += bajada2;
+    if (incluirMensajesInstalacion) {
+        const bajada1 = "Todos los precios incluyen instalación, balanceo y válvulas nuevas.";
+        const bajada2 = "*No aplica para válvulas con sensor.";
+        resultadosTexto += bajada1 + "\n\n" + bajada2;
+    }
 
     navigator.clipboard.writeText(resultadosTexto.trim());
-
-    resultadosTexto = resultadosTexto.trim();
-    navigator.clipboard.writeText(resultadosTexto);
 });
+
+
 
