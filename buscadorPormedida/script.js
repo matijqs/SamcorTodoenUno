@@ -28,26 +28,27 @@ function realizarBusqueda() {
         alert("Por favor, ingresa una medida válida.");
         return;
     }
-    cargarArchivo(medidaBuscada);
+    cargarArchivoDesdeCSV(medidaBuscada);
 }
 
-function cargarArchivo(medidaBuscada) {
-    fetch('files/LISTA DE PRECIOS MARKET.xlsx')
-        .then(response => response.arrayBuffer())
-        .then(data => {
-            const workbook = XLSX.read(data, { type: 'array' });
-            const worksheet = workbook.Sheets["Hoja1"];
-            const jsonData = XLSX.utils.sheet_to_json(worksheet);
-
-            const variantes = GenerarVariantesMedida(medidaBuscada);
-
-            const resultados = jsonData.filter(row =>
-                variantes.some(vari => row["MEDIDA"] && row["MEDIDA"].toString().toUpperCase().includes(vari.toUpperCase()))
-            );
-
-            mostrarResultados(resultados, medidaBuscada);
-        })
-        .catch(error => console.error('Error al cargar el archivo:', error));
+function cargarArchivoDesdeCSV(medidaBuscada) {
+  fetch(
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vRGKRlXX6HxPIq7mquuYTtoKbTE5k4pvoOBgxrWZV9617kkaLriisK45uVSrx76kA/pub?gid=10180166&single=true&output=csv"
+  )
+    .then((response) => response.text())
+    .then((csvText) => {
+      const rows = Papa.parse(csvText, { header: true }).data;
+      const variantes = GenerarVariantesMedida(medidaBuscada);
+      const resultados = rows.filter((row) =>
+        variantes.some(
+          (vari) =>
+            row["MEDIDA"] &&
+            row["MEDIDA"].toUpperCase().includes(vari.toUpperCase())
+        )
+      );
+      mostrarResultados(resultados, medidaBuscada);
+    })
+    .catch((error) => console.error("Error al cargar los datos:", error));
 }
 
 function GenerarVariantesMedida(medida) {
