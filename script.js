@@ -6,6 +6,11 @@ function openTab(tabId) {
   if (selected) selected.style.display = "block";
 }
 
+function toggleSubmenu(id) {
+  const submenu = document.getElementById(id);
+  submenu.style.display = submenu.style.display === "flex" ? "none" : "flex";
+}
+
 // Esto asegura que se muestre por defecto si no usas inline style en el div
 window.onload = () => {
   openTab("porMedida");
