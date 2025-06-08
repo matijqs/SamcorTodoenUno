@@ -121,16 +121,16 @@ function mostrarResultados(resultados, medidaBuscada) {
             if (precioUnidad && precioX2 && precioX4) {
                 resultadoTexto = `
                     Neumático ${medida} ${marca} ${modelo}<br>
-                    1X $${precioUnidadFormateado}<br>
-                    2x $${precioX2Formateado}<br>
-                    4x $${precioX4Formateado}<br>`;  
+                    1 X $${precioUnidadFormateado}<br>
+                    2 X $${precioX2Formateado}<br>
+                    4 X $${precioX4Formateado}<br>`;  
             }
             // Caso 2: Precio por unidad y precio por juego (X4) están disponibles
             else if (precioUnidad && !precioX2 && precioX4) {
                 resultadoTexto = `
                     Neumático ${medida} ${marca} ${modelo}<br>
-                    1X $${precioUnidadFormateado}<br>
-                    4x $${precioX4Formateado}<br>`; 
+                    1 X $${precioUnidadFormateado}<br>
+                    4 X $${precioX4Formateado}<br>`; 
             }
             // Caso 3: Precio por unidad y precio por par (X2) están disponibles
             else if (precioUnidad && precioX2 && !precioX4) {
