@@ -120,63 +120,49 @@ function mostrarResultados(resultados, medidaBuscada) {
             // Caso 1: Los tres precios están disponibles
             if (precioUnidad && precioX2 && precioX4) {
                 resultadoTexto = `
-                    Medida: ${medida}<br>
-                    Marca: ${marca}<br>
-                    Modelo: ${modelo}<br>
-                    Precio unidad: $${precioUnidadFormateado}<br>
-                    Precio por par (X2): $${precioX2Formateado}<br>
-                    Precio por juego (X4): $${precioX4Formateado}<br>`;  
+                    Neumático ${medida} ${marca} ${modelo}<br>
+                    1X $${precioUnidadFormateado}<br>
+                    2x $${precioX2Formateado}<br>
+                    4x $${precioX4Formateado}<br>`;  
             }
             // Caso 2: Precio por unidad y precio por juego (X4) están disponibles
             else if (precioUnidad && !precioX2 && precioX4) {
                 resultadoTexto = `
-                    Medida: ${medida}<br>
-                    Marca: ${marca}<br>
-                    Modelo: ${modelo}<br>
-                    Precio unidad: $${precioUnidadFormateado}<br>
-                    Precio por juego (X4): $${precioX4Formateado}<br>`;
+                    Neumático ${medida} ${marca} ${modelo}<br>
+                    1X $${precioUnidadFormateado}<br>
+                    4x $${precioX4Formateado}<br>`; 
             }
             // Caso 3: Precio por unidad y precio por par (X2) están disponibles
             else if (precioUnidad && precioX2 && !precioX4) {
                 resultadoTexto = `
-                    Medida: ${medida}<br>
-                    Marca: ${marca}<br>
-                    Modelo: ${modelo}<br>
-                    Precio unidad: $${precioUnidadFormateado}<br>
-                    Precio por par (X2): $${precioX2Formateado}<br>`;
+                    Neumático ${medida} ${marca} ${modelo}<br>
+                    1 X $${precioUnidadFormateado}<br>
+                    2 X $${precioX2Formateado}<br>`; 
             }
             // Caso 4: Solo precio por par (X2) y precio por juego (X4) está disponible
             else if (precioX2 && precioX4) {
                 resultadoTexto = `
-                    Medida: ${medida}<br>
-                    Marca: ${marca}<br>
-                    Modelo: ${modelo}<br>
-                    Precio por par (X2): $${precioX2Formateado}<br>
-                    Precio por juego (X4): $${precioX4Formateado}<br>`;
+                    Neumático ${medida} ${marca} ${modelo}<br>
+                    2 X $${precioX2Formateado}<br>
+                    4 X $${precioX4Formateado}<br>`; 
             }
             // Caso 5: Solo precio por juego (X4) está disponible
             else if (!precioUnidad && !precioX2 && precioX4) {
                 resultadoTexto = `
-                    Medida: ${medida}<br>
-                    Marca: ${marca}<br>
-                    Modelo: ${modelo}<br>
-                    Precio por juego (X4): $${precioX4Formateado}<br>`;
+                    Neumático ${medida} ${marca} ${modelo}<br>
+                    4 X $${precioX4Formateado}<br>`; 
             }
             // Caso 6: Solo precio por par (X2) está disponible
             else if (!precioUnidad && precioX2 && !precioX4) {
                 resultadoTexto = `
-                    Medida: ${medida}<br>
-                    Marca: ${marca}<br>
-                    Modelo: ${modelo}<br>
-                    Precio por par (X2): $${precioX2Formateado}<br>`; 
+                    Neumático ${medida} ${marca} ${modelo}<br>
+                    2 X $${precioX2Formateado}<br>`; 
             }
             // Caso 7: Solo precio por unidad está disponible
             else if (precioUnidad && !precioX2 && !precioX4) {
                 resultadoTexto = `
-                    Medida: ${medida}<br>
-                    Marca: ${marca}<br>
-                    Modelo: ${modelo}<br>
-                    Precio unidad: $${precioUnidadFormateado}<br>`;  
+                    Neumático ${medida} ${marca} ${modelo}<br>
+                    1 X $${precioUnidadFormateado}<br>`;  
             }
 
             // Crear el elemento del resultado
@@ -200,12 +186,12 @@ function mostrarResultados(resultados, medidaBuscada) {
         });
 
         const bajada1 = document.createElement('p');
-        bajada1.textContent = "Todos los precios incluyen instalación, balanceo y válvulas nuevas.";
+        bajada1.textContent = "Incluye instalación, balanceo y válvula normal.";
         resultadosDiv.appendChild(bajada1);
 
-        const bajada2 = document.createElement('p');
+        /* const bajada2 = document.createElement('p');
         bajada2.innerHTML = "<strong>*No aplica para válvulas con sensor.</strong>";
-        resultadosDiv.appendChild(bajada2);
+        resultadosDiv.appendChild(bajada2); */
 
         // Mostrar botones si hay resultados
         document.getElementById('copyButton').style.display = 'block';
@@ -245,9 +231,10 @@ document.getElementById('copyButton').addEventListener('click', function() {
     });
 
     if (incluirMensajesInstalacion) {
-        const bajada1 = "Todos los precios incluyen instalación, balanceo y válvulas nuevas.";
-        const bajada2 = "*No aplica para válvulas con sensor.";
-        resultadosTexto += bajada1 + "\n\n" + bajada2;
+        const bajada1 = "Incluye instalación, balanceo y válvula normal.";
+        //const bajada2 = "*No aplica para válvulas con sensor.";
+        resultadosTexto += bajada1;
+        //resultadosTexto += bajada1 + "\n\n" + bajada2;
     }
 
     navigator.clipboard.writeText(resultadosTexto.trim());
@@ -283,9 +270,10 @@ document.getElementById('copySelectedButton').addEventListener('click', function
     });
 
     if (incluirMensajesInstalacion) {
-        const bajada1 = "Todos los precios incluyen instalación, balanceo y válvulas nuevas.";
-        const bajada2 = "*No aplica para válvulas con sensor.";
-        resultadosTexto += bajada1 + "\n\n" + bajada2;
+        const bajada1 = "Incluye instalación, balanceo y válvula normal.";
+        //const bajada2 = "*No aplica para válvulas con sensor.";
+        resultadosTexto += bajada1;
+        //resultadosTexto += bajada1 + "\n\n" + bajada2;
     }
 
     navigator.clipboard.writeText(resultadosTexto.trim());

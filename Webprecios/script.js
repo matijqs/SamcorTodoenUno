@@ -173,10 +173,8 @@ function mostrarResultados(resultados, medidaBuscada) {
             // Caso 7: Solo precio por unidad está disponible
             else if (precioUnidad && !precioX2 && !precioX4) {
                 resultadoTexto = `
-                    Medida: ${medida}<br>
-                    Marca: ${marca}<br>
-                    Modelo: ${modelo}<br>
-                    Precio unidad: $${precioUnidadFormateado}<br>`;  
+                    Neumático ${medida} ${marca} ${modelo}. Valor Unitario: $${precioUnidadFormateado} <br>`;
+                    // Neumatico 205/60R15 SUMAXX AT $75.000 valor unitario
             }
 
             // Crear el elemento del resultado
@@ -200,12 +198,12 @@ function mostrarResultados(resultados, medidaBuscada) {
         });
 
         const bajada1 = document.createElement('p');
-        bajada1.textContent = "Todos los precios incluyen instalación, balanceo y válvulas nuevas.";
+        bajada1.textContent = "Incluye instalación, balanceo y válvula normal.";
         resultadosDiv.appendChild(bajada1);
 
-        const bajada2 = document.createElement('p');
+        /*const bajada2 = document.createElement('p');
         bajada2.innerHTML = "<strong>*No aplica para válvulas con sensor.</strong>";
-        resultadosDiv.appendChild(bajada2);
+        resultadosDiv.appendChild(bajada2);*/
 
         // Mostrar botones si hay resultados
         document.getElementById('copyButton').style.display = 'block';
@@ -246,9 +244,10 @@ document.getElementById('copyButton').addEventListener('click', function() {
     });
 
     if (incluirMensajesInstalacion) {
-        const bajada1 = "Todos los precios incluyen instalación, balanceo y válvulas nuevas.";
-        const bajada2 = "*No aplica para válvulas con sensor.";
-        resultadosTexto += bajada1 + "\n\n" + bajada2;
+        const bajada1 = "Incluye instalación, balanceo y válvula normal.";
+        //const bajada2 = "*No aplica para válvulas con sensor.";
+        resultadosTexto += bajada1;
+        //resultadosTexto += bajada1 + "\n\n" + bajada2;
     }
 
     navigator.clipboard.writeText(resultadosTexto.trim());
@@ -283,9 +282,10 @@ document.getElementById('copySelectedButton').addEventListener('click', function
     });
 
     if (incluirMensajesInstalacion) {
-        const bajada1 = "Todos los precios incluyen instalación, balanceo y válvulas nuevas.";
-        const bajada2 = "*No aplica para válvulas con sensor.";
-        resultadosTexto += bajada1 + "\n\n" + bajada2;
+        const bajada1 = "Incluye instalación, balanceo y válvula normal.";
+        //const bajada2 = "*No aplica para válvulas con sensor.";
+        resultadosTexto += bajada1;
+        //resultadosTexto += bajada1 + "\n\n" + bajada2;
     }
 
     navigator.clipboard.writeText(resultadosTexto.trim());
