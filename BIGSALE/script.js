@@ -95,7 +95,7 @@ function mostrarResultados(resultados, medidaBuscada) {
   resultadosDiv.innerHTML = "";
 
   const encabezado = document.createElement("h3");
-  encabezado.textContent = "Tenemos lo siguiente:";
+  encabezado.textContent = "Estamos en días SAMCOR SALE, tenemos estas ofertas para ti:";
   resultadosDiv.appendChild(encabezado);
 
   if (resultados.length > 0) {
@@ -107,9 +107,8 @@ function mostrarResultados(resultados, medidaBuscada) {
       const precioX2 = fila["X2"] || "";
       const precioX4 = fila["X4"] || "";
       const web = fila["WEB"] || "";
-      const seVenden = fila["SE VENDEN"] || "";
-      const cantidad = fila["CANTIDAD"] || "";
       const categoria = fila["CATEGORIA"] || "";
+      const stock = fila["CANTIDAD"] || "";
       const instalacion = fila["INSTALACION"] || "";
 
       function formatearPrecio(precio) {
@@ -127,7 +126,6 @@ function mostrarResultados(resultados, medidaBuscada) {
         1 X $${precioUnidadFormateado}<br>
         2 X $${precioX2Formateado}<br>
         4 X $${precioX4Formateado}<br>
-        Cantidad: ${cantidad}<br>
         Precio Web: $${formatearPrecio(web)}<br>
         Categoría: ${categoria}<br>`;
         
@@ -135,7 +133,6 @@ function mostrarResultados(resultados, medidaBuscada) {
         resultadoTexto = `Neumático ${medida} ${marca} ${modelo}<br>
         1 X $${precioUnidadFormateado}<br>
         4 X $${precioX4Formateado}<br>
-        Cantidad: ${cantidad}<br>
         Precio Web: $${formatearPrecio(web)}<br>
         Categoría: ${categoria}<br>`;
 
@@ -143,7 +140,6 @@ function mostrarResultados(resultados, medidaBuscada) {
         resultadoTexto = `Neumático ${medida} ${marca} ${modelo}<br>
         1 X $${precioUnidadFormateado}<br>
         2 X $${precioX2Formateado}<br>
-        Cantidad: ${cantidad}<br>
         Precio Web: $${formatearPrecio(web)}<br>
         Categoría: ${categoria}<br>`;
 
@@ -151,28 +147,24 @@ function mostrarResultados(resultados, medidaBuscada) {
         resultadoTexto = `Neumático ${medida} ${marca} ${modelo}<br>
         2 X $${precioX2Formateado}<br>
         4 X $${precioX4Formateado}<br>
-        Cantidad: ${cantidad}<br>
         Precio Web: $${formatearPrecio(web)}<br>
         Categoría: ${categoria}<br>`;
 
       } else if (!precioUnidad && !precioX2 && precioX4) {
         resultadoTexto = `Neumático ${medida} ${marca} ${modelo}<br>
-        4 X $${precioX4Formateado}<br>
-        Cantidad: ${cantidad}<br>
-        Precio Web: $${formatearPrecio(web)}<br>
-        Categoría: ${categoria}<br>`;
+        Precio: 4 X $${precioX4Formateado}<br>
+        Stock: ${stock}<br>       
+        PRECIO VALIDO SOLO POR LA COMPRA DE 4 UNIDADES<br>`;
 
       } else if (!precioUnidad && precioX2 && !precioX4) {
         resultadoTexto = `Neumático ${medida} ${marca} ${modelo}<br>
-        2 X $${precioX2Formateado}<br>
-        Cantidad: ${cantidad}<br>
-        Precio Web: $${formatearPrecio(web)}<br>
-        Categoría: ${categoria}<br>`;
+        Precio: 2 X $${precioX2Formateado}<br>
+        Stock: ${stock}<br>
+        PRECIO VALIDO SOLO POR LA COMPRA DE 2 UNIDADES<br>`;
 
       } else if (precioUnidad && !precioX2 && !precioX4) {
         resultadoTexto = `Neumático ${medida} ${marca} ${modelo}<br>
         1 X $${precioUnidadFormateado}<br>
-        Cantidad: ${cantidad}<br>
         Precio Web: $${formatearPrecio(web)}<br>
         Categoría: ${categoria}<br>`;
       }
