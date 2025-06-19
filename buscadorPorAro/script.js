@@ -106,8 +106,8 @@ function mostrarResultados(resultados, medidaBuscada) {
                 Modelo: ${modelos}<br>
                 Tipo Vehículo: ${tipoVehiculo}<br>
                 Precio Market: $${facebook}<br>
-                Agregado: ${agregado}<br>
                 Precio Web: $${web}<br>
+                Agregado Web: ${agregado}<br>
             `;
 
       // Crear el elemento del resultado

@@ -109,7 +109,6 @@ function mostrarResultados(resultados, medidaBuscada) {
       const web = fila["WEB"] || "";
       const categoria = fila["CATEGORIA"] || "";
       const stock = fila["CANTIDAD"] || "";
-      const instalacion = fila["INSTALACION"] || "";
 
       function formatearPrecio(precio) {
         if (!precio) return "";
@@ -152,13 +151,13 @@ function mostrarResultados(resultados, medidaBuscada) {
 
       } else if (!precioUnidad && !precioX2 && precioX4) {
         resultadoTexto = `Neumático ${medida} ${marca} ${modelo}<br>
-        Precio: 4 X $${precioX4Formateado}<br>
+        Precio Oferta: 4 X $${precioX4Formateado}<br>
         Stock: ${stock}<br>       
         PRECIO VALIDO SOLO POR LA COMPRA DE 4 UNIDADES<br>`;
 
       } else if (!precioUnidad && precioX2 && !precioX4) {
         resultadoTexto = `Neumático ${medida} ${marca} ${modelo}<br>
-        Precio: 2 X $${precioX2Formateado}<br>
+        Precio Oferta: 2 X $${precioX2Formateado}<br>
         Stock: ${stock}<br>
         PRECIO VALIDO SOLO POR LA COMPRA DE 2 UNIDADES<br>`;
 
