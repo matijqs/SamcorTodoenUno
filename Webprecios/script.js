@@ -63,12 +63,7 @@ function GenerarVariantesMedida(medida) {
 function cargarArchivoDesdeCSV(medidaBuscada) {
   const urls = [
     {
-      url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSvX_EPW0NwRZS69n3dKorHfYERGXaHeQyuJZacQCNUIHzFXZ36Tuu6ry03DeWjfQ/pub?output=csv",
-      tipo: "normal"
-    },
-    {
-      url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSt2J_fxHoCMq4KhMBR85x4vVO_m8v5SLWo09BP7KJ5cp-SKw_mN2cgxznNnaZWBw/pub?output=csv",
-      tipo: "sale"
+      url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSvX_EPW0NwRZS69n3dKorHfYERGXaHeQyuJZacQCNUIHzFXZ36Tuu6ry03DeWjfQ/pub?output=csv"
     }
   ];
 
@@ -84,7 +79,7 @@ function cargarArchivoDesdeCSV(medidaBuscada) {
             row["MEDIDA"] &&
             row["MEDIDA"].toUpperCase().includes(vari.toUpperCase())
           )
-        ).map(row => ({ ...row, tipo: item.tipo }));
+        );
       })
   ))
   .then(resultadosArrays => {
@@ -110,7 +105,6 @@ function mostrarResultados(resultados, medidaBuscada) {
             const precioUnidad = fila["UNIDAD"] || '';
             const precioX2 = fila["X2"] || '';
             const precioX4 = fila["X4"] || '';
-            const tipo = fila["tipo"] || '';
 
             function formatearPrecio(precio) {
                 if (!precio) return '';
@@ -167,10 +161,6 @@ function mostrarResultados(resultados, medidaBuscada) {
             } else if (precioUnidad && !precioX2 && !precioX4) {
                 resultadoTexto = `
                     Neumático ${medida} ${marca} ${modelo}. Valor Unitario: $${precioUnidad} <br>`;
-            }
-
-            if (tipo === "sale") {
-                resultadoTexto += `<span style="color: red; font-weight: bold;">🔥 Oferta SAMCORSALE</span><br>`;
             }
 
             const resultadoElemento = document.createElement('div');

@@ -7,8 +7,8 @@ document.getElementById('medidaInput').addEventListener('keydown', function(even
 
 document.getElementById("cleanButton").addEventListener("click", function() {
     let input = document.getElementById("medidaInput");
-    input.value = "";
-    input.focus();
+    input.value = ""; // Limpia el input
+    input.focus();    // Hace focus en el input
 });
 
 const scrollButton = document.getElementById("scrollButton");
@@ -31,8 +31,30 @@ function realizarBusqueda() {
     cargarArchivoDesdeCSV(medidaBuscada);
 }
 
+function cargarArchivoDesdeCSV(medidaBuscada) {
+  fetch(
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vRGKRlXX6HxPIq7mquuYTtoKbTE5k4pvoOBgxrWZV9617kkaLriisK45uVSrx76kA/pub?gid=10180166&single=true&output=csv"
+  )
+    .then((response) => response.text())
+    .then((csvText) => {
+      const rows = Papa.parse(csvText, { header: true }).data;
+      const variantes = GenerarVariantesMedida(medidaBuscada);
+      const resultados = rows.filter((row) =>
+        variantes.some(
+          (vari) =>
+            row["MEDIDA"] &&
+            row["MEDIDA"].toUpperCase().includes(vari.toUpperCase())
+        )
+      );
+      mostrarResultados(resultados, medidaBuscada);
+    })
+    .catch((error) => console.error("Error al cargar los datos:", error));
+}
+
 function GenerarVariantesMedida(medida) {
     medida = medida.toString().trim();
+    
+    // Verificar si la medida tiene una longitud de 7 (común para medidas estándar)
     if (medida.length === 7) {
         const ancho = medida.substring(0, 3);
         const perfil = medida.substring(3, 5);
@@ -45,6 +67,8 @@ function GenerarVariantesMedida(medida) {
             `${ancho}/${perfil}ZRF${diametro}C`
         ];
     }
+
+    // Verificar si la medida tiene una longitud de 5 (puede ser común para algunos casos)
     if (medida.length === 5) {
         const ancho = medida.substring(0, 3);
         const diametro = medida.substring(3);
@@ -54,45 +78,16 @@ function GenerarVariantesMedida(medida) {
             `${ancho}ZRF${diametro}`
         ];
     }
+    
+    // Caso donde la medida incluye caracteres como "/" o "R" o "Z", que son comunes en medidas
     if (medida.includes("/") || medida.includes("R") || medida.includes("Z")) {
         return [medida];
     }    
+
+    // Para cualquier otro formato, simplemente devolver la medida original
     return [medida];
 }
 
-function cargarArchivoDesdeCSV(medidaBuscada) {
-    const urls = [
-        {
-            url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRGKRlXX6HxPIq7mquuYTtoKbTE5k4pvoOBgxrWZV9617kkaLriisK45uVSrx76kA/pub?gid=10180166&single=true&output=csv",
-            tipo: "normal"
-        },
-        {
-            url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSt2J_fxHoCMq4KhMBR85x4vVO_m8v5SLWo09BP7KJ5cp-SKw_mN2cgxznNnaZWBw/pub?output=csv",
-            tipo: "sale"
-        }
-    ];
-
-    const variantes = GenerarVariantesMedida(medidaBuscada);
-
-    Promise.all(urls.map(item =>
-        fetch(item.url)
-            .then(resp => resp.text())
-            .then(csv => {
-                const rows = Papa.parse(csv, { header: true }).data;
-                return rows.filter(row =>
-                    variantes.some(vari =>
-                        row["MEDIDA"] &&
-                        row["MEDIDA"].toUpperCase().includes(vari.toUpperCase())
-                    )
-                ).map(row => ({ ...row, tipo: item.tipo }));
-            })
-    ))
-    .then(resultadosArrays => {
-        const resultadosCombinados = [].concat(...resultadosArrays);
-        mostrarResultados(resultadosCombinados, medidaBuscada);
-    })
-    .catch(error => console.error("Error al cargar los datos:", error));
-}
 
 function mostrarResultados(resultados, medidaBuscada) {
     const resultadosDiv = document.getElementById('resultados');
@@ -107,10 +102,9 @@ function mostrarResultados(resultados, medidaBuscada) {
             const medida = fila["MEDIDA"] || '';
             const marca = fila["MARCA"] || '';
             const modelo = fila["MODELO"] || '';
-            const precioUnidad = fila["UNIDAD"] || fila["X1"] || '';
+            const precioUnidad = fila["UNIDAD"] || '';
             const precioX2 = fila["X2"] || '';
             const precioX4 = fila["X4"] || '';
-            const tipo = fila["tipo"] || '';
 
             function formatearPrecio(precio) {
                 if (!precio) return '';
@@ -128,38 +122,39 @@ function mostrarResultados(resultados, medidaBuscada) {
                     Neumático ${medida} ${marca} ${modelo}<br>
                     1 X $${precioUnidadFormateado}<br>
                     2 X $${precioX2Formateado}<br>
-                    4 X $${precioX4Formateado}<br>`;
+                    4 X $${precioX4Formateado}<br>`;  
             } else if (precioUnidad && !precioX2 && precioX4) {
                 resultadoTexto = `
                     Neumático ${medida} ${marca} ${modelo}<br>
                     1 X $${precioUnidadFormateado}<br>
-                    4 X $${precioX4Formateado}<br>`;
+                    4 X $${precioX4Formateado}<br>`; 
             } else if (precioUnidad && precioX2 && !precioX4) {
                 resultadoTexto = `
                     Neumático ${medida} ${marca} ${modelo}<br>
                     1 X $${precioUnidadFormateado}<br>
-                    2 X $${precioX2Formateado}<br>`;
+                    2 X $${precioX2Formateado}<br>`; 
             } else if (precioX2 && precioX4) {
                 resultadoTexto = `
                     Neumático ${medida} ${marca} ${modelo}<br>
                     2 X $${precioX2Formateado}<br>
-                    4 X $${precioX4Formateado}<br>`;
+                    4 X $${precioX4Formateado}<br>`; 
             } else if (!precioUnidad && !precioX2 && precioX4) {
                 resultadoTexto = `
                     Neumático ${medida} ${marca} ${modelo}<br>
-                    4 X $${precioX4Formateado}<br>`;
+                    4 X $${precioX4Formateado}<br>`; 
             } else if (!precioUnidad && precioX2 && !precioX4) {
                 resultadoTexto = `
                     Neumático ${medida} ${marca} ${modelo}<br>
-                    2 X $${precioX2Formateado}<br>`;
+                    2 X $${precioX2Formateado}<br>`; 
             } else if (precioUnidad && !precioX2 && !precioX4) {
                 resultadoTexto = `
                     Neumático ${medida} ${marca} ${modelo}<br>
-                    1 X $${precioUnidadFormateado}<br>`;
+                    1 X $${precioUnidadFormateado}<br>`;  
             }
 
-            if (tipo === "sale") {
-                resultadoTexto += `<strong style="color: red;">🔥 Oferta SAMCORSALE</strong><br>`;
+            // 🔴 AGREGAR ETIQUETA LIQUIDACIÓN
+            if ((fila["PROMO"] || '').toUpperCase() === "LIQUIDACIÓN") {
+                resultadoTexto += `<strong style="color: red;">🔥 LIQUIDACIÓN</strong><br>`;
             }
 
             const resultadoElemento = document.createElement('div');
@@ -194,6 +189,7 @@ function mostrarResultados(resultados, medidaBuscada) {
     }
 }
 
+
 document.getElementById('copyButton').addEventListener('click', function() {
     const resultadosDiv = document.getElementById('resultados');
     let resultadosTexto = '';
@@ -217,11 +213,15 @@ document.getElementById('copyButton').addEventListener('click', function() {
 
     if (incluirMensajesInstalacion) {
         const bajada1 = "Incluye instalación, balanceo y válvula normal.";
+        //const bajada2 = "*No aplica para válvulas con sensor.";
         resultadosTexto += bajada1;
+        //resultadosTexto += bajada1 + "\n\n" + bajada2;
     }
 
     navigator.clipboard.writeText(resultadosTexto.trim());
 });
+
+
 
 document.getElementById('copySelectedButton').addEventListener('click', function() {
     const resultadosDiv = document.getElementById('resultados');
@@ -252,7 +252,9 @@ document.getElementById('copySelectedButton').addEventListener('click', function
 
     if (incluirMensajesInstalacion) {
         const bajada1 = "Incluye instalación, balanceo y válvula normal.";
+        //const bajada2 = "*No aplica para válvulas con sensor.";
         resultadosTexto += bajada1;
+        //resultadosTexto += bajada1 + "\n\n" + bajada2;
     }
 
     navigator.clipboard.writeText(resultadosTexto.trim());
