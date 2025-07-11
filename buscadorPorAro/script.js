@@ -93,21 +93,15 @@ function mostrarResultados(resultados, medidaBuscada) {
   if (resultados.length > 0) {
     resultados.forEach((fila) => {
       const medida = fila["ARO"] || "";
-      const proveedor = fila["PROVEEDOR"] || "";
-      const modelos = fila["MODELOS"] || "";
+      const grupo = fila["GRUPO"] || "";
+      const precio = fila["PRECIO"];
       const tipoVehiculo = fila["TIPO VEHICULO"] || "";
-      const facebook = fila["FACEBOOK"] || "";
-      const agregado = fila["AGREGADO"] || "NO CONTIENE AGREGADO";
-      const web = fila["WEB"] || "";
 
       let resultadoTexto = `
                 Medida: ARO ${medida}<br>
-                Proveedor: ${proveedor}<br>
-                Modelo: ${modelos}<br>
+                Grupo: ${grupo}<br>
                 Tipo Vehículo: ${tipoVehiculo}<br>
-                Precio Market: $${facebook}<br>
-                Precio Web: $${web}<br>
-                Agregado Web: ${agregado}<br>
+                Precio : $${precio}<br>
             `;
 
       // Crear el elemento del resultado
