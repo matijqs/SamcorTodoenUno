@@ -63,7 +63,7 @@ function GenerarVariantesMedida(medida) {
 function cargarArchivoDesdeCSV(medidaBuscada) {
   const urls = [
     {
-      url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSvX_EPW0NwRZS69n3dKorHfYERGXaHeQyuJZacQCNUIHzFXZ36Tuu6ry03DeWjfQ/pub?output=csv"
+      url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRGKRlXX6HxPIq7mquuYTtoKbTE5k4pvoOBgxrWZV9617kkaLriisK45uVSrx76kA/pub?gid=10180166&single=true&output=csv"
     }
   ];
 
@@ -102,9 +102,7 @@ function mostrarResultados(resultados, medidaBuscada) {
             const medida = fila["MEDIDA"] || '';
             const marca = fila["MARCA"] || '';
             const modelo = fila["MODELO"] || '';
-            const precioUnidad = fila["UNIDAD"] || '';
-            const precioX2 = fila["X2"] || '';
-            const precioX4 = fila["X4"] || '';
+            const precioUnidad = fila["WEB"] || '';
 
             function formatearPrecio(precio) {
                 if (!precio) return '';
@@ -112,56 +110,11 @@ function mostrarResultados(resultados, medidaBuscada) {
             }
 
             const precioUnidadFormateado = formatearPrecio(precioUnidad);
-            const precioX2Formateado = formatearPrecio(precioX2);
-            const precioX4Formateado = formatearPrecio(precioX4);
 
             let resultadoTexto = '';
-
-            if (precioUnidad && precioX2 && precioX4) {
-                resultadoTexto = `
-                    Medida: ${medida}<br>
-                    Marca: ${marca}<br>
-                    Modelo: ${modelo}<br>
-                    Precio unidad: $${precioUnidad}<br>
-                    Precio por par (X2): $${precioX2}<br>
-                    Precio por juego (X4): $${precioX4}<br>`;
-            } else if (precioUnidad && !precioX2 && precioX4) {
-                resultadoTexto = `
-                    Medida: ${medida}<br>
-                    Marca: ${marca}<br>
-                    Modelo: ${modelo}<br>
-                    Precio unidad: $${precioUnidad}<br>
-                    Precio por juego (X4): $${precioX4}<br>`;
-            } else if (precioUnidad && precioX2 && !precioX4) {
-                resultadoTexto = `
-                    Medida: ${medida}<br>
-                    Marca: ${marca}<br>
-                    Modelo: ${modelo}<br>
-                    Precio unidad: $${precioUnidad}<br>
-                    Precio por par (X2): $${precioX2}<br>`;
-            } else if (precioX2 && precioX4) {
-                resultadoTexto = `
-                    Medida: ${medida}<br>
-                    Marca: ${marca}<br>
-                    Modelo: ${modelo}<br>
-                    Precio por par (X2): $${precioX2}<br>
-                    Precio por juego (X4): $${precioX4}<br>`;
-            } else if (!precioUnidad && !precioX2 && precioX4) {
-                resultadoTexto = `
-                    Medida: ${medida}<br>
-                    Marca: ${marca}<br>
-                    Modelo: ${modelo}<br>
-                    Precio por juego (X4): $${precioX4}<br>`;
-            } else if (!precioUnidad && precioX2 && !precioX4) {
-                resultadoTexto = `
-                    Medida: ${medida}<br>
-                    Marca: ${marca}<br>
-                    Modelo: ${modelo}<br>
-                    Precio por par (X2): $${precioX2Formateado}<br>`;
-            } else if (precioUnidad && !precioX2 && !precioX4) {
-                resultadoTexto = `
-                    Neumático ${medida} ${marca} ${modelo}. Valor Unitario: $${precioUnidad} <br>`;
-            }
+            
+            resultadoTexto = `Neumático ${medida} ${marca} ${modelo}. Valor Unitario: $${precioUnidad} <br>`;
+            
 
             const resultadoElemento = document.createElement('div');
             resultadoElemento.classList.add('alert', 'alert-info');
