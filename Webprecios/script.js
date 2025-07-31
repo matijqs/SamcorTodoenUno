@@ -152,9 +152,6 @@ function mostrarResultados(resultados, medidaBuscada) {
     const bajada1 = document.createElement("p");
     bajada1.textContent = "Incluye instalación, balanceo y válvula normal.";
     resultadosDiv.appendChild(bajada1);
-    const bajada2 = document.createElement('p');
-    bajada2.textContent = "Precio por 4 neumáticos pagando al contado. Con tarjeta se agrega recargo de 3%.";
-    resultadosDiv.appendChild(bajada2);
 
     document.getElementById("copyButton").style.display = "block";
     document.getElementById("copySelectedButton").style.display = "block";
@@ -175,7 +172,6 @@ document.getElementById('copyButton').addEventListener('click', function() {
     let incluirMensajesInstalacion = false;
 
     const bajada1 = "Incluye instalación, balanceo y válvula normal.";
-    const bajada2 = "Precio por 4 neumáticos pagando al contado. Con tarjeta se agrega recargo de 3%.";
 
     const encabezado = resultadosDiv.querySelector('h3');
     if (encabezado) {
@@ -197,8 +193,6 @@ document.getElementById('copyButton').addEventListener('click', function() {
         resultadosTexto += bajada1 + "\n\n";
     }
 
-    resultadosTexto += bajada2;
-
     navigator.clipboard.writeText(resultadosTexto.trim());
 });
 
@@ -208,7 +202,6 @@ document.getElementById('copySelectedButton').addEventListener('click', function
     let incluirMensajesInstalacion = false;
 
     const bajada1 = "Incluye instalación, balanceo y válvula normal.";
-    const bajada2 = "Precio por 4 neumáticos pagando al contado. Con tarjeta se agrega recargo de 3%.";
 
     const encabezado = resultadosDiv.querySelector('h3');
     if (encabezado) {
@@ -235,8 +228,6 @@ document.getElementById('copySelectedButton').addEventListener('click', function
     if (incluirMensajesInstalacion) {
         resultadosTexto += bajada1 + "\n\n";
     }
-
-    resultadosTexto += bajada2;
 
     navigator.clipboard.writeText(resultadosTexto.trim());
 });
