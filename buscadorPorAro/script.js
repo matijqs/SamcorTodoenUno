@@ -124,12 +124,10 @@ function cargarArchivo(medidaBuscada) {
 
       mostrarResultados(resultados, medidaBuscada);
     })
-    .catch((error) => {
-      console.error("Error al procesar LLANTAS.csv:", error);
-      alert("Hubo un error al cargar los datos.");
-    });
+    .catch((error) =>
+      console.error("Error al cargar los datos desde GitHub:", error)
+    );
 }
-
 
 function mostrarResultados(resultados, medidaBuscada) {
   const resultadosDiv = document.getElementById("resultados");
