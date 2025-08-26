@@ -31,13 +31,41 @@ function realizarBusqueda() {
     cargarArchivoDesdeCSV(medidaBuscada);
 }
 
+// function cargarArchivoDesdeCSV(medidaBuscada) {
+//   fetch(
+//     "https://docs.google.com/spreadsheets/d/e/2PACX-1vRGKRlXX6HxPIq7mquuYTtoKbTE5k4pvoOBgxrWZV9617kkaLriisK45uVSrx76kA/pub?gid=10180166&single=true&output=csv"
+//   )
+//     .then((response) => response.text())
+//     .then((csvText) => {
+//       const rows = Papa.parse(csvText, { header: true }).data;
+//       const variantes = GenerarVariantesMedida(medidaBuscada);
+//       const resultados = rows.filter((row) =>
+//         variantes.some(
+//           (vari) =>
+//             row["MEDIDA"] &&
+//             row["MEDIDA"].toUpperCase().includes(vari.toUpperCase())
+//         )
+//       );
+//       mostrarResultados(resultados, medidaBuscada);
+//     })
+//     .catch((error) => console.error("Error al cargar los datos:", error));
+// }
+
 function cargarArchivoDesdeCSV(medidaBuscada) {
-  fetch(
-    "https://docs.google.com/spreadsheets/d/e/2PACX-1vRGKRlXX6HxPIq7mquuYTtoKbTE5k4pvoOBgxrWZV9617kkaLriisK45uVSrx76kA/pub?gid=10180166&single=true&output=csv"
-  )
-    .then((response) => response.text())
+  // URL de tu CSV en GitHub Pages
+  const URL_CSV = "files/LISTA DE PRECIOS MARKET.csv";
+
+  fetch(URL_CSV)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("No se pudo cargar el CSV: " + response.status);
+      }
+      return response.text();
+    })
     .then((csvText) => {
-      const rows = Papa.parse(csvText, { header: true }).data;
+      const parsed = Papa.parse(csvText, { header: true, skipEmptyLines: true });
+      const rows = parsed.data;
+
       const variantes = GenerarVariantesMedida(medidaBuscada);
       const resultados = rows.filter((row) =>
         variantes.some(
@@ -46,10 +74,14 @@ function cargarArchivoDesdeCSV(medidaBuscada) {
             row["MEDIDA"].toUpperCase().includes(vari.toUpperCase())
         )
       );
+
       mostrarResultados(resultados, medidaBuscada);
     })
-    .catch((error) => console.error("Error al cargar los datos:", error));
+    .catch((error) =>
+      console.error("Error al cargar los datos desde GitHub:", error)
+    );
 }
+
 
 function GenerarVariantesMedida(medida) {
     medida = medida.toString().trim();
