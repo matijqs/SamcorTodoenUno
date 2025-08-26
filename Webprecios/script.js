@@ -70,36 +70,67 @@ function GenerarVariantesMedida(medida) {
   return [medida];
 }
 
+// function cargarArchivoDesdeCSV(medidaBuscada) {
+//   const urls = [
+//     {
+//       url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRGKRlXX6HxPIq7mquuYTtoKbTE5k4pvoOBgxrWZV9617kkaLriisK45uVSrx76kA/pub?gid=10180166&single=true&output=csv",
+//     },
+//   ];
+
+//   const variantes = GenerarVariantesMedida(medidaBuscada);
+
+//   Promise.all(
+//     urls.map((item) =>
+//       fetch(item.url)
+//         .then((resp) => resp.text())
+//         .then((csv) => {
+//           const rows = Papa.parse(csv, { header: true }).data;
+//           return rows.filter((row) =>
+//             variantes.some(
+//               (vari) =>
+//                 row["MEDIDA"] &&
+//                 row["MEDIDA"].toUpperCase().includes(vari.toUpperCase())
+//             )
+//           );
+//         })
+//     )
+//   )
+//     .then((resultadosArrays) => {
+//       const resultadosCombinados = [].concat(...resultadosArrays);
+//       mostrarResultados(resultadosCombinados, medidaBuscada);
+//     })
+//     .catch((error) => console.error("Error al cargar los datos:", error));
+// }
+
 function cargarArchivoDesdeCSV(medidaBuscada) {
-  const urls = [
-    {
-      url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRGKRlXX6HxPIq7mquuYTtoKbTE5k4pvoOBgxrWZV9617kkaLriisK45uVSrx76kA/pub?gid=10180166&single=true&output=csv",
-    },
-  ];
+  // URL de tu CSV en GitHub Pages
+  const URL_CSV = "files/LISTA DE PRECIOS MARKET.csv";
 
-  const variantes = GenerarVariantesMedida(medidaBuscada);
-
-  Promise.all(
-    urls.map((item) =>
-      fetch(item.url)
-        .then((resp) => resp.text())
-        .then((csv) => {
-          const rows = Papa.parse(csv, { header: true }).data;
-          return rows.filter((row) =>
-            variantes.some(
-              (vari) =>
-                row["MEDIDA"] &&
-                row["MEDIDA"].toUpperCase().includes(vari.toUpperCase())
-            )
-          );
-        })
-    )
-  )
-    .then((resultadosArrays) => {
-      const resultadosCombinados = [].concat(...resultadosArrays);
-      mostrarResultados(resultadosCombinados, medidaBuscada);
+  fetch(URL_CSV)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("No se pudo cargar el CSV: " + response.status);
+      }
+      return response.text();
     })
-    .catch((error) => console.error("Error al cargar los datos:", error));
+    .then((csvText) => {
+      const parsed = Papa.parse(csvText, { header: true, skipEmptyLines: true });
+      const rows = parsed.data;
+
+      const variantes = GenerarVariantesMedida(medidaBuscada);
+      const resultados = rows.filter((row) =>
+        variantes.some(
+          (vari) =>
+            row["MEDIDA"] &&
+            row["MEDIDA"].toUpperCase().includes(vari.toUpperCase())
+        )
+      );
+
+      mostrarResultados(resultados, medidaBuscada);
+    })
+    .catch((error) =>
+      console.error("Error al cargar los datos desde GitHub:", error)
+    );
 }
 
 function mostrarResultados(resultados, medidaBuscada) {

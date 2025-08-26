@@ -35,9 +35,56 @@ function realizarBusqueda() {
   cargarArchivo(medidaBuscada);
 }
 
+// function cargarArchivo(medidaBuscada) {
+//   const csvUrl =
+//     "https://docs.google.com/spreadsheets/d/e/2PACX-1vQjAvFAI8WFGT2lFVeotBGNAyOFwFgXGGof1HjmwQqe0SB-1B2zf9SAfmVK3M9bew/pub?gid=500081744&single=true&output=csv";
+
+//   fetch(csvUrl)
+//     .then((response) => {
+//       if (!response.ok) {
+//         throw new Error(
+//           `Error al cargar el archivo CSV: ${response.statusText}`
+//         );
+//       }
+//       return response.text();
+//     })
+//     .then((csvText) => {
+//       const parsed = Papa.parse(csvText, { header: true });
+
+//       if (medidaBuscada.length < 2) {
+//         alert("Por favor, ingresa una medida válida (por ejemplo, '15A' o '15C').");
+//         return;
+//       }
+
+//       const aro = medidaBuscada.slice(0, -1).trim();
+//       const tipoLetra = medidaBuscada.slice(-1).toUpperCase();
+//       const tipoVehiculo =
+//         tipoLetra === "A" ? "auto" : tipoLetra === "C" ? "camioneta" : null;
+
+//       if (!tipoVehiculo) {
+//         alert("Por favor, termina la medida con 'A' (auto) o 'C' (camioneta).");
+//         return;
+//       }
+
+//       const jsonData = parsed.data;
+
+//       const resultados = jsonData.filter((row) => {
+//         const aroValido = row["ARO"]?.toString().trim() === aro;
+//         const tipoValido = row["TIPO VEHICULO"]?.toLowerCase().trim() === tipoVehiculo;
+//         return aroValido && tipoValido;
+//       });
+
+//       mostrarResultados(resultados, medidaBuscada);
+//     })
+//     .catch((error) => {
+//       console.error("Error al procesar el CSV:", error);
+//       alert("Hubo un error al cargar los datos.");
+//     });
+// }
+
 function cargarArchivo(medidaBuscada) {
-  const csvUrl =
-    "https://docs.google.com/spreadsheets/d/e/2PACX-1vQjAvFAI8WFGT2lFVeotBGNAyOFwFgXGGof1HjmwQqe0SB-1B2zf9SAfmVK3M9bew/pub?gid=500081744&single=true&output=csv";
+  // CSV local en tu repo GitHub Pages
+  const csvUrl = "files/LLANTAS.csv";
 
   fetch(csvUrl)
     .then((response) => {
@@ -49,7 +96,7 @@ function cargarArchivo(medidaBuscada) {
       return response.text();
     })
     .then((csvText) => {
-      const parsed = Papa.parse(csvText, { header: true });
+      const parsed = Papa.parse(csvText, { header: true, skipEmptyLines: true });
 
       if (medidaBuscada.length < 2) {
         alert("Por favor, ingresa una medida válida (por ejemplo, '15A' o '15C').");
@@ -70,17 +117,19 @@ function cargarArchivo(medidaBuscada) {
 
       const resultados = jsonData.filter((row) => {
         const aroValido = row["ARO"]?.toString().trim() === aro;
-        const tipoValido = row["TIPO VEHICULO"]?.toLowerCase().trim() === tipoVehiculo;
+        const tipoValido =
+          row["TIPO VEHICULO"]?.toLowerCase().trim() === tipoVehiculo;
         return aroValido && tipoValido;
       });
 
       mostrarResultados(resultados, medidaBuscada);
     })
     .catch((error) => {
-      console.error("Error al procesar el CSV:", error);
+      console.error("Error al procesar LLANTAS.csv:", error);
       alert("Hubo un error al cargar los datos.");
     });
 }
+
 
 function mostrarResultados(resultados, medidaBuscada) {
   const resultadosDiv = document.getElementById("resultados");

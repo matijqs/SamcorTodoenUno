@@ -35,9 +35,43 @@ function realizarBusqueda() {
   cargarUbicaciones(medidaBuscada);
 }
 
+// function cargarUbicaciones(medidaBuscada) {
+//   const csvUrl =
+//     "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ8e8rG-dbXPudPU9BJZ1Hbd59BZYmD2bmlEuS_X6ib_pEG-R9p7LVnMAlXwWcI3Q/pub?gid=1044172382&single=true&output=csv"; // Reemplaza con tu URL pública CSV
+
+//   fetch(csvUrl)
+//     .then((response) => {
+//       if (!response.ok) {
+//         throw new Error(
+//           `Error al cargar el archivo CSV: ${response.statusText}`
+//         );
+//       }
+//       return response.text();
+//     })
+//     .then((csvText) => {
+//       const parsed = Papa.parse(csvText, { header: true });
+//       const data = parsed.data.filter((row) => row["Medida"]); // <- evita filas vacías
+
+//       const variantes = GenerarVariantesMedida(medidaBuscada);
+
+//       const resultados = data.filter((row) =>
+//         variantes.some((vari) =>
+//           row["Medida"].toString().toUpperCase().includes(vari.toUpperCase())
+//         )
+//       );
+
+//       mostrarUbicaciones(resultados, medidaBuscada);
+//     })
+
+//     .catch((error) => {
+//       console.error("Error al procesar CSV:", error);
+//       alert("Hubo un error al cargar los datos.");
+//     });
+// }
+
 function cargarUbicaciones(medidaBuscada) {
-  const csvUrl =
-    "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ8e8rG-dbXPudPU9BJZ1Hbd59BZYmD2bmlEuS_X6ib_pEG-R9p7LVnMAlXwWcI3Q/pub?gid=1044172382&single=true&output=csv"; // Reemplaza con tu URL pública CSV
+  // Ruta al CSV dentro de tu repo en GitHub Pages
+  const csvUrl = "files/Ubicaciones.csv"; 
 
   fetch(csvUrl)
     .then((response) => {
@@ -49,8 +83,8 @@ function cargarUbicaciones(medidaBuscada) {
       return response.text();
     })
     .then((csvText) => {
-      const parsed = Papa.parse(csvText, { header: true });
-      const data = parsed.data.filter((row) => row["Medida"]); // <- evita filas vacías
+      const parsed = Papa.parse(csvText, { header: true, skipEmptyLines: true });
+      const data = parsed.data.filter((row) => row["Medida"]); // evita filas vacías
 
       const variantes = GenerarVariantesMedida(medidaBuscada);
 
@@ -62,10 +96,9 @@ function cargarUbicaciones(medidaBuscada) {
 
       mostrarUbicaciones(resultados, medidaBuscada);
     })
-
     .catch((error) => {
       console.error("Error al procesar CSV:", error);
-      alert("Hubo un error al cargar los datos.");
+      alert("Hubo un error al cargar los datos de ubicaciones.");
     });
 }
 
