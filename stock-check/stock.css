@@ -112,3 +112,27 @@ h1 {
   border-color: #ff0000 !important;
   color: white !important;
 }
+
+/* 📱 Ajustes para vista móvil */
+@media (max-width: 600px) {
+  /* Oculta las columnas Categoría y SKU */
+  #stock-table th:nth-child(1),
+  #stock-table td:nth-child(1),
+  #stock-table th:nth-child(3),
+  #stock-table td:nth-child(3) {
+    display: none;
+  }
+
+  /* Reduce un poco el tamaño del texto */
+  #stock-table {
+    font-size: 12px;
+  }
+
+  #stock-search {
+    font-size: 14px;
+  }
+
+  .stock-header h2 {
+    font-size: 1.3rem;
+  }
+}
