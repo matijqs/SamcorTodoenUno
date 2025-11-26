@@ -159,9 +159,12 @@ function mostrarResultados(resultados, medidaBuscada) {
 
       resultadoTexto = `Neumático ${medida} ${marca} ${modelo}. Valor Unitario: $${precioUnidad} <br>`;
 
-      if ((fila["PROMO"] || "").toUpperCase() === "LIQUIDACIÓN") {
-        resultadoTexto += `<strong style="color: red;">🔥 LIQUIDACIÓN</strong><br>`;
-      }
+const promo = (fila["PROMO"] || "").trim();
+
+if (promo !== "") {
+  resultadoTexto += `<strong style="color: red;">🔥 ${promo}</strong><br>`;
+}
+
 
       const resultadoElemento = document.createElement("div");
       resultadoElemento.classList.add("alert", "alert-info");
