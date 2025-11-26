@@ -252,8 +252,6 @@ document.getElementById('copyButton').addEventListener('click', function() {
         resultadosTexto += bajada1 + "\n\n";
     }
 
-    resultadosTexto += bajada2;
-
     navigator.clipboard.writeText(resultadosTexto.trim());
 });
 
@@ -289,8 +287,5 @@ document.getElementById('copySelectedButton').addEventListener('click', function
     if (incluirMensajesInstalacion) {
         resultadosTexto += bajada1 + "\n\n";
     }
-
-    resultadosTexto += bajada2;
-
     navigator.clipboard.writeText(resultadosTexto.trim());
 });
