@@ -184,10 +184,13 @@ function mostrarResultados(resultados, medidaBuscada) {
                     1 X $${precioUnidadFormateado}<br>`;  
             }
 
-            // 🔴 AGREGAR ETIQUETA LIQUIDACIÓN
-            if ((fila["PROMO"] || '').toUpperCase() === "LIQUIDACIÓN") {
-                resultadoTexto += `<strong style="color: red;">🔥 LIQUIDACIÓN</strong><br>`;
-            }
+        // 🔴 Agregar etiqueta de PROMO (4x3, BLACK, 2x1, SOLO 2, SOLO LLEVANDO 2, etc.)
+const promo = (fila["PROMO"] || '').trim().toUpperCase();
+
+if (promo !== '') {
+    resultadoTexto += `<strong style="color:red;">🔥 ${promo}</strong><br>`;
+}
+
 
             const resultadoElemento = document.createElement('div');
             resultadoElemento.classList.add('alert', 'alert-info');
