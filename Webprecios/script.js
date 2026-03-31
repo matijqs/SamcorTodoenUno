@@ -201,7 +201,7 @@ document.getElementById('copySelectedButton').addEventListener('click', function
     let incluirMensajesInstalacion = false;
 
     // AQUÍ UNIMOS LOS DOS MENSAJES PARA EL PORTAPAPELES
-    const textoBajada = "Incluye instalación, balanceo y válvula normal.\nPrecios Black válidos solo comprando 4 unidades.";
+    const textoBajada = "Incluye instalación, balanceo y válvula normal.";
 
     const encabezado = resultadosDiv.querySelector('h3');
     if (encabezado) {
