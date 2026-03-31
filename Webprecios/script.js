@@ -1,4 +1,102 @@
-// ... (código anterior sin cambios) ...
+/document.getElementById("searchButton").addEventListener("click", realizarBusqueda);
+
+document.getElementById("medidaInput").addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+    realizarBusqueda();
+  }
+});
+
+document.getElementById("cleanButton").addEventListener("click", function () {
+  let input = document.getElementById("medidaInput");
+  input.value = "";
+  input.focus();
+});
+
+const scrollButton = document.getElementById("scrollButton");
+scrollButton.addEventListener("click", function () {
+  if (window.scrollY >= document.body.scrollHeight - window.innerHeight - 10) {
+    window.scrollTo({ top: 0, behavior: "instant" });
+    scrollButton.innerHTML = "Ir al final";
+  } else {
+    window.scrollTo({ top: document.body.scrollHeight, behavior: "instant" });
+    scrollButton.innerHTML = "Ir al inicio";
+  }
+});
+
+function realizarBusqueda() {
+  const medidaBuscada = document.getElementById("medidaInput").value.trim();
+  if (!medidaBuscada) {
+    alert("Por favor, ingresa una medida válida.");
+    return;
+  }
+  cargarArchivoDesdeCSV(medidaBuscada);
+}
+
+function GenerarVariantesMedida(medida) {
+  medida = medida.toString().trim();
+  if (medida.length === 7) {
+    const ancho = medida.substring(0, 3);
+    const perfil = medida.substring(3, 5);
+    const diametro = medida.substring(5);
+    return [
+      `${ancho}/${perfil}R${diametro}`,
+      `${ancho}/${perfil}ZR${diametro}`,
+      `${ancho}/${perfil}ZRZ${diametro}`,
+      `${ancho}/${perfil}RZR${diametro}`,
+      `${ancho}/${perfil}R${diametro}C`,
+      `${ancho}/${perfil}ZR${diametro}C`,
+      `${ancho}/${perfil}ZRF${diametro}`,
+      `${ancho}/${perfil}ZRXL${diametro}`,
+      `${ancho}/${perfil}ZRF${diametro}C`,
+    ];
+  }
+  if (medida.length === 5) {
+    const ancho = medida.substring(0, 3);
+    const diametro = medida.substring(3);
+    return [
+      `${ancho}R${diametro}`,
+      `${ancho}R${diametro}C`,
+      `${ancho}ZR${diametro}`,
+      `${ancho}ZR${diametro}C`,
+      `${ancho}ZRF${diametro}`,
+    ];
+  }
+  if (medida.includes("/") || medida.includes("R") || medida.includes("Z")) {
+    return [medida];
+  }
+  return [medida];
+}
+
+function cargarArchivoDesdeCSV(medidaBuscada) {
+  // URL de tu CSV en GitHub Pages
+  const URL_CSV = "files/LISTA DE PRECIOS MARKET.csv";
+
+  fetch(URL_CSV)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("No se pudo cargar el CSV: " + response.status);
+      }
+      return response.text();
+    })
+    .then((csvText) => {
+      const parsed = Papa.parse(csvText, { header: true, skipEmptyLines: true });
+      const rows = parsed.data;
+
+      const variantes = GenerarVariantesMedida(medidaBuscada);
+      const resultados = rows.filter((row) =>
+        variantes.some(
+          (vari) =>
+            row["MEDIDA"] &&
+            row["MEDIDA"].toUpperCase().includes(vari.toUpperCase())
+        )
+      );
+
+      mostrarResultados(resultados, medidaBuscada);
+    })
+    .catch((error) =>
+      console.error("Error al cargar los datos desde GitHub:", error)
+    );
+}
 
 function mostrarResultados(resultados, medidaBuscada) {
   const resultadosDiv = document.getElementById("resultados");
@@ -53,11 +151,8 @@ function mostrarResultados(resultados, medidaBuscada) {
     bajada1.textContent = "Incluye instalación, balanceo y válvula normal.";
     resultadosDiv.appendChild(bajada1);
 
-    // NUEVO: Agregando el mensaje de Precios Black en pantalla
     const bajada2 = document.createElement("p");
     bajada2.textContent = "Precios Black válidos solo comprando 4 unidades.";
-    // Opcional: puedes darle algún estilo, por ejemplo ponerlo en negrita:
-    // bajada2.style.fontWeight = "bold"; 
     resultadosDiv.appendChild(bajada2);
 
     document.getElementById("copyButton").style.display = "block";
@@ -79,7 +174,6 @@ document.getElementById('copyButton').addEventListener('click', function() {
     let incluirMensajesInstalacion = false;
 
     const bajada1 = "Incluye instalación, balanceo y válvula normal.";
-    // NUEVO: Agregando la variable para el texto a copiar
     const bajada2 = "Precios Black válidos solo comprando 4 unidades.";
 
     const encabezado = resultadosDiv.querySelector('h3');
@@ -99,7 +193,6 @@ document.getElementById('copyButton').addEventListener('click', function() {
     });
 
     if (incluirMensajesInstalacion) {
-        // NUEVO: Concatenando ambos mensajes al copiar
         resultadosTexto += bajada1 + "\n" + bajada2 + "\n\n";
     }
 
@@ -112,7 +205,6 @@ document.getElementById('copySelectedButton').addEventListener('click', function
     let incluirMensajesInstalacion = false;
 
     const bajada1 = "Incluye instalación, balanceo y válvula normal.";
-    // NUEVO: Agregando la variable para el texto a copiar
     const bajada2 = "Precios Black válidos solo comprando 4 unidades.";
 
     const encabezado = resultadosDiv.querySelector('h3');
@@ -138,7 +230,6 @@ document.getElementById('copySelectedButton').addEventListener('click', function
     });
 
     if (incluirMensajesInstalacion) {
-        // NUEVO: Concatenando ambos mensajes al copiar
         resultadosTexto += bajada1 + "\n" + bajada2 + "\n\n";
     }
 
