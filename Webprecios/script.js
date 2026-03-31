@@ -1,4 +1,4 @@
-/document.getElementById("searchButton").addEventListener("click", realizarBusqueda);
+document.getElementById("searchButton").addEventListener("click", realizarBusqueda);
 
 document.getElementById("medidaInput").addEventListener("keydown", function (event) {
   if (event.key === "Enter") {
@@ -68,7 +68,6 @@ function GenerarVariantesMedida(medida) {
 }
 
 function cargarArchivoDesdeCSV(medidaBuscada) {
-  // URL de tu CSV en GitHub Pages
   const URL_CSV = "files/LISTA DE PRECIOS MARKET.csv";
 
   fetch(URL_CSV)
@@ -147,13 +146,10 @@ function mostrarResultados(resultados, medidaBuscada) {
       resultadosDiv.appendChild(resultadoElemento);
     });
 
-    const bajada1 = document.createElement("p");
-    bajada1.textContent = "Incluye instalación, balanceo y válvula normal.";
-    resultadosDiv.appendChild(bajada1);
-
-    const bajada2 = document.createElement("p");
-    bajada2.textContent = "Precios Black válidos solo comprando 4 unidades.";
-    resultadosDiv.appendChild(bajada2);
+    // AQUÍ UNIMOS LOS DOS MENSAJES EN UNO SOLO PARA LA PANTALLA
+    const bajada = document.createElement("p");
+    bajada.innerHTML = "Incluye instalación, balanceo y válvula normal.<br>Precios Black válidos solo comprando 4 unidades.";
+    resultadosDiv.appendChild(bajada);
 
     document.getElementById("copyButton").style.display = "block";
     document.getElementById("copySelectedButton").style.display = "block";
@@ -173,8 +169,8 @@ document.getElementById('copyButton').addEventListener('click', function() {
     let resultadosTexto = '';
     let incluirMensajesInstalacion = false;
 
-    const bajada1 = "Incluye instalación, balanceo y válvula normal.";
-    const bajada2 = "Precios Black válidos solo comprando 4 unidades.";
+    // AQUÍ UNIMOS LOS DOS MENSAJES PARA EL PORTAPAPELES
+    const textoBajada = "Incluye instalación, balanceo y válvula normal.\nPrecios Black válidos solo comprando 4 unidades.";
 
     const encabezado = resultadosDiv.querySelector('h3');
     if (encabezado) {
@@ -193,7 +189,7 @@ document.getElementById('copyButton').addEventListener('click', function() {
     });
 
     if (incluirMensajesInstalacion) {
-        resultadosTexto += bajada1 + "\n" + bajada2 + "\n\n";
+        resultadosTexto += textoBajada + "\n\n";
     }
 
     navigator.clipboard.writeText(resultadosTexto.trim());
@@ -204,8 +200,8 @@ document.getElementById('copySelectedButton').addEventListener('click', function
     let resultadosTexto = '';
     let incluirMensajesInstalacion = false;
 
-    const bajada1 = "Incluye instalación, balanceo y válvula normal.";
-    const bajada2 = "Precios Black válidos solo comprando 4 unidades.";
+    // AQUÍ UNIMOS LOS DOS MENSAJES PARA EL PORTAPAPELES
+    const textoBajada = "Incluye instalación, balanceo y válvula normal.\nPrecios Black válidos solo comprando 4 unidades.";
 
     const encabezado = resultadosDiv.querySelector('h3');
     if (encabezado) {
@@ -230,7 +226,7 @@ document.getElementById('copySelectedButton').addEventListener('click', function
     });
 
     if (incluirMensajesInstalacion) {
-        resultadosTexto += bajada1 + "\n" + bajada2 + "\n\n";
+        resultadosTexto += textoBajada + "\n\n";
     }
 
     navigator.clipboard.writeText(resultadosTexto.trim());
