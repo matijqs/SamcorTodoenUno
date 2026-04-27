@@ -1,20 +1,12 @@
-function openTab(tabId) {
-  const contents = document.querySelectorAll(".tab-content");
-  contents.forEach((el) => (el.style.display = "none"));
-
-  const selected = document.getElementById(tabId);
-  if (selected) selected.style.display = "block";
-}
+// Esto asegura que se muestre Neumáticos Web por defecto
+window.onload = () => {
+  openTab("webprecios");
+};
 
 function toggleSubmenu(id) {
   const submenu = document.getElementById(id);
   submenu.style.display = submenu.style.display === "flex" ? "none" : "flex";
 }
-
-// Esto asegura que se muestre por defecto si no usas inline style en el div
-window.onload = () => {
-  openTab("porMedida");
-};
 
 function toggleMenu() {
   const menu = document.getElementById("menu");
@@ -26,10 +18,19 @@ function openTab(tabId) {
   const tabs = document.querySelectorAll(".tab-content");
   tabs.forEach((tab) => tab.classList.remove("active"));
 
-  document.getElementById(tabId).classList.add("active");
+  // Busca la pestaña que queremos abrir
+  const selectedTab = document.getElementById(tabId);
+  
+  // Si la pestaña existe, le agrega la clase active
+  if (selectedTab) {
+    selectedTab.classList.add("active");
+  }
 
   // Cierra el menú después de hacer clic
-  document.getElementById("menu").classList.remove("show");
+  const menu = document.getElementById("menu");
+  if (menu) {
+    menu.classList.remove("show");
+  }
 }
 
 // Opcional: cerrar menú si se hace clic fuera
@@ -38,7 +39,7 @@ window.addEventListener("click", function (e) {
   const hamburger = document.querySelector(".hamburger");
 
   // Si el clic NO es dentro del menú NI del botón hamburguesa
-  if (!menu.contains(e.target) && !hamburger.contains(e.target)) {
+  if (menu && hamburger && !menu.contains(e.target) && !hamburger.contains(e.target)) {
     menu.classList.remove("show");
   }
 });
