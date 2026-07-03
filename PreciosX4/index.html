@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Búsqueda de Neumáticos - Precios x4</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css?v=1.1" rel="stylesheet">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+</head>
+<body>
+    
+    <button id="scrollButton">Ir al final</button>
+    <div class="logo-container">
+        <img src="../files/SAMCORLOGO-COLOR.png" alt="Logo de la Empresa" class="logo">
+    </div>
+
+    <div class="container mt-5">
+        <div class="text-center">
+            <h1>Precios x4 Neumáticos</h1>
+            <p class="lead">Ingresa la medida que deseas buscar para cotizar los 4 neumáticos.</p>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="form-group">
+                    <label for="medidaInput">Introduce la medida del neumático buscado y presiona Enter:</label>
+                    <input type="text" id="medidaInput" class="form-control" placeholder="Ejemplo: 2055516">
+                </div>
+                <button style="background-color: red;" id="searchButton" class="btn btn-primary btn-block">Buscar</button>
+                <button style="background-color: red;" id="cleanButton" class="btn btn-primary btn-block">Borrar</button>
+            </div>
+        </div>
+
+        <div id="resultados" class="mt-4"></div>
+
+        <button id="copySelectedButton" class="btn btn-success btn-block mt-4" style="display: none;">Copiar Seleccionados</button>
+        <button id="copyButton" class="btn btn-success btn-block mt-4" style="display:none;">Copiar Todo</button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="script.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+</body>
+</html>
