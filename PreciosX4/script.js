@@ -69,7 +69,7 @@ function GenerarVariantesMedida(medida) {
 
 function cargarArchivoDesdeCSV(medidaBuscada) {
   // Ajusté la ruta para subir una carpeta hacia los archivos
-  const URL_CSV = "../files/LISTADO X 4.csv";
+  const URL_CSV = "files/LISTADO X 4.csv";
 
   fetch(URL_CSV)
     .then((response) => {
