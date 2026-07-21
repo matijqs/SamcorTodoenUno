@@ -1,6 +1,3 @@
-// script.js
-
-// 1. MATRICES DE TARIFAS (Los precios de Ecoex y TVP)
 const tarifasTransporte = {
     ecoex: {
         rancagua: { tramos: [{ max: 10, precio: 11200 }, { max: 20, precio: 12800 }, { max: 30, precio: 14100 }, { max: 40, precio: 15600 }, { max: 50, precio: 17100 }, { max: 60, precio: 18600 }, { max: 70, precio: 20000 }, { max: 80, precio: 21500 }, { max: 90, precio: 23000 }, { max: 100, precio: 24500 }], kiloExtra: 185 },
@@ -24,124 +21,48 @@ const tarifasTransporte = {
     }
 };
 
-// 2. DICCIONARIO MAESTRO DE COBERTURA Y RENDERIZADO
-// Si una agencia dice "null", esa opción no se dibujará en pantalla.
 const estructuraZonas = [
-    {
-        grupo: "Norte Chico",
-        zonas: [ { id: "coquimbo", texto: "La Serena / Coquimbo / Ovalle", ecoex: null, tvp: 'zona_2' } ]
-    },
-    {
-        grupo: "Región Metropolitana",
-        zonas: [
-            { id: "santiago_centro", texto: "Santiago (Dentro Vespucio)", ecoex: null, tvp: 'zona_0' },
-            { id: "santiago_periferia", texto: "Santiago (Periferia y Provincias)", ecoex: null, tvp: 'zona_1' }
-        ]
-    },
-    {
-        grupo: "Valparaíso",
-        zonas: [
-            { id: "valparaiso_vina", texto: "Valparaíso / Viña / Quilpué / V. Alemana", ecoex: null, tvp: 'zona_1' },
-            { id: "san_antonio", texto: "San Antonio / Litoral Central / Melipilla", ecoex: null, tvp: 'zona_2' }
-        ]
-    },
-    {
-        grupo: "O'Higgins y Maule",
-        zonas: [
-            { id: "rancagua", texto: "Rancagua / San Fernando / Santa Cruz", ecoex: 'rancagua', tvp: 'zona_1' },
-            { id: "talca", texto: "Curicó / Talca / Linares / Cauquenes", ecoex: 'talca', tvp: 'zona_1' }
-        ]
-    },
-    {
-        grupo: "Ñuble y Biobío",
-        zonas: [
-            { id: "chillan", texto: "Chillán / San Carlos (Ñuble)", ecoex: 'chillan', tvp: 'zona_2' },
-            { id: "concepcion", texto: "Concepción / Talcahuano / Coronel", ecoex: 'chillan', tvp: 'zona_2' },
-            { id: "los_angeles", texto: "Los Ángeles / Angol / Laja / Cañete", ecoex: 'chillan', tvp: 'zona_2' }
-        ]
-    },
-    {
-        grupo: "Araucanía y Los Ríos",
-        zonas: [
-            { id: "temuco", texto: "Temuco / Victoria / Lautaro", ecoex: 'temuco', tvp: 'zona_3' },
-            { id: "villarrica", texto: "Villarrica / Pucón / Loncoche", ecoex: 'villarrica', tvp: 'zona_3' },
-            { id: "valdivia", texto: "Valdivia / Panguipulli / Mariquina", ecoex: 'valdivia', tvp: 'zona_3' },
-            { id: "la_union", texto: "La Unión / Río Bueno / Paillaco", ecoex: 'villarrica', tvp: 'zona_3' }
-        ]
-    },
-    {
-        grupo: "Los Lagos (Continente)",
-        zonas: [
-            { id: "osorno", texto: "Osorno / Purranque / Pto. Octay", ecoex: 'futrono', tvp: 'zona_4' },
-            { id: "puerto_montt", texto: "Puerto Montt / Pto. Varas / Frutillar", ecoex: 'futrono', tvp: 'zona_4' },
-            { id: "calbuco", texto: "Calbuco", ecoex: 'calbuco', tvp: 'zona_4' }
-        ]
-    },
-    {
-        grupo: "Chiloé",
-        zonas: [
-            { id: "castro_oficina", texto: "Castro / Ancud / Dalcahue (Oficina)", ecoex: 'castro_oficina', tvp: 'zona_4' },
-            { id: "castro_domicilio", texto: "Castro / Ancud / Dalcahue (Domicilio)", ecoex: 'castro_domicilio', tvp: 'zona_4' },
-            { id: "chonchi", texto: "Chonchi / Quellón", ecoex: 'chonchi', tvp: 'zona_4' }
-        ]
-    }
+    { grupo: "Norte Chico", zonas: [ { id: "coquimbo", texto: "La Serena / Coquimbo / Ovalle", ecoex: null, tvp: 'zona_2' } ] },
+    { grupo: "Región Metropolitana", zonas: [ { id: "santiago_centro", texto: "Santiago (Dentro Vespucio)", ecoex: null, tvp: 'zona_0' }, { id: "santiago_periferia", texto: "Santiago (Periferia y Provincias)", ecoex: null, tvp: 'zona_1' } ] },
+    { grupo: "Valparaíso", zonas: [ { id: "valparaiso_vina", texto: "Valparaíso / Viña / Quilpué / V. Alemana", ecoex: null, tvp: 'zona_1' }, { id: "san_antonio", texto: "San Antonio / Litoral Central / Melipilla", ecoex: null, tvp: 'zona_2' } ] },
+    { grupo: "O'Higgins y Maule", zonas: [ { id: "rancagua", texto: "Rancagua / San Fernando / Santa Cruz", ecoex: 'rancagua', tvp: 'zona_1' }, { id: "talca", texto: "Curicó / Talca / Linares / Cauquenes", ecoex: 'talca', tvp: 'zona_1' } ] },
+    { grupo: "Ñuble y Biobío", zonas: [ { id: "chillan", texto: "Chillán / San Carlos (Ñuble)", ecoex: 'chillan', tvp: 'zona_2' }, { id: "concepcion", texto: "Concepción / Talcahuano / Coronel", ecoex: 'chillan', tvp: 'zona_2' }, { id: "los_angeles", texto: "Los Ángeles / Angol / Laja / Cañete", ecoex: 'chillan', tvp: 'zona_2' } ] },
+    { grupo: "Araucanía y Los Ríos", zonas: [ { id: "temuco", texto: "Temuco / Victoria / Lautaro", ecoex: 'temuco', tvp: 'zona_3' }, { id: "villarrica", texto: "Villarrica / Pucón / Loncoche", ecoex: 'villarrica', tvp: 'zona_3' }, { id: "valdivia", texto: "Valdivia / Panguipulli / Mariquina", ecoex: 'valdivia', tvp: 'zona_3' }, { id: "la_union", texto: "La Unión / Río Bueno / Paillaco", ecoex: 'villarrica', tvp: 'zona_3' } ] },
+    { grupo: "Los Lagos (Continente)", zonas: [ { id: "osorno", texto: "Osorno / Purranque / Pto. Octay", ecoex: 'futrono', tvp: 'zona_4' }, { id: "puerto_montt", texto: "Puerto Montt / Pto. Varas / Frutillar", ecoex: 'futrono', tvp: 'zona_4' }, { id: "calbuco", texto: "Calbuco", ecoex: 'calbuco', tvp: 'zona_4' } ] },
+    { grupo: "Chiloé", zonas: [ { id: "castro_oficina", texto: "Castro / Ancud / Dalcahue (Oficina)", ecoex: 'castro_oficina', tvp: 'zona_4' }, { id: "castro_domicilio", texto: "Castro / Ancud / Dalcahue (Domicilio)", ecoex: 'castro_domicilio', tvp: 'zona_4' }, { id: "chonchi", texto: "Chonchi / Quellón", ecoex: 'chonchi', tvp: 'zona_4' } ] }
 ];
 
-
-// 3. FUNCIÓN MAGICA: Pinta y oculta zonas según la agencia seleccionada
 function poblarZonas() {
     const agenciaSeleccionada = document.getElementById('agencia').value;
     const selectZona = document.getElementById('zona');
-    const zonaAnterior = selectZona.value; // Guardar lo que el usuario tenía elegido
+    const zonaAnterior = selectZona.value;
 
-    // Vaciar todo el selector
     selectZona.innerHTML = '';
     let laZonaSigueDisponible = false;
 
-    // Recorrer el diccionario maestro
     estructuraZonas.forEach(grupo => {
-        // Filtrar las zonas de este grupo que SÍ cubre la agencia elegida
         const zonasValidas = grupo.zonas.filter(zona => zona[agenciaSeleccionada] !== null);
-
         if (zonasValidas.length > 0) {
-            // Crear el OptGroup (ej: "Valparaíso")
             const optgroup = document.createElement('optgroup');
             optgroup.label = grupo.grupo;
-
             zonasValidas.forEach(zona => {
-                // Crear la Opción (ej: "San Antonio / Litoral Central")
                 const option = document.createElement('option');
                 option.value = zona.id;
                 option.textContent = zona.texto;
                 optgroup.appendChild(option);
-
-                // Verificar si la zona que estaba puesta antes, sobrevive con esta nueva agencia
-                if (zona.id === zonaAnterior) {
-                    laZonaSigueDisponible = true;
-                }
+                if (zona.id === zonaAnterior) laZonaSigueDisponible = true;
             });
-
             selectZona.appendChild(optgroup);
         }
     });
 
-    // Si la zona que estaba puesta ya no existe (ej: Estaba en La Serena con TVP y lo cambió a Ecoex),
-    // el sistema salta automáticamente a la primera ciudad de la lista para evitar errores.
-    if (!laZonaSigueDisponible && selectZona.options.length > 0) {
-        selectZona.selectedIndex = 0;
-    }
-
-    // Forzar el recálculo con los datos frescos
+    if (!laZonaSigueDisponible && selectZona.options.length > 0) selectZona.selectedIndex = 0;
     calcularCotizacion();
 }
 
-
-// 4. EL MOTOR DE CÁLCULO
 function calcularCotizacion() {
     const agenciaSeleccionada = document.getElementById('agencia').value;
     const destinoSeleccionado = document.getElementById('zona').value;
-    
-    // Si por algún motivo no hay destino, abortamos para no dar error
     if (!destinoSeleccionado) return;
 
     const ancho = parseFloat(document.getElementById('ancho').value) || 0;
@@ -150,7 +71,6 @@ function calcularCotizacion() {
     const pesoFisicoUni = parseFloat(document.getElementById('pesoFisico').value) || 0;
     const cantidad = parseInt(document.getElementById('cantidad').value) || 0;
 
-    // Cálculo Volumétrico
     const diametroCm = (aro * 2.54) + (2 * (ancho * (perfil / 100) / 10));
     const anchoCm = ancho / 10;
     const volumenUnidad = (diametroCm * diametroCm * anchoCm) / 4000; 
@@ -159,50 +79,34 @@ function calcularCotizacion() {
     const pesoFisicoTotal = pesoFisicoUni * cantidad;
     const pesoFacturable = Math.max(pesoVolumetricoTotal, pesoFisicoTotal);
 
-    // Buscar el identificador tarifario cruzando estructuraZonas
     let tarifaInternaDeZona = null;
     for (let grupo of estructuraZonas) {
         let zonaEncontrada = grupo.zonas.find(z => z.id === destinoSeleccionado);
-        if (zonaEncontrada) {
-            tarifaInternaDeZona = zonaEncontrada[agenciaSeleccionada];
-            break;
-        }
+        if (zonaEncontrada) { tarifaInternaDeZona = zonaEncontrada[agenciaSeleccionada]; break; }
     }
 
     let precioFinal = 0;
     const tarifaAgencia = tarifasTransporte[agenciaSeleccionada][tarifaInternaDeZona];
 
-    // CÁLCULOS
     if (agenciaSeleccionada === 'ecoex') {
-        if (pesoFacturable > 100) {
-            precioFinal = pesoFacturable * tarifaAgencia.kiloExtra;
-        } else {
+        if (pesoFacturable > 100) precioFinal = pesoFacturable * tarifaAgencia.kiloExtra;
+        else {
             for (let tramo of tarifaAgencia.tramos) {
-                if (pesoFacturable <= tramo.max) {
-                    precioFinal = tramo.precio;
-                    break;
-                }
+                if (pesoFacturable <= tramo.max) { precioFinal = tramo.precio; break; }
             }
         }
     } else if (agenciaSeleccionada === 'tvp') {
         if (pesoFacturable <= 30) {
             for (let tramo of tarifaAgencia.tramosFijos) {
-                if (pesoFacturable <= tramo.max) {
-                    precioFinal = tramo.precio;
-                    break;
-                }
+                if (pesoFacturable <= tramo.max) { precioFinal = tramo.precio; break; }
             }
         } else {
             for (let tramo of tarifaAgencia.tramosKilo) {
-                if (pesoFacturable <= tramo.max) {
-                    precioFinal = pesoFacturable * tramo.precioKilo;
-                    break;
-                }
+                if (pesoFacturable <= tramo.max) { precioFinal = pesoFacturable * tramo.precioKilo; break; }
             }
         }
     }
 
-    // PINTAR RESULTADOS
     document.getElementById('resFisico').innerText = pesoFisicoTotal.toFixed(1) + ' kg';
     document.getElementById('resVolumetrico').innerText = pesoVolumetricoTotal.toFixed(1) + ' kg';
     document.getElementById('resFacturable').innerText = pesoFacturable.toFixed(1) + ' kg';
@@ -213,20 +117,11 @@ function calcularCotizacion() {
     document.getElementById('resPrecio').innerText = formatoCLP;
 }
 
-// 5. INICIADOR
 document.addEventListener('DOMContentLoaded', () => {
-    // Escuchar cambios en la agencia para repintar las zonas
     document.getElementById('agencia').addEventListener('change', poblarZonas);
-    
-    // Escuchar el resto de los inputs para el cálculo
     const inputs = document.querySelectorAll('input, select');
     inputs.forEach(input => {
-        // Excluimos 'agencia' de este evento directo para que no calcule dos veces
-        if(input.id !== 'agencia') {
-            input.addEventListener('input', calcularCotizacion);
-        }
+        if(input.id !== 'agencia') input.addEventListener('input', calcularCotizacion);
     });
-
-    // Arrancar la app por primera vez
     poblarZonas(); 
 });
