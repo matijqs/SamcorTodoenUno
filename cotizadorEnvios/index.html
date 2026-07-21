@@ -7,6 +7,141 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
+<body class="bg-gray-900 p-6 font-sans text-gray-100">
+
+    <!-- Contenedor principal Oscuro -->
+    <div class="max-w-3xl mx-auto bg-gray-800 p-8 rounded-lg shadow-2xl mt-8 border-t-4 border-blue-500">
+        <h2 class="text-xl font-bold text-white mb-6">Cotizador de Envíos Multi-Agencia</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+            <!-- PANEL DE CONTROLES -->
+            <div class="space-y-4">
+                
+                <div>
+                    <label class="block text-sm font-medium text-gray-300">Agencia de Transporte</label>
+                    <select id="agencia" class="mt-1 block w-full p-2 bg-gray-700 border border-gray-600 rounded-md text-white focus:ring-blue-500 focus:border-blue-500">
+                        <option value="ecoex">Ecoex</option>
+                        <option value="tvp">TVP</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-300">Zona de Destino</label>
+                    <select id="zona" class="mt-1 block w-full p-2 bg-gray-700 border border-gray-600 rounded-md text-white focus:ring-blue-500 focus:border-blue-500">
+                        <!-- Las opciones se inyectan vía JS -->
+                    </select>
+                </div>
+
+                <!-- Nuevos Selectores de Medidas -->
+                <div class="grid grid-cols-3 gap-2">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-300">Ancho</label>
+                        <select id="ancho" class="mt-1 w-full p-2 bg-gray-700 border border-gray-600 rounded-md text-white focus:ring-blue-500 focus:border-blue-500">
+                            <option value="145">145</option>
+                            <option value="155">155</option>
+                            <option value="165">165</option>
+                            <option value="175">175</option>
+                            <option value="185">185</option>
+                            <option value="195">195</option>
+                            <option value="205" selected>205</option>
+                            <option value="215">215</option>
+                            <option value="225">225</option>
+                            <option value="235">235</option>
+                            <option value="245">245</option>
+                            <option value="255">255</option>
+                            <option value="265">265</option>
+                            <option value="275">275</option>
+                            <option value="285">285</option>
+                            <option value="295">295</option>
+                            <option value="305">305</option>
+                            <option value="315">315</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-300">Perfil</label>
+                        <select id="perfil" class="mt-1 w-full p-2 bg-gray-700 border border-gray-600 rounded-md text-white focus:ring-blue-500 focus:border-blue-500">
+                            <option value="30">30</option>
+                            <option value="35">35</option>
+                            <option value="40">40</option>
+                            <option value="45">45</option>
+                            <option value="50">50</option>
+                            <option value="55" selected>55</option>
+                            <option value="60">60</option>
+                            <option value="65">65</option>
+                            <option value="70">70</option>
+                            <option value="75">75</option>
+                            <option value="80">80</option>
+                            <option value="85">85</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-300">Aro</label>
+                        <select id="aro" class="mt-1 w-full p-2 bg-gray-700 border border-gray-600 rounded-md text-white focus:ring-blue-500 focus:border-blue-500">
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16" selected>16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Peso y Cantidad Manuales -->
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-300">Peso Físico c/u (kg)</label>
+                        <input type="number" id="pesoFisico" value="9" min="1" step="0.5" class="mt-1 w-full p-2 bg-gray-700 border border-gray-600 rounded-md text-white focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-300">Cantidad</label>
+                        <input type="number" id="cantidad" value="4" min="1" class="mt-1 w-full p-2 bg-gray-700 border border-gray-600 rounded-md text-white focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                </div>
+            </div>
+
+            <!-- PANEL DE RESULTADOS (Modo Oscuro) -->
+            <div class="bg-gray-900 p-6 rounded-lg border border-gray-700 flex flex-col justify-center">
+                <h3 class="text-md font-semibold text-gray-300 mb-3 border-b border-gray-700 pb-2">Análisis de Carga</h3>
+                
+                <div class="flex justify-between mb-1">
+                    <span class="text-sm text-gray-400">Físico Total:</span>
+                    <span id="resFisico" class="font-medium text-sm text-gray-100">0 kg</span>
+                </div>
+                <div class="flex justify-between mb-3">
+                    <span class="text-sm text-gray-400">Volumétrico Total:</span>
+                    <span id="resVolumetrico" class="font-medium text-sm text-gray-100">0 kg</span>
+                </div>
+
+                <div class="mt-2 pt-2 border-t border-gray-700">
+                    <span class="block text-xs text-gray-500">Kilos Facturables (El mayor)</span>
+                    <span id="resFacturable" class="text-lg font-bold text-white">0 kg</span>
+                </div>
+
+                <div class="mt-4 bg-blue-900 bg-opacity-40 border border-blue-800 p-4 rounded-md text-center">
+                    <span id="labelCosto" class="block text-xs font-bold text-blue-300 mb-1">Costo Final (IVA inc.)</span>
+                    <span id="resPrecio" class="text-3xl font-extrabold text-blue-400">$0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html><!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotizador de Envíos - Samcor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
 <body class="bg-gray-100 p-6 font-sans">
 
     <div class="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-md mt-8 border-t-4 border-blue-600">
