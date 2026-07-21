@@ -13,7 +13,8 @@
         <button onclick="openTab('webprecios')">Neumáticos Web</button>        
         <button onclick="openTab('porAro')">LLANTAS</button>        
         <button onclick="openTab('comparador')">Comparador de Neumáticos</button>
-        <button onclick="openTab('largoAnchoAlto')">Largo-Ancho-Alto</button>
+        <!-- Cópialo junto a tus otros botones de navegación -->
+<button class="tablinks" onclick="openTab(event, 'cotizadorEnvios')">Cotizador de Envíos</button>
         <button onclick="openTab('apernaduras')">Apernaduras</button>
         <button onclick="openTab('ubicaciones')">Ubicación de Neumáticos</button>
         <button onclick="openTab('stock')">Consulta de Stock</button>
@@ -31,9 +32,10 @@
       <div id="comparador" class="tab-content">
         <iframe src="comparadorNeumaticos/index.html"></iframe>
       </div>
-      <div id="largoAnchoAlto" class="tab-content">
-        <iframe src="LargoAnchoAlto/index.html"></iframe>
-      </div>
+      <div id="cotizadorEnvios" class="tab-content" style="display:none;">
+    <!-- Asegúrate de darle un height al iframe para que la calculadora quepa completa -->
+    <iframe src="cotizadorEnvios/index.html" width="100%" height="900px" frameborder="0"></iframe>
+</div>
       <div id="apernaduras" class="tab-content">
         <iframe src="Apernaduras/index.html"></iframe>
       </div>
