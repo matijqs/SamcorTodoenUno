@@ -117,6 +117,17 @@ function mostrarResultados(resultados, medidaBuscada) {
   resultadosDiv.appendChild(encabezado);
 
   if (resultados.length > 0) {
+    
+    // Identificamos el sufijo según la opción elegida para agregarlo al lado del precio
+    let sufijoCantidad = "";
+    if (columnaPrecio === "X 4 EFEC" || columnaPrecio === "X 4 TC") {
+        sufijoCantidad = " los 4";
+    } else if (columnaPrecio === "X 2 EFEC") {
+        sufijoCantidad = " los 2";
+    } else {
+        sufijoCantidad = " c/u";
+    }
+
     resultados.forEach((fila) => {
       const descripcion = fila["DESCRIPCION"] || "";
       const precioUnidad = fila[columnaPrecio] || "";
@@ -130,11 +141,10 @@ function mostrarResultados(resultados, medidaBuscada) {
       const precioUnidadFormateado = formatearPrecio(precioUnidad);
       if (!precioUnidadFormateado) return;
 
-      // Aplicar formato para que la marca Nexen aparezca siempre correctamente escrita
       let descLimpia = descripcion.replace(/\bNEXEN\b/ig, "Nexen");
 
-      // NUEVO FORMATO DE TEXTO (Directo al grano)
-      let resultadoTexto = `🔥 ${descLimpia}: *$${precioUnidadFormateado}*`;
+      // NUEVO FORMATO: Se agrega el sufijo (los 4, los 2, c/u) después del precio
+      let resultadoTexto = `🔥 ${descLimpia}: *$${precioUnidadFormateado}*${sufijoCantidad}`;
 
       const resultadoElemento = document.createElement("div");
       resultadoElemento.classList.add("alert", "alert-info");
@@ -149,25 +159,23 @@ function mostrarResultados(resultados, medidaBuscada) {
       resultadosDiv.appendChild(resultadoElemento);
     });
 
-    // NUEVO: CREAR EL TEXTO FINAL (FOOTER) UNA SOLA VEZ
     let textoPromocion = "";
     if (columnaPrecio === "X 4 EFEC") {
-        textoPromocion = "Valor por 4 neumáticos. Incluye instalación, balanceo y válvula nueva. Oferta válida con efectivo o transferencia.";
+        textoPromocion = "Incluye instalación, balanceo y válvula nueva. Oferta válida con efectivo o transferencia.";
     } else if (columnaPrecio === "X 4 TC") {
-        textoPromocion = "Valor por 4 neumáticos. Incluye instalación, balanceo y válvula nueva pagando con Tarjeta de Crédito.";
+        textoPromocion = "Incluye instalación, balanceo y válvula nueva pagando con Tarjeta de Crédito.";
     } else if (columnaPrecio === "X 2 EFEC") {
-        textoPromocion = "Valor por 2 neumáticos. Incluye instalación, balanceo y válvula nueva. Oferta válida con efectivo o transferencia.";
+        textoPromocion = "Incluye instalación, balanceo y válvula nueva. Oferta válida con efectivo o transferencia.";
     } else {
-        textoPromocion = "Valor unitario (Precio Web). Incluye instalación, balanceo y válvula normal.";
+        textoPromocion = "Incluye instalación, balanceo y válvula normal.";
     }
 
     const footerElemento = document.createElement("p");
     footerElemento.id = "texto-bajadas";
     footerElemento.style.marginTop = "20px";
-    footerElemento.style.color = "#ff0000"; // Rojo para que destaque en pantalla
+    footerElemento.style.color = "#ff0000"; 
     footerElemento.innerHTML = `<em>${textoPromocion}</em>`;
     
-    // Guardamos el texto puro en un atributo oculto para que el botón de copiar lo pueda extraer fácil
     footerElemento.dataset.textoCopia = textoPromocion;
     
     resultadosDiv.appendChild(footerElemento);
@@ -203,7 +211,6 @@ document.getElementById('copyButton').addEventListener('click', function() {
         }
     });
 
-    // Agregar el texto final (bajadas) una sola vez
     const footer = document.getElementById('texto-bajadas');
     if (footer) {
         resultadosTexto += '\n' + footer.dataset.textoCopia;
@@ -237,7 +244,6 @@ document.getElementById('copySelectedButton').addEventListener('click', function
         }
     });
 
-    // Agregar el texto final (bajadas) una sola vez, incluso si solo seleccionó uno
     const footer = document.getElementById('texto-bajadas');
     if (footer) {
         resultadosTexto += '\n' + footer.dataset.textoCopia;
