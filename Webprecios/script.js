@@ -6,7 +6,7 @@ document.getElementById("medidaInput").addEventListener("keydown", function (eve
   }
 });
 
-// NUEVO: Escuchar cambios en el menú desplegable para actualizar automáticamente
+// Escuchar cambios en el menú desplegable para actualizar automáticamente
 document.getElementById("tipoPrecio").addEventListener("change", function() {
   if (document.getElementById("medidaInput").value.trim() !== "") {
     realizarBusqueda();
@@ -75,7 +75,6 @@ function GenerarVariantesMedida(medida) {
 }
 
 function cargarArchivoDesdeCSV(medidaBuscada) {
-  // Asegúrate de que este sea el nombre exacto de tu nuevo archivo CSV
   const URL_CSV = "files/stock-bodega.csv"; 
 
   fetch(URL_CSV)
@@ -91,7 +90,6 @@ function cargarArchivoDesdeCSV(medidaBuscada) {
 
       const variantes = GenerarVariantesMedida(medidaBuscada);
       
-      // Ahora buscamos dentro de "DESCRIPCION" 
       const resultados = rows.filter((row) =>
         variantes.some(
           (vari) =>
@@ -111,7 +109,6 @@ function mostrarResultados(resultados, medidaBuscada) {
   const resultadosDiv = document.getElementById("resultados");
   resultadosDiv.innerHTML = "";
 
-  // Leemos qué opción está seleccionada en el menú
   const tipoPrecioSelect = document.getElementById("tipoPrecio");
   const columnaPrecio = tipoPrecioSelect.value;
 
@@ -131,25 +128,13 @@ function mostrarResultados(resultados, medidaBuscada) {
       }
 
       const precioUnidadFormateado = formatearPrecio(precioUnidad);
-      
-      // Si esa fila no tiene precio para esta categoría, la saltamos
       if (!precioUnidadFormateado) return;
 
+      // Aplicar formato para que la marca Nexen aparezca siempre correctamente escrita
       let descLimpia = descripcion.replace(/\bNEXEN\b/ig, "Nexen");
 
-      // Adaptamos el texto para WhatsApp según el tipo de cotización
-      let textoPromocion = "";
-      if (columnaPrecio === "X 4 EFEC") {
-          textoPromocion = "los 4 neumáticos con instalación, balanceo y válvula nueva. Oferta válida con efectivo o transferencia.";
-      } else if (columnaPrecio === "X 4 TC") {
-          textoPromocion = "los 4 neumáticos con instalación, balanceo y válvula nueva pagando con Tarjeta de Crédito.";
-      } else if (columnaPrecio === "X 2 EFEC") {
-          textoPromocion = "los 2 neumáticos con instalación, balanceo y válvula nueva. Oferta válida con efectivo o transferencia.";
-      } else {
-          textoPromocion = "c/u (Precio Web). Incluye instalación, balanceo y válvula nueva.";
-      }
-
-      let resultadoTexto = `🔥 Para la medida ${medidaBuscada} (${descLimpia}) tenemos desde: *$${precioUnidadFormateado}* ${textoPromocion}`;
+      // NUEVO FORMATO DE TEXTO (Directo al grano)
+      let resultadoTexto = `🔥 ${descLimpia}: *$${precioUnidadFormateado}*`;
 
       const resultadoElemento = document.createElement("div");
       resultadoElemento.classList.add("alert", "alert-info");
@@ -164,6 +149,29 @@ function mostrarResultados(resultados, medidaBuscada) {
       resultadosDiv.appendChild(resultadoElemento);
     });
 
+    // NUEVO: CREAR EL TEXTO FINAL (FOOTER) UNA SOLA VEZ
+    let textoPromocion = "";
+    if (columnaPrecio === "X 4 EFEC") {
+        textoPromocion = "Valor por 4 neumáticos. Incluye instalación, balanceo y válvula nueva. Oferta válida con efectivo o transferencia.";
+    } else if (columnaPrecio === "X 4 TC") {
+        textoPromocion = "Valor por 4 neumáticos. Incluye instalación, balanceo y válvula nueva pagando con Tarjeta de Crédito.";
+    } else if (columnaPrecio === "X 2 EFEC") {
+        textoPromocion = "Valor por 2 neumáticos. Incluye instalación, balanceo y válvula nueva. Oferta válida con efectivo o transferencia.";
+    } else {
+        textoPromocion = "Valor unitario (Precio Web). Incluye instalación, balanceo y válvula normal.";
+    }
+
+    const footerElemento = document.createElement("p");
+    footerElemento.id = "texto-bajadas";
+    footerElemento.style.marginTop = "20px";
+    footerElemento.style.color = "#ff0000"; // Rojo para que destaque en pantalla
+    footerElemento.innerHTML = `<em>${textoPromocion}</em>`;
+    
+    // Guardamos el texto puro en un atributo oculto para que el botón de copiar lo pueda extraer fácil
+    footerElemento.dataset.textoCopia = textoPromocion;
+    
+    resultadosDiv.appendChild(footerElemento);
+
     document.getElementById("copyButton").style.display = "block";
     document.getElementById("copySelectedButton").style.display = "block";
   } else {
@@ -177,7 +185,7 @@ function mostrarResultados(resultados, medidaBuscada) {
   }
 }
 
-// FUNCIONES DE COPIADO 
+// FUNCIONES DE COPIADO ACTUALIZADAS
 document.getElementById('copyButton').addEventListener('click', function() {
     const resultadosDiv = document.getElementById('resultados');
     let resultadosTexto = '';
@@ -191,9 +199,15 @@ document.getElementById('copyButton').addEventListener('click', function() {
     alertElements.forEach(alert => {
         const textContent = alert.innerText.trim();
         if (textContent) {
-            resultadosTexto += textContent + '\n\n';
+            resultadosTexto += textContent + '\n';
         }
     });
+
+    // Agregar el texto final (bajadas) una sola vez
+    const footer = document.getElementById('texto-bajadas');
+    if (footer) {
+        resultadosTexto += '\n' + footer.dataset.textoCopia;
+    }
 
     navigator.clipboard.writeText(resultadosTexto.trim());
 });
@@ -219,9 +233,15 @@ document.getElementById('copySelectedButton').addEventListener('click', function
         const textContent = resultadoElemento.innerText.trim();
         
         if (textContent) {
-            resultadosTexto += textContent + '\n\n';
+            resultadosTexto += textContent + '\n';
         }
     });
+
+    // Agregar el texto final (bajadas) una sola vez, incluso si solo seleccionó uno
+    const footer = document.getElementById('texto-bajadas');
+    if (footer) {
+        resultadosTexto += '\n' + footer.dataset.textoCopia;
+    }
 
     navigator.clipboard.writeText(resultadosTexto.trim());
 });
