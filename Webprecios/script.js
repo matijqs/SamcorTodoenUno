@@ -6,6 +6,13 @@ document.getElementById("medidaInput").addEventListener("keydown", function (eve
   }
 });
 
+// NUEVO: Escuchar cambios en el menú desplegable para actualizar automáticamente
+document.getElementById("tipoPrecio").addEventListener("change", function() {
+  if (document.getElementById("medidaInput").value.trim() !== "") {
+    realizarBusqueda();
+  }
+});
+
 document.getElementById("cleanButton").addEventListener("click", function () {
   let input = document.getElementById("medidaInput");
   input.value = "";
@@ -68,7 +75,8 @@ function GenerarVariantesMedida(medida) {
 }
 
 function cargarArchivoDesdeCSV(medidaBuscada) {
-  const URL_CSV = "files/LISTA DE PRECIOS MARKET.csv";
+  // Asegúrate de que este sea el nombre exacto de tu nuevo archivo CSV
+  const URL_CSV = "files/stock-bodega.csv"; 
 
   fetch(URL_CSV)
     .then((response) => {
@@ -82,18 +90,20 @@ function cargarArchivoDesdeCSV(medidaBuscada) {
       const rows = parsed.data;
 
       const variantes = GenerarVariantesMedida(medidaBuscada);
+      
+      // Ahora buscamos dentro de "DESCRIPCION" 
       const resultados = rows.filter((row) =>
         variantes.some(
           (vari) =>
-            row["MEDIDA"] &&
-            row["MEDIDA"].toUpperCase().includes(vari.toUpperCase())
+            row["DESCRIPCION"] &&
+            row["DESCRIPCION"].toUpperCase().includes(vari.toUpperCase())
         )
       );
 
       mostrarResultados(resultados, medidaBuscada);
     })
     .catch((error) =>
-      console.error("Error al cargar los datos desde GitHub:", error)
+      console.error("Error al cargar los datos:", error)
     );
 }
 
@@ -101,42 +111,50 @@ function mostrarResultados(resultados, medidaBuscada) {
   const resultadosDiv = document.getElementById("resultados");
   resultadosDiv.innerHTML = "";
 
+  // Leemos qué opción está seleccionada en el menú
+  const tipoPrecioSelect = document.getElementById("tipoPrecio");
+  const columnaPrecio = tipoPrecioSelect.value;
+
   const encabezado = document.createElement("h3");
   encabezado.textContent = "Tenemos lo siguiente:";
   resultadosDiv.appendChild(encabezado);
 
   if (resultados.length > 0) {
     resultados.forEach((fila) => {
-      const medida = fila["MEDIDA"] || "";
-      const marca = fila["MARCA"] || "";
-      const modelo = fila["MODELO"] || "";
-      const precioUnidad = fila["WEB"] || "";
+      const descripcion = fila["DESCRIPCION"] || "";
+      const precioUnidad = fila[columnaPrecio] || "";
 
       function formatearPrecio(precio) {
         if (!precio) return "";
-        return Number(precio).toLocaleString("es-ES");
+        const precioLimpio = precio.toString().replace(/[^\d]/g, "");
+        return Number(precioLimpio).toLocaleString("es-CL");
       }
 
       const precioUnidadFormateado = formatearPrecio(precioUnidad);
+      
+      // Si esa fila no tiene precio para esta categoría, la saltamos
+      if (!precioUnidadFormateado) return;
 
-      let resultadoTexto = "";
+      let descLimpia = descripcion.replace(/\bNEXEN\b/ig, "Nexen");
 
-      resultadoTexto = `Neumático ${medida} ${marca} ${modelo}. Valor Unitario: $${precioUnidad} <br>`;
-
-      const promo = (fila["PROMO"] || "").trim();
-
-      if (promo !== "") {
-        resultadoTexto += `<strong style="color: red;">🔥 ${promo}</strong><br>`;
+      // Adaptamos el texto para WhatsApp según el tipo de cotización
+      let textoPromocion = "";
+      if (columnaPrecio === "X 4 EFEC") {
+          textoPromocion = "los 4 neumáticos con instalación, balanceo y válvula nueva. Oferta válida con efectivo o transferencia.";
+      } else if (columnaPrecio === "X 4 TC") {
+          textoPromocion = "los 4 neumáticos con instalación, balanceo y válvula nueva pagando con Tarjeta de Crédito.";
+      } else if (columnaPrecio === "X 2 EFEC") {
+          textoPromocion = "los 2 neumáticos con instalación, balanceo y válvula nueva. Oferta válida con efectivo o transferencia.";
+      } else {
+          textoPromocion = "c/u (Precio Web). Incluye instalación, balanceo y válvula nueva.";
       }
+
+      let resultadoTexto = `🔥 Para la medida ${medidaBuscada} (${descLimpia}) tenemos desde: *$${precioUnidadFormateado}* ${textoPromocion}`;
 
       const resultadoElemento = document.createElement("div");
       resultadoElemento.classList.add("alert", "alert-info");
 
       const checkbox = document.createElement("input");
-      checkbox.dataset.instalacion = (fila["INSTALACION"] || "")
-        .toString()
-        .trim()
-        .toLowerCase();
       checkbox.type = "checkbox";
       checkbox.classList.add("resultado-checkbox");
       checkbox.style.marginRight = "10px";
@@ -145,11 +163,6 @@ function mostrarResultados(resultados, medidaBuscada) {
       resultadoElemento.innerHTML += resultadoTexto;
       resultadosDiv.appendChild(resultadoElemento);
     });
-
-    // AQUÍ UNIMOS LOS DOS MENSAJES EN UNO SOLO PARA LA PANTALLA
-    const bajada = document.createElement("p");
-    bajada.innerHTML = "Incluye instalación, balanceo y válvula normal.";
-    resultadosDiv.appendChild(bajada);
 
     document.getElementById("copyButton").style.display = "block";
     document.getElementById("copySelectedButton").style.display = "block";
@@ -164,33 +177,23 @@ function mostrarResultados(resultados, medidaBuscada) {
   }
 }
 
+// FUNCIONES DE COPIADO 
 document.getElementById('copyButton').addEventListener('click', function() {
     const resultadosDiv = document.getElementById('resultados');
     let resultadosTexto = '';
-    let incluirMensajesInstalacion = false;
-
-    // AQUÍ UNIMOS LOS DOS MENSAJES PARA EL PORTAPAPELES
-    const textoBajada = "Incluye instalación, balanceo y válvula normal.";
 
     const encabezado = resultadosDiv.querySelector('h3');
     if (encabezado) {
         resultadosTexto += encabezado.innerText + '\n\n';
     }
 
-    const alertElements = resultadosDiv.querySelectorAll('.alert');
+    const alertElements = resultadosDiv.querySelectorAll('.alert-info');
     alertElements.forEach(alert => {
-        const checkbox = alert.querySelector('.resultado-checkbox');
-        if (checkbox && checkbox.dataset.instalacion === 'sí') {
-            incluirMensajesInstalacion = true;
+        const textContent = alert.innerText.trim();
+        if (textContent) {
+            resultadosTexto += textContent + '\n\n';
         }
-
-        const lines = alert.innerText.split('\n').map(line => line.trim()).filter(line => line !== '');
-        resultadosTexto += lines.join('\n') + '\n\n';
     });
-
-    if (incluirMensajesInstalacion) {
-        resultadosTexto += textoBajada + "\n\n";
-    }
 
     navigator.clipboard.writeText(resultadosTexto.trim());
 });
@@ -198,10 +201,6 @@ document.getElementById('copyButton').addEventListener('click', function() {
 document.getElementById('copySelectedButton').addEventListener('click', function() {
     const resultadosDiv = document.getElementById('resultados');
     let resultadosTexto = '';
-    let incluirMensajesInstalacion = false;
-
-    // AQUÍ UNIMOS LOS DOS MENSAJES PARA EL PORTAPAPELES
-    const textoBajada = "Incluye instalación, balanceo y válvula normal.";
 
     const encabezado = resultadosDiv.querySelector('h3');
     if (encabezado) {
@@ -216,18 +215,13 @@ document.getElementById('copySelectedButton').addEventListener('click', function
     }
 
     checkboxes.forEach(checkbox => {
-        const resultadoElemento = checkbox.closest('.alert');
-        if (checkbox.dataset.instalacion === 'sí') {
-            incluirMensajesInstalacion = true;
+        const resultadoElemento = checkbox.closest('.alert-info');
+        const textContent = resultadoElemento.innerText.trim();
+        
+        if (textContent) {
+            resultadosTexto += textContent + '\n\n';
         }
-
-        const lines = resultadoElemento.innerText.split('\n').map(line => line.trim()).filter(line => line !== '');
-        resultadosTexto += lines.join('\n') + '\n\n';
     });
-
-    if (incluirMensajesInstalacion) {
-        resultadosTexto += textoBajada + "\n\n";
-    }
 
     navigator.clipboard.writeText(resultadosTexto.trim());
 });
