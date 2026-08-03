@@ -193,7 +193,7 @@ function mostrarResultados(resultados, medidaBuscada) {
   }
 }
 
-// FUNCIONES DE COPIADO ACTUALIZADAS
+// FUNCIONES DE COPIADO ACTUALIZADAS (CON SALTO DE LÍNEA EXTRA)
 document.getElementById('copyButton').addEventListener('click', function() {
     const resultadosDiv = document.getElementById('resultados');
     let resultadosTexto = '';
@@ -207,13 +207,14 @@ document.getElementById('copyButton').addEventListener('click', function() {
     alertElements.forEach(alert => {
         const textContent = alert.innerText.trim();
         if (textContent) {
-            resultadosTexto += textContent + '\n';
+            // AQUI ESTÁ EL CAMBIO: \n\n agrega un espacio en blanco entre cada opción
+            resultadosTexto += textContent + '\n\n';
         }
     });
 
     const footer = document.getElementById('texto-bajadas');
     if (footer) {
-        resultadosTexto += '\n' + footer.dataset.textoCopia;
+        resultadosTexto += footer.dataset.textoCopia;
     }
 
     navigator.clipboard.writeText(resultadosTexto.trim());
@@ -240,13 +241,14 @@ document.getElementById('copySelectedButton').addEventListener('click', function
         const textContent = resultadoElemento.innerText.trim();
         
         if (textContent) {
-            resultadosTexto += textContent + '\n';
+            // AQUÍ TAMBIÉN ESTÁ EL CAMBIO: \n\n
+            resultadosTexto += textContent + '\n\n';
         }
     });
 
     const footer = document.getElementById('texto-bajadas');
     if (footer) {
-        resultadosTexto += '\n' + footer.dataset.textoCopia;
+        resultadosTexto += footer.dataset.textoCopia;
     }
 
     navigator.clipboard.writeText(resultadosTexto.trim());
