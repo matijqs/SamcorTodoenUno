@@ -3,42 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Búsqueda de Neumáticos</title>
+    <title>Cotizador de Neumáticos</title>
     <!-- Incluir el CSS de Bootstrap -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="styles.css?v=1.1" rel="stylesheet"> <!-- Enlace al archivo CSS -->
- 
+    <link href="styles.css?v=1.1" rel="stylesheet">
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
 </head>
 <body>
     
     <button id="scrollButton">Ir al final</button>
+    
     <div class="logo-container">
+        <!-- Ruta de la imagen corregida para GitHub -->
         <img src="files/SAMCORLOGO-COLOR.png" alt="Logo de la Empresa" class="logo">
     </div>
 
     <div class="container mt-5">
         <div class="text-center">
-            <h1>Búsqueda de Neumáticos (Web)</h1>
-            <p class="lead">Ingresa la medida que deseas buscar.</p>
+            <!-- Textos ajustados para el nuevo formato del cotizador -->
+            <h1>Cotizador de Neumáticos</h1>
+            <p class="lead">Selecciona la cantidad y forma de pago, luego ingresa la medida.</p>
         </div>
 
-        <!-- Formulario para ingresar la medida del neumático -->
         <div class="row justify-content-center">
             <div class="col-md-8">
+                
+                <!-- NUEVO: Selector de tipo de cotización -->
+                <div class="form-group">
+                    <label for="tipoPrecio" style="color: #fff; font-weight: bold;">Selecciona qué vas a cotizar:</label>
+                    <select id="tipoPrecio" class="form-control mb-3" style="background-color: #333; color: #fff; border: 1px solid #ff0000;">
+                        <option value="X 4 EFEC">4 Neumáticos (Efectivo/Transferencia)</option>
+                        <option value="X 4 TC">4 Neumáticos (Tarjeta de Crédito)</option>
+                        <option value="X 2 EFEC">2 Neumáticos (Efectivo/Transferencia)</option>
+                        <option value="WEB">1 Neumático (Precio Web)</option>
+                    </select>
+                </div>
+
+                <!-- Formulario para ingresar la medida -->
                 <div class="form-group">
                     <label for="medidaInput">Introduce la medida del neumático buscado y presiona Enter:</label>
-                    <input type="text" id="medidaInput" class="form-control" placeholder="Ejemplo: 1457012">
+                    <input type="text" id="medidaInput" class="form-control" placeholder="Ejemplo: 2055516">
                 </div>
                 <button style="background-color: red;" id="searchButton" class="btn btn-primary btn-block">Buscar</button>
                 <button style="background-color: red;" id="cleanButton" class="btn btn-primary btn-block">Borrar</button>
             </div>
         </div>
 
-        <!-- Contenedor para mostrar los resultados -->
+        <!-- Contenedor de resultados -->
         <div id="resultados" class="mt-4"></div>
 
-        <!-- Botón para copiar resultados al portapapeles -->
+        <!-- Botones de copiado -->
         <button id="copySelectedButton" class="btn btn-success btn-block mt-4" style="display: none;">Copiar Seleccionados</button>
         <button id="copyButton" class="btn btn-success btn-block mt-4" style="display:none;">Copiar Todo</button>
     </div>
@@ -51,7 +66,7 @@
     <!-- Enlace al archivo JS -->
     <script src="script.js"></script>
     
-    <!-- Necesitas incluir PapaParse en tu proyecto para procesar CSV: -->
+    <!-- PapaParse para procesar CSV -->
     <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
 </body>
 </html>
