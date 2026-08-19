@@ -163,7 +163,7 @@ function mostrarResultados(resultados, medidaBuscada) {
     if (columnaPrecio === "X 4 EFEC") {
         textoPromocion = "Incluye instalación, balanceo y válvula nueva. Oferta válida con efectivo o transferencia.";
     } else if (columnaPrecio === "X 4 TC") {
-        textoPromocion = "Incluye instalación, balanceo y válvula nueva pagando con Tarjeta de Crédito.";
+        textoPromocion = "Incluye instalación, balanceo y válvula nueva pagando con Tarjeta de Crédito o Debito.";
     } else if (columnaPrecio === "X 2 EFEC") {
         textoPromocion = "Incluye instalación, balanceo y válvula nueva. Oferta válida con efectivo o transferencia.";
     } else {
