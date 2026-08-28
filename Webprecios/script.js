@@ -30,6 +30,22 @@ scrollButton.addEventListener("click", function () {
   }
 });
 
+// NUEVO: medidas de neumáticos comerciales/camión que NO llevan instalación
+const MEDIDAS_SIN_INSTALACION = [
+  "700R16C",
+  "650R16C",
+  "215/75R17.5",
+  "205/75R17.5",
+];
+
+function esMedidaSinInstalacion(descripcion) {
+  if (!descripcion) return false;
+  const descUpper = descripcion.toUpperCase();
+  return MEDIDAS_SIN_INSTALACION.some((medida) =>
+    descUpper.includes(medida.toUpperCase())
+  );
+}
+
 function realizarBusqueda() {
   const medidaBuscada = document.getElementById("medidaInput").value.trim();
   if (!medidaBuscada) {
@@ -159,26 +175,34 @@ function mostrarResultados(resultados, medidaBuscada) {
       resultadosDiv.appendChild(resultadoElemento);
     });
 
-    let textoPromocion = "";
-    if (columnaPrecio === "X 4 EFEC") {
-        textoPromocion = "Incluye instalación, balanceo y válvula nueva. Oferta válida con efectivo o transferencia.";
-    } else if (columnaPrecio === "X 4 TC") {
-        textoPromocion = "Incluye instalación, balanceo y válvula nueva pagando con Tarjeta de Crédito o Debito.";
-    } else if (columnaPrecio === "X 2 EFEC") {
-        textoPromocion = "Incluye instalación, balanceo y válvula nueva. Oferta válida con efectivo o transferencia.";
-    } else {
-        textoPromocion = "Incluye instalación, balanceo y válvula normal.";
-    }
+    // NUEVO: si TODOS los resultados son medidas que no llevan instalación
+    // (camión / comerciales), no se muestra el texto de "incluye instalación..."
+    const todosSinInstalacion = resultados.every((fila) =>
+      esMedidaSinInstalacion(fila["DESCRIPCION"] || "")
+    );
 
-    const footerElemento = document.createElement("p");
-    footerElemento.id = "texto-bajadas";
-    footerElemento.style.marginTop = "20px";
-    footerElemento.style.color = "#ff0000"; 
-    footerElemento.innerHTML = `<em>${textoPromocion}</em>`;
-    
-    footerElemento.dataset.textoCopia = textoPromocion;
-    
-    resultadosDiv.appendChild(footerElemento);
+    if (!todosSinInstalacion) {
+      let textoPromocion = "";
+      if (columnaPrecio === "X 4 EFEC") {
+          textoPromocion = "Incluye instalación, balanceo y válvula nueva. Oferta válida con efectivo o transferencia.";
+      } else if (columnaPrecio === "X 4 TC") {
+          textoPromocion = "Incluye instalación, balanceo y válvula nueva pagando con Tarjeta de Crédito o Debito.";
+      } else if (columnaPrecio === "X 2 EFEC") {
+          textoPromocion = "Incluye instalación, balanceo y válvula nueva. Oferta válida con efectivo o transferencia.";
+      } else {
+          textoPromocion = "Incluye instalación, balanceo y válvula normal.";
+      }
+
+      const footerElemento = document.createElement("p");
+      footerElemento.id = "texto-bajadas";
+      footerElemento.style.marginTop = "20px";
+      footerElemento.style.color = "#ff0000"; 
+      footerElemento.innerHTML = `<em>${textoPromocion}</em>`;
+      
+      footerElemento.dataset.textoCopia = textoPromocion;
+      
+      resultadosDiv.appendChild(footerElemento);
+    }
 
     document.getElementById("copyButton").style.display = "block";
     document.getElementById("copySelectedButton").style.display = "block";
