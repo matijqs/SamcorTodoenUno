@@ -1,0 +1,36 @@
+name: Probar stock Facto
+
+on:
+  workflow_dispatch:
+    inputs:
+      sku:
+        description: SKU activo que exista en Facto (no ingresar claves)
+        required: true
+        default: '14513GODCR868'
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: facto-stock-prueba
+  cancel-in-progress: false
+
+jobs:
+  consultar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Verificar la lógica sin llamar a Facto
+        run: node --test scripts/facto-stock.test.mjs
+      - name: Consultar un producto en Facto
+        env:
+          FACTO_CLIENT_ID: ${{ secrets.FACTO_CLIENT_ID }}
+          FACTO_CLIENT_SECRET: ${{ secrets.FACTO_CLIENT_SECRET }}
+          FACTO_USERNAME: ${{ secrets.FACTO_USERNAME }}
+          FACTO_PASSWORD: ${{ secrets.FACTO_PASSWORD }}
+          FACTO_TEST_SKU: ${{ inputs.sku }}
+        run: node scripts/facto-stock.mjs
