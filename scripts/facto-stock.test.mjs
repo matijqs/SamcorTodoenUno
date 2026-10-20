@@ -150,3 +150,44 @@ test('un resultado correcto no publica stock, SKU, token ni credenciales en logs
     assert.ok(!output.join('').includes(secret));
   }
 });
+
+test('HTTP 400 identifica la etapa exacta sin exponer SKU ni ID', async () => {
+  const scenarios = [
+    { prior: [], stage: 'Autenticación (POST /auth)' },
+    { prior: [auth], stage: 'Búsqueda por SKU (GET /products)' },
+    { prior: [auth, listing], stage: 'Lectura de inventario (GET /products/{id})' },
+  ];
+  for (const { prior, stage } of scenarios) {
+    const mock = mockFetch([...prior, new Response('respuesta privada test-secret', { status: 400 })]);
+    const output = [];
+    assert.equal(await runProbe({ env, ...mock, log: m => output.push(m) }), 1);
+    assert.ok(output[0].startsWith(stage));
+    assert.ok(!output[0].includes('SKU-001'));
+    assert.ok(!output[0].includes('test-secret'));
+    assert.ok(!output[0].includes('respuesta privada'));
+    assert.equal(mock.calls.length, prior.length + 1);
+  }
+});
+
+test('solo muestra códigos OAuth conocidos y omite descripciones privadas', async () => {
+  for (const code of ['invalid_client', 'invalid_grant', 'invalid_request',
+    'unsupported_grant_type', 'unauthorized_client', 'invalid_scope']) {
+    const mock = mockFetch([Response.json({ error: code, error_description: 'test-password test-token' }, { status: 400 })]);
+    const output = [];
+    assert.equal(await runProbe({ env, ...mock, log: m => output.push(m) }), 1);
+    assert.ok(output[0].includes(code));
+    assert.ok(!output[0].includes('test-password'));
+    assert.ok(!output[0].includes('test-token'));
+  }
+});
+
+test('códigos arbitrarios, objetos y nombres heredados nunca se reflejan en el log', async () => {
+  for (const error of ['test-secret', 'constructor', 'toString', '__proto__', { code: 'test-password' }]) {
+    const mock = mockFetch([Response.json({ error, message: 'test-password', error_description: 'test-token' }, { status: 400 })]);
+    const output = [];
+    assert.equal(await runProbe({ env, ...mock, log: m => output.push(m) }), 1);
+    for (const value of ['test-secret', 'constructor', 'toString', '__proto__', 'test-password', 'test-token']) {
+      assert.ok(!output[0].includes(value));
+    }
+  }
+});

@@ -41,6 +41,9 @@ function quantity(value) {
 }
 
 async function request(fetchImpl, path, { token, body } = {}) {
+  const stage = path === '/auth' ? 'Autenticación (POST /auth)'
+    : path.startsWith('/products?') ? 'Búsqueda por SKU (GET /products)'
+      : 'Lectura de inventario (GET /products/{id})';
   let response;
   try {
     response = await fetchImpl(`${API}${path}`, {
@@ -56,24 +59,39 @@ async function request(fetchImpl, path, { token, body } = {}) {
       signal: AbortSignal.timeout(15000),
     });
   } catch {
-    throw new FactoError('No se pudo contactar a Facto: revisa la red o inténtalo más tarde.');
+    throw new FactoError(`${stage}: No se pudo contactar a Facto: revisa la red o inténtalo más tarde.`);
   }
   if (!response.ok) {
     const messages = {
-      400: 'Facto rechazó la solicitud (HTTP 400). Revisa la configuración de la llave REST.',
+      400: 'Facto rechazó la solicitud (HTTP 400). El estado por sí solo no identifica la causa.',
       401: 'Facto rechazó la autenticación (HTTP 401). Revisa las credenciales REST.',
       402: 'Facto respondió HTTP 402. Consulta con soporte las condiciones de tu cuenta.',
       403: 'Facto denegó el acceso (HTTP 403). Confirma los permisos de consulta con soporte.',
       404: 'Facto no encontró el recurso solicitado (HTTP 404).',
       429: 'Facto limitó las consultas (HTTP 429). Espera al menos 30 segundos antes de volver a probar.',
     };
-    // No incluir cuerpos, cabeceras ni errores del proveedor en logs públicos.
-    throw new FactoError(messages[response.status] || 'Facto respondió con un error HTTP.');
+    // Solo traducir códigos conocidos. Nunca imprimir error_description, mensajes,
+    // cabeceras o respuestas crudas: pueden incluir credenciales o información privada.
+    const knownErrors = {
+      invalid_client: 'invalid_client: revisa Client Identification y Client Secret de la misma llave REST vigente.',
+      invalid_grant: 'invalid_grant: revisa Resource Owner Name y Resource Owner Password de la misma llave REST vigente.',
+      invalid_request: 'invalid_request: Facto considera incompleta o inválida la solicitud; hay que revisar el formato requerido.',
+      unsupported_grant_type: 'unsupported_grant_type: Facto rechazó el tipo de autenticación password documentado; confirma la configuración REST.',
+      unauthorized_client: 'unauthorized_client: el cliente no está autorizado para esta autenticación; consulta a soporte.',
+      invalid_scope: 'invalid_scope: Facto rechazó el alcance solicitado; consulta a soporte.',
+    };
+    let hint = '';
+    try {
+      const errorBody = await response.json();
+      const code = isObject(errorBody) ? errorBody.error : null;
+      if (typeof code === 'string' && Object.hasOwn(knownErrors, code)) hint = ` ${knownErrors[code]}`;
+    } catch { /* Conservar etapa y HTTP aunque el cuerpo no sea JSON. */ }
+    throw new FactoError(`${stage}: ${messages[response.status] || 'Facto respondió con un error HTTP.'}${hint}`);
   }
   try {
     return await response.json();
   } catch {
-    throw new FactoError('Facto devolvió una respuesta JSON inválida o incompleta.');
+    throw new FactoError(`${stage}: Facto devolvió una respuesta JSON inválida o incompleta.`);
   }
 }
 
