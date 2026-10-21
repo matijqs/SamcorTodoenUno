@@ -104,7 +104,7 @@ test('faltan credenciales o SKU: no inicia ninguna solicitud', async () => {
 });
 
 test('rechaza token ausente y formatos inesperados sin registrar respuestas', async () => {
-  for (const responses of [[{ access_token: '' }], [auth, { products: listing }],
+  for (const responses of [[{ access_token: '' }], [auth, { unknown_collection: listing }],
     [new Response('secreto-de-prueba', { status: 200 })]]) {
     const mock = mockFetch(responses);
     const output = [];
@@ -193,7 +193,7 @@ test('códigos arbitrarios, objetos y nombres heredados nunca se reflejan en el 
 });
 
 test('diagnóstico de estructura distingue envoltorios sin aceptar datos no documentados', async () => {
-  for (const body of [{ data: listing }, { products: listing },
+  for (const body of [{ data: listing }, { unknown_collection: listing },
     { data: { items: listing } }, { error: 'PRIVATE', message: 'PRIVATE' }, null, 'PRIVATE']) {
     const mock = mockFetch([auth, body]);
     const output = [];
@@ -261,7 +261,7 @@ test('diagnóstico limita profundidad, anchura y presupuesto de nodos', async ()
 });
 
 test('diagnóstico de detalle e inventario protege valores privados', async () => {
-  for (const body of [{ 'PRIVATE': detail(987654321) }, { ...detail(null), inventories: { 'PRIVATE': 987654321 } }]) {
+  for (const body of [{ 'PRIVATE': { ...detail(987654321), sku: 'PRIVATE-WRONG-SKU' } }, { ...detail(null), inventories: { 'PRIVATE': 987654321 } }]) {
     const mock = mockFetch([auth, listing, body]);
     const output = [];
     assert.equal(await runProbe({ env, ...mock, log: m => output.push(m) }), 1);
@@ -269,6 +269,85 @@ test('diagnóstico de detalle e inventario protege valores privados', async () =
     assert.ok(!output[0].includes('PRIVATE'));
     assert.ok(!output[0].includes('987654321'));
     assert.ok(!output[0].includes('SKU-001'));
+  }
+});
+
+
+
+const envelope = value => ({
+  PRIVATE_METADATA: { PRIVATE_HEADER_A: { PRIVATE_VALUE: 'PRIVATE' },
+    PRIVATE_HEADER_B: { PRIVATE_VALUE: 'PRIVATE' } },
+  PRIVATE_PAYLOAD: value,
+});
+
+test('lee la estructura observada: metadatos y contenedor con products', async () => {
+  const mock = mockFetch([auth, envelope({ products: listing }), detail(8)]);
+  const result = await readStock({ credentials, sku: env.FACTO_TEST_SKU, ...mock });
+  assert.equal(result.available, 8);
+  assert.equal(mock.calls.length, 3);
+  assert.equal(mock.calls[2].url, 'https://apifacto.com/v1/products/7');
+});
+
+test('acepta listado directo, products en raíz y products dentro de un contenedor', async () => {
+  for (const response of [listing, { products: listing }, envelope({ products: listing })]) {
+    const mock = mockFetch([auth, response, detail(0)]);
+    const result = await readStock({ credentials, sku: env.FACTO_TEST_SKU, ...mock });
+    assert.equal(result.available, 0);
+  }
+});
+
+test('rechaza listas ambiguas, SKU duplicados y listas vacías sin consultar detalle', async () => {
+  for (const response of [
+    { first: { products: listing }, second: { products: listing } },
+    { products: listing, second: { products: listing } },
+    envelope({ products: [...listing, ...listing] }),
+    envelope({ products: [] }),
+  ]) {
+    const mock = mockFetch([auth, response]);
+    await assert.rejects(readStock({ credentials, sku: env.FACTO_TEST_SKU, ...mock }), /Stock sin verificar/);
+    assert.equal(mock.calls.length, 2);
+  }
+});
+
+test('el envoltorio no permite IDs inseguros ni stock de otro SKU', async () => {
+  const unsafe = mockFetch([auth, envelope({ products: [{ sku: env.FACTO_TEST_SKU, product_id: '../auth' }] })]);
+  await assert.rejects(readStock({ credentials, sku: env.FACTO_TEST_SKU, ...unsafe }), /identificador/);
+  assert.equal(unsafe.calls.length, 2);
+  for (const changed of [{ ...detail(8), sku: 'OTRO' }, { ...detail(8), product_id: 9 }]) {
+    const mock = mockFetch([auth, envelope({ products: listing }), envelope({ product: changed })]);
+    await assert.rejects(readStock({ credentials, sku: env.FACTO_TEST_SKU, ...mock }), /no corresponde/);
+  }
+});
+
+test('extrae un único detalle del contenedor y conserva el stock total', async () => {
+  for (const response of [
+    detail(8), envelope(detail(8)), envelope({ product: detail(8) }),
+    envelope({ products: [detail(8)] }), { product: detail(8) },
+  ]) {
+    const mock = mockFetch([auth, envelope({ products: listing }), response]);
+    assert.equal((await readStock({ credentials, sku: env.FACTO_TEST_SKU, ...mock })).available, 8);
+  }
+});
+
+test('rechaza detalles múltiples o inválidos y stock ausente', async () => {
+  for (const response of [
+    envelope({ products: [detail(8), detail(9)] }),
+    { first: detail(8), second: detail(8) },
+    envelope({ product: { ...detail(8), inventories: {} } }),
+    envelope({ products: [] }),
+    envelope({ product: JSON.stringify(detail(8)) }),
+  ]) {
+    const mock = mockFetch([auth, listing, response]);
+    await assert.rejects(readStock({ credentials, sku: env.FACTO_TEST_SKU, ...mock }), /Stock sin verificar/);
+  }
+});
+
+test('la conexión con envoltorios no publica metadatos, SKU ni cantidades', async () => {
+  const mock = mockFetch([auth, envelope({ products: listing }), envelope({ product: detail(987654321) })]);
+  const output = [];
+  assert.equal(await runProbe({ env, ...mock, log: m => output.push(m) }), 0);
+  for (const value of ['PRIVATE', '987654321', ...Object.values(env), 'test-token']) {
+    assert.ok(!output[0].includes(value));
   }
 });
 

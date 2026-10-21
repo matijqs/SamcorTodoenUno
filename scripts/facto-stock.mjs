@@ -124,12 +124,59 @@ function responseShape(value, depth = 0, budget = { remaining: 80 }) {
   // Examinar la estructura bajo las claves desconocidas sin imprimir sus nombres.
   for (const key of unknown.slice(0, 2)) {
     if (budget.remaining <= 0) break;
-    const label = /^\\d+$/.test(key) ? 'clave numerica oculta' : 'clave de texto oculta';
+    const label = /^\d+$/.test(key) ? 'clave numerica oculta' : 'clave de texto oculta';
     parts.push(`${label}: ${responseShape(value[key], depth + 1, budget)}`);
   }
   if (unknown.length) parts.push('otros campos omitidos');
   if (budget.remaining <= 0) parts.push('limite');
   return `objeto{${parts.join(', ')}}`;
+}
+
+// La respuesta observada coloca products dentro de un objeto contenedor.
+// Solo aceptar una lista inequívoca, sin interpretar metadatos como productos.
+function productList(response) {
+  if (Array.isArray(response)) return response;
+  const containers = isObject(response)
+    ? [response, ...Object.values(response).filter(isObject)] : [];
+  const candidates = containers
+    .filter(value => Object.hasOwn(value, 'products') && Array.isArray(value.products))
+    .map(value => value.products);
+  if (candidates.length !== 1) {
+    throw new FactoError('No se pudo identificar una lista única de productos. Stock sin verificar. '
+      + 'Estructura recibida (solo tipos): ' + responseShape(response) + '.');
+  }
+  return candidates[0];
+}
+
+// El detalle puede venir directo o dentro de un contenedor.
+// Exigir un único producto, y comprobar después su SKU, ID y stock.
+// No recorrer listas arbitrarias, enlaces ni cadenas que parezcan JSON.
+function productDetail(response) {
+  const candidates = [];
+  let visited = 0;
+  function visit(value, depth = 0) {
+    if (++visited > 100) throw new FactoError('El detalle excede los límites de estructura. Stock sin verificar.');
+    if (!isObject(value)) return;
+    if (Object.hasOwn(value, 'product_id') && Object.hasOwn(value, 'sku')) {
+      candidates.push(value);
+      return;
+    }
+    if (depth >= 2) return;
+    for (const [key, child] of Object.entries(value)) {
+      if (isObject(child)) visit(child, depth + 1);
+      else if (key === 'products' && Array.isArray(child)) {
+        for (const item of child) visit(item, depth + 1);
+      }
+    }
+  }
+  if (Array.isArray(response)) {
+    for (const item of response) visit(item);
+  } else visit(response);
+  if (candidates.length !== 1) {
+    throw new FactoError('No se pudo identificar un detalle único de producto. Stock sin verificar. '
+      + 'Estructura del detalle (solo tipos): ' + responseShape(response) + '.');
+  }
+  return candidates[0];
 }
 
 export async function readStock({ credentials, sku, fetchImpl = fetch }) {
@@ -145,10 +192,8 @@ export async function readStock({ credentials, sku, fetchImpl = fetch }) {
     throw new FactoError('Facto no devolvió un token válido.');
   }
   const token = auth.access_token;
-  const products = await request(fetchImpl, `/products?${new URLSearchParams({ sku })}`, { token });
-  if (!Array.isArray(products)) {
-    throw new FactoError(`El listado de productos no coincide con el formato documentado. Stock sin verificar. Estructura recibida (solo tipos): ${responseShape(products)}.`);
-  }
+  const listingResponse = await request(fetchImpl, `/products?${new URLSearchParams({ sku })}`, { token });
+  const products = productList(listingResponse);
   const matches = products.filter(product => isObject(product) && product.sku === sku);
   if (matches.length !== 1) {
     throw new FactoError(matches.length ? 'Hay varios productos con el mismo SKU. Stock sin verificar.'
@@ -156,7 +201,8 @@ export async function readStock({ credentials, sku, fetchImpl = fetch }) {
   }
   const id = matches[0].product_id;
   if (!validId(id)) throw new FactoError('Facto devolvió un identificador de producto inválido.');
-  const product = await request(fetchImpl, `/products/${id}`, { token });
+  const detailResponse = await request(fetchImpl, `/products/${id}`, { token });
+  const product = productDetail(detailResponse);
   if (!isObject(product) || product.sku !== sku || String(product.product_id) !== String(id)) {
     throw new FactoError(`El detalle recibido no corresponde al producto solicitado. Stock sin verificar. Estructura del detalle (solo tipos): ${responseShape(product)}.`);
   }
@@ -195,5 +241,6 @@ if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1]
     process.exitCode = 1;
   }
 }
+
 
 
