@@ -351,3 +351,4 @@ test('la conexión con envoltorios no publica metadatos, SKU ni cantidades', asy
   }
 });
 
+

@@ -11,7 +11,12 @@ const CREDENTIAL_FIELDS = {
   password: 'FACTO_PASSWORD',
 };
 
-export class FactoError extends Error {}
+export class FactoError extends Error {
+  constructor(message, status = null) {
+    super(message);
+    this.status = status;
+  }
+}
 
 export function credentialsFromEnv(env) {
   const credentials = {};
@@ -59,7 +64,9 @@ async function request(fetchImpl, path, { token, body } = {}) {
       signal: AbortSignal.timeout(15000),
     });
   } catch {
-    throw new FactoError(`${stage}: No se pudo contactar a Facto: revisa la red o inténtalo más tarde.`);
+    const error = new FactoError(`${stage}: No se pudo contactar a Facto: revisa la red o inténtalo más tarde.`);
+    error.transient = true;
+    throw error;
   }
   if (!response.ok) {
     const messages = {
@@ -86,7 +93,7 @@ async function request(fetchImpl, path, { token, body } = {}) {
       const code = isObject(errorBody) ? errorBody.error : null;
       if (typeof code === 'string' && Object.hasOwn(knownErrors, code)) hint = ` ${knownErrors[code]}`;
     } catch { /* Conservar etapa y HTTP aunque el cuerpo no sea JSON. */ }
-    throw new FactoError(`${stage}: ${messages[response.status] || 'Facto respondió con un error HTTP.'}${hint}`);
+    throw new FactoError(`${stage}: ${messages[response.status] || 'Facto respondió con un error HTTP.'}${hint}`, response.status);
   }
   try {
     return await response.json();
@@ -179,19 +186,27 @@ function productDetail(response) {
   return candidates[0];
 }
 
-export async function readStock({ credentials, sku, fetchImpl = fetch }) {
+function validateSku(sku) {
   if (typeof sku !== 'string' || !sku.trim() || sku.length > 200 || /[\x00-\x1f\x7f]/.test(sku)) {
     throw new FactoError('Indica un SKU válido para la prueba.');
   }
-  sku = sku.trim();
+  return sku.trim();
+}
+
+async function authenticate(credentials, fetchImpl) {
   const auth = await request(fetchImpl, '/auth', {
     body: { grant_type: 'password', ...credentials },
   });
   if (!isObject(auth) || typeof auth.access_token !== 'string' || !auth.access_token.trim()
       || /[\r\n]/.test(auth.access_token)) {
-    throw new FactoError('Facto no devolvió un token válido.');
+    const error = new FactoError('Facto no devolvió un token válido.');
+    error.fatal = true;
+    throw error;
   }
-  const token = auth.access_token;
+  return auth;
+}
+
+async function stockWithToken(sku, token, fetchImpl) {
   const listingResponse = await request(fetchImpl, `/products?${new URLSearchParams({ sku })}`, { token });
   const products = productList(listingResponse);
   const matches = products.filter(product => isObject(product) && product.sku === sku);
@@ -211,6 +226,30 @@ export async function readStock({ credentials, sku, fetchImpl = fetch }) {
   // Usar total_available tal como lo entrega Facto: no restar reservas otra vez
   // ni sumar el total y los detalles de las bodegas (duplicaría las unidades).
   return { sku, available: total, checkedAt: new Date().toISOString() };
+}
+
+export async function readStock({ credentials, sku, fetchImpl = fetch }) {
+  sku = validateSku(sku);
+  const auth = await authenticate(credentials, fetchImpl);
+  return stockWithToken(sku, auth.access_token, fetchImpl);
+}
+
+// Una sesión por sincronización, renovada antes de que caduque el token.
+// El token nunca se escribe en el archivo público.
+export function createStockReader({ credentials, fetchImpl = fetch, now = Date.now }) {
+  let token;
+  let expiresAt = 0;
+  return async sku => {
+    sku = validateSku(sku);
+    if (!token || now() >= expiresAt) {
+      const auth = await authenticate(credentials, fetchImpl);
+      token = auth.access_token;
+      const ttl = Number(auth.expires_in);
+      const seconds = Number.isFinite(ttl) && ttl > 0 ? Math.min(ttl, 3600) : 3600;
+      expiresAt = now() + Math.max(1, seconds - Math.min(60, seconds / 10)) * 1000;
+    }
+    return stockWithToken(sku, token, fetchImpl);
+  };
 }
 
 export async function runProbe({ env = process.env, fetchImpl = fetch, log = console.log, summary } = {}) {
@@ -241,6 +280,7 @@ if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1]
     process.exitCode = 1;
   }
 }
+
 
 
 
