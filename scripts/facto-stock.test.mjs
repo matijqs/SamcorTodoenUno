@@ -191,3 +191,35 @@ test('códigos arbitrarios, objetos y nombres heredados nunca se reflejan en el 
     }
   }
 });
+
+test('diagnóstico de estructura distingue envoltorios sin aceptar datos no documentados', async () => {
+  for (const body of [{ data: listing }, { products: listing },
+    { data: { items: listing } }, { error: 'PRIVATE', message: 'PRIVATE' }, null, 'PRIVATE']) {
+    const mock = mockFetch([auth, body]);
+    const output = [];
+    assert.equal(await runProbe({ env, ...mock, log: m => output.push(m) }), 1);
+    assert.match(output[0], /Estructura recibida \(solo tipos\):/);
+    assert.equal(mock.calls.length, 2);
+    for (const secret of ['PRIVATE', ...Object.values(env), 'test-token']) {
+      assert.ok(!output[0].includes(secret));
+    }
+  }
+});
+
+test('diagnóstico omite claves desconocidas y limita profundidad sin filtrar valores', async () => {
+  const body = { data: [{ sku: 'PRIVATE-SKU', product_id: 987654321,
+    'PRIVATE-KEY': 'PRIVATE-VALUE', inventories: { total_available: 987654321 } }],
+    message: 'PRIVATE-MESSAGE', 'PRIVATE-ROOT': 'PRIVATE-VALUE' };
+  const mock = mockFetch([auth, body]);
+  const output = [];
+  const summary = [];
+  assert.equal(await runProbe({ env, ...mock, log: m => output.push(m), summary: async m => summary.push(m) }), 1);
+  assert.deepEqual(output, summary);
+  assert.match(output[0], /data: lista<objeto\{/);
+  assert.match(output[0], /sku: string/);
+  assert.match(output[0], /product_id: number/);
+  assert.match(output[0], /otros campos omitidos/);
+  assert.ok(!output[0].includes('PRIVATE'));
+  assert.ok(!output[0].includes('987654321'));
+});
+

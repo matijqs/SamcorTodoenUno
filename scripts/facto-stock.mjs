@@ -95,6 +95,26 @@ async function request(fetchImpl, path, { token, body } = {}) {
   }
 }
 
+// Diagnóstico limitado: solo nombres de campos predefinidos y tipos JSON.
+// Nunca incluye valores, cantidades, SKU, nombres de claves desconocidas ni cuerpos.
+function responseShape(value, depth = 0) {
+  if (value === null) return 'null';
+  if (Array.isArray(value)) {
+    return depth < 3 && value.length
+      ? `lista<${responseShape(value[0], depth + 1)}>` : 'lista';
+  }
+  if (!isObject(value)) return typeof value;
+  if (depth >= 3) return 'objeto';
+  const allowed = ['data', 'products', 'items', 'results', 'result', 'response',
+    'payload', 'error', 'errors', 'message', 'code', 'status', 'success',
+    'pagination', 'meta', 'links', 'product_id', 'sku', 'inventories',
+    'total_available', 'total_reserved', 'details'];
+  const fields = allowed.filter(key => Object.hasOwn(value, key));
+  const parts = fields.map(key => `${key}: ${responseShape(value[key], depth + 1)}`);
+  if (Object.keys(value).some(key => !allowed.includes(key))) parts.push('otros campos omitidos');
+  return `objeto{${parts.join(', ')}}`;
+}
+
 export async function readStock({ credentials, sku, fetchImpl = fetch }) {
   if (typeof sku !== 'string' || !sku.trim() || sku.length > 200 || /[\x00-\x1f\x7f]/.test(sku)) {
     throw new FactoError('Indica un SKU válido para la prueba.');
@@ -110,7 +130,7 @@ export async function readStock({ credentials, sku, fetchImpl = fetch }) {
   const token = auth.access_token;
   const products = await request(fetchImpl, `/products?${new URLSearchParams({ sku })}`, { token });
   if (!Array.isArray(products)) {
-    throw new FactoError('El listado de productos no coincide con el formato documentado. Stock sin verificar.');
+    throw new FactoError(`El listado de productos no coincide con el formato documentado. Stock sin verificar. Estructura recibida (solo tipos): ${responseShape(products)}.`);
   }
   const matches = products.filter(product => isObject(product) && product.sku === sku);
   if (matches.length !== 1) {
@@ -158,3 +178,4 @@ if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1]
     process.exitCode = 1;
   }
 }
+
