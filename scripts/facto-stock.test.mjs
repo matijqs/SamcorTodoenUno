@@ -223,3 +223,52 @@ test('diagnóstico omite claves desconocidas y limita profundidad sin filtrar va
   assert.ok(!output[0].includes('987654321'));
 });
 
+
+test('expone tipos bajo claves desconocidas sin revelar nombres ni valores', async () => {
+  for (const key of ['987654321', 'PRIVATE-COLLECTION']) {
+    const mock = mockFetch([auth, { [key]: { product_id: 987654321, sku: 'PRIVATE-SKU' } }]);
+    const output = [];
+    assert.equal(await runProbe({ env, ...mock, log: m => output.push(m) }), 1);
+    assert.match(output[0], /clave (numerica|de texto) oculta: objeto/);
+    assert.match(output[0], /product_id: number/);
+    assert.match(output[0], /sku: string/);
+    assert.ok(!output[0].includes('987654321'));
+    assert.ok(!output[0].includes('PRIVATE'));
+    assert.equal(mock.calls.length, 2);
+  }
+});
+
+test('un envoltorio desconocido revela solo estructura anidada y permanece rechazado', async () => {
+  const mock = mockFetch([auth, { 'PRIVATE-WRAPPER': { 'PRIVATE-KEY': listing } }]);
+  const output = [];
+  assert.equal(await runProbe({ env, ...mock, log: m => output.push(m) }), 1);
+  assert.match(output[0], /lista<objeto/);
+  assert.match(output[0], /sku: string/);
+  assert.ok(!output[0].includes('PRIVATE'));
+  assert.ok(!output[0].includes('SKU-001'));
+});
+
+test('diagnóstico limita profundidad, anchura y presupuesto de nodos', async () => {
+  const wide = Object.fromEntries(Array.from({length: 1000}, (_, i) => ['PRIVATE-' + i, { sku: 'PRIVATE' }]));
+  const deepBody = { data: { data: { data: { data: { data: { sku: 'PRIVATE' } } } } } };
+  for (const body of [wide, deepBody]) {
+    const mock = mockFetch([auth, body]);
+    const output = [];
+    assert.equal(await runProbe({ env, ...mock, log: m => output.push(m) }), 1);
+    assert.ok(output[0].length < 4000);
+    assert.ok(!output[0].includes('PRIVATE'));
+  }
+});
+
+test('diagnóstico de detalle e inventario protege valores privados', async () => {
+  for (const body of [{ 'PRIVATE': detail(987654321) }, { ...detail(null), inventories: { 'PRIVATE': 987654321 } }]) {
+    const mock = mockFetch([auth, listing, body]);
+    const output = [];
+    assert.equal(await runProbe({ env, ...mock, log: m => output.push(m) }), 1);
+    assert.match(output[0], /Estructura/);
+    assert.ok(!output[0].includes('PRIVATE'));
+    assert.ok(!output[0].includes('987654321'));
+    assert.ok(!output[0].includes('SKU-001'));
+  }
+});
+

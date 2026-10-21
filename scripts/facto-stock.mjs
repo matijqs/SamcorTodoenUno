@@ -95,23 +95,40 @@ async function request(fetchImpl, path, { token, body } = {}) {
   }
 }
 
-// Diagnóstico limitado: solo nombres de campos predefinidos y tipos JSON.
-// Nunca incluye valores, cantidades, SKU, nombres de claves desconocidas ni cuerpos.
-function responseShape(value, depth = 0) {
+// Diagnóstico de tipos: nombres conocidos, claves desconocidas anonimizadas.
+// Los límites evitan volcar catálogos completos o respuestas excesivas.
+function responseShape(value, depth = 0, budget = { remaining: 80 }) {
+  if (--budget.remaining < 0) return 'limite';
   if (value === null) return 'null';
   if (Array.isArray(value)) {
-    return depth < 3 && value.length
-      ? `lista<${responseShape(value[0], depth + 1)}>` : 'lista';
+    if (!value.length || depth >= 5) return 'lista';
+    const samples = [...new Set(value.slice(0, 2).map(item => responseShape(item, depth + 1, budget)))];
+    return `lista<${samples.join(' | ')}>`;
   }
   if (!isObject(value)) return typeof value;
-  if (depth >= 3) return 'objeto';
+  if (depth >= 5) return 'objeto';
   const allowed = ['data', 'products', 'items', 'results', 'result', 'response',
     'payload', 'error', 'errors', 'message', 'code', 'status', 'success',
     'pagination', 'meta', 'links', 'product_id', 'sku', 'inventories',
-    'total_available', 'total_reserved', 'details'];
-  const fields = allowed.filter(key => Object.hasOwn(value, key));
-  const parts = fields.map(key => `${key}: ${responseShape(value[key], depth + 1)}`);
-  if (Object.keys(value).some(key => !allowed.includes(key))) parts.push('otros campos omitidos');
+    'total_available', 'total_reserved', 'details', 'body', 'value', 'content',
+    'collection', 'records', 'error_code', 'error_message', 'status_code',
+    'faultcode', 'faultstring', 'detail', 'description'];
+  const keys = Object.keys(value);
+  const known = allowed.filter(key => Object.hasOwn(value, key));
+  const parts = [];
+  for (const key of known) {
+    if (budget.remaining <= 0) break;
+    parts.push(`${key}: ${responseShape(value[key], depth + 1, budget)}`);
+  }
+  const unknown = keys.filter(key => !allowed.includes(key));
+  // Examinar la estructura bajo las claves desconocidas sin imprimir sus nombres.
+  for (const key of unknown.slice(0, 2)) {
+    if (budget.remaining <= 0) break;
+    const label = /^\\d+$/.test(key) ? 'clave numerica oculta' : 'clave de texto oculta';
+    parts.push(`${label}: ${responseShape(value[key], depth + 1, budget)}`);
+  }
+  if (unknown.length) parts.push('otros campos omitidos');
+  if (budget.remaining <= 0) parts.push('limite');
   return `objeto{${parts.join(', ')}}`;
 }
 
@@ -141,10 +158,10 @@ export async function readStock({ credentials, sku, fetchImpl = fetch }) {
   if (!validId(id)) throw new FactoError('Facto devolvió un identificador de producto inválido.');
   const product = await request(fetchImpl, `/products/${id}`, { token });
   if (!isObject(product) || product.sku !== sku || String(product.product_id) !== String(id)) {
-    throw new FactoError('El detalle recibido no corresponde al producto solicitado. Stock sin verificar.');
+    throw new FactoError(`El detalle recibido no corresponde al producto solicitado. Stock sin verificar. Estructura del detalle (solo tipos): ${responseShape(product)}.`);
   }
   const total = isObject(product.inventories) ? quantity(product.inventories.total_available) : null;
-  if (total === null) throw new FactoError('Facto no entregó un stock total válido. Stock sin verificar.');
+  if (total === null) throw new FactoError(`Facto no entregó un stock total válido. Stock sin verificar. Estructura de inventario (solo tipos): ${responseShape(product.inventories)}.`);
   // Usar total_available tal como lo entrega Facto: no restar reservas otra vez
   // ni sumar el total y los detalles de las bodegas (duplicaría las unidades).
   return { sku, available: total, checkedAt: new Date().toISOString() };
@@ -178,4 +195,5 @@ if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1]
     process.exitCode = 1;
   }
 }
+
 
