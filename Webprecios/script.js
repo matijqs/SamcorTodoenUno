@@ -1,3 +1,6 @@
+let busquedaActual = 0;
+let stockSnapshot = null;
+
 document.getElementById("searchButton").addEventListener("click", realizarBusqueda);
 
 document.getElementById("medidaInput").addEventListener("keydown", function (event) {
@@ -91,6 +94,7 @@ function GenerarVariantesMedida(medida) {
 }
 
 function cargarArchivoDesdeCSV(medidaBuscada) {
+  const consulta = ++busquedaActual;
   const URL_CSV = "files/stock-bodega.csv"; 
 
   fetch(URL_CSV)
@@ -114,11 +118,16 @@ function cargarArchivoDesdeCSV(medidaBuscada) {
         )
       );
 
+      if (consulta !== busquedaActual) return;
       mostrarResultados(resultados, medidaBuscada);
+      cargarStockVisible();
     })
-    .catch((error) =>
-      console.error("Error al cargar los datos:", error)
-    );
+    .catch(() => {
+      if (consulta !== busquedaActual) return;
+      document.getElementById("resultados").textContent = "No se pudieron cargar los precios. Intenta buscar nuevamente.";
+      document.getElementById("copyButton").style.display = "none";
+      document.getElementById("copySelectedButton").style.display = "none";
+    });
 }
 
 function mostrarResultados(resultados, medidaBuscada) {
@@ -171,7 +180,16 @@ function mostrarResultados(resultados, medidaBuscada) {
       checkbox.style.marginRight = "10px";
 
       resultadoElemento.appendChild(checkbox);
-      resultadoElemento.innerHTML += resultadoTexto;
+      // La cotización se guarda por separado: nunca copiar stock ni fecha.
+      resultadoElemento.dataset.textoCopia = resultadoTexto;
+      const texto = document.createElement("span");
+      texto.textContent = resultadoTexto;
+      resultadoElemento.appendChild(texto);
+      const stock = document.createElement("div");
+      stock.className = "stock-producto stock-unknown";
+      stock.dataset.sku = (fila["CODIGO"] || "").trim();
+      stock.textContent = "Cargando stock publicado…";
+      resultadoElemento.appendChild(stock);
       resultadosDiv.appendChild(resultadoElemento);
     });
 
@@ -229,7 +247,7 @@ document.getElementById('copyButton').addEventListener('click', function() {
 
     const alertElements = resultadosDiv.querySelectorAll('.alert-info');
     alertElements.forEach(alert => {
-        const textContent = alert.innerText.trim();
+        const textContent = (alert.dataset.textoCopia || "").trim();
         if (textContent) {
             // AQUI ESTÁ EL CAMBIO: \n\n agrega un espacio en blanco entre cada opción
             resultadosTexto += textContent + '\n\n';
@@ -262,7 +280,7 @@ document.getElementById('copySelectedButton').addEventListener('click', function
 
     checkboxes.forEach(checkbox => {
         const resultadoElemento = checkbox.closest('.alert-info');
-        const textContent = resultadoElemento.innerText.trim();
+        const textContent = (resultadoElemento.dataset.textoCopia || "").trim();
         
         if (textContent) {
             // AQUÍ TAMBIÉN ESTÁ EL CAMBIO: \n\n
@@ -277,3 +295,25 @@ document.getElementById('copySelectedButton').addEventListener('click', function
 
     navigator.clipboard.writeText(resultadosTexto.trim());
 });
+
+function actualizarIndicadoresStock() {
+  const cantidad = SamcorStock.quantityFor(document.getElementById("tipoPrecio").value);
+  document.querySelectorAll(".stock-producto").forEach(elemento => {
+    const vista = SamcorStock.stockView(stockSnapshot, elemento.dataset.sku, cantidad);
+    elemento.className = "stock-producto stock-" + vista.tone;
+    elemento.textContent = vista.text;
+    elemento.title = vista.detail || "";
+  });
+  document.getElementById("stockEstado").textContent = SamcorStock.summary(stockSnapshot);
+}
+
+async function cargarStockVisible() {
+  try { stockSnapshot = await SamcorStock.load(); }
+  catch { stockSnapshot = null; }
+  actualizarIndicadoresStock();
+}
+
+setInterval(() => {
+  if (document.querySelector(".stock-producto")) actualizarIndicadoresStock();
+}, 60000);
+

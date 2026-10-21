@@ -196,3 +196,23 @@ a:hover {
 
 
 
+
+/* El stock se muestra solo en pantalla; los botones copian textoCopia. */
+.stock-estado { color: #cbd5e1; font-size: .9rem; margin: 24px 0 12px; line-height: 1.5; }
+.stock-producto { margin-top: 10px; padding: 7px 10px; border-radius: 6px;
+  font-size: .9rem; line-height: 1.4; display: table; border: 1px solid transparent; }
+.stock-ok { color: #aff5ca; background: #163e2a; border-color: #306448; }
+.stock-low { color: #ffe49b; background: #443719; border-color: #796123; }
+.stock-empty { color: #ffc3c3; background: #491e26; border-color: #7f3540; }
+.stock-unknown { color: #d5dfec; background: #293340; border-color: #4a596e; }
+@media (max-width: 575px) {
+  .container { padding: 20px 15px; }
+  h1 { font-size: 2rem; }
+  .stock-producto { display: block; }
+}
+
+
+
+
+
+

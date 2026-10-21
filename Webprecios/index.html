@@ -6,7 +6,7 @@
     <title>Cotizador de Neumáticos</title>
     <!-- Incluir el CSS de Bootstrap -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="styles.css?v=1.1" rel="stylesheet">
+    <link href="styles.css?v=stock1" rel="stylesheet">
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
 </head>
@@ -50,6 +50,8 @@
             </div>
         </div>
 
+        <p id="stockEstado" class="stock-estado" role="status" aria-live="polite">Stock total de todas las bodegas · Actualización diaria. Se carga al buscar.</p>
+
         <!-- Contenedor de resultados -->
         <div id="resultados" class="mt-4"></div>
 
@@ -64,9 +66,11 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <!-- Enlace al archivo JS -->
-    <script src="script.js"></script>
+    <script src="stock-facto.js?v=1"></script>
+    <script src="script.js?v=stock1"></script>
     
     <!-- PapaParse para procesar CSV -->
     <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
 </body>
 </html>
+
