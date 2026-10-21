@@ -1,0 +1,39 @@
+name: Revisar bodegas Facto
+
+on:
+  workflow_dispatch:
+    inputs:
+      sku:
+        description: SKU a comparar
+        required: true
+        default: '1556513ROADH11'
+        type: string
+      expected:
+        description: Cantidad que muestra Facto para este SKU
+        required: true
+        default: '5'
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  comparar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: false
+      - name: Verificar diagnóstico
+        run: node --test scripts/facto-audit.test.mjs
+      - name: Comparar total y bodegas
+        env:
+          FACTO_CLIENT_ID: ${{ secrets.FACTO_CLIENT_ID }}
+          FACTO_CLIENT_SECRET: ${{ secrets.FACTO_CLIENT_SECRET }}
+          FACTO_USERNAME: ${{ secrets.FACTO_USERNAME }}
+          FACTO_PASSWORD: ${{ secrets.FACTO_PASSWORD }}
+          FACTO_TEST_SKU: ${{ inputs.sku }}
+          FACTO_EXPECTED_STOCK: ${{ inputs.expected }}
+        run: node scripts/facto-audit.mjs
+
