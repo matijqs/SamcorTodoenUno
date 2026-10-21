@@ -32,7 +32,7 @@ test('sesión reutiliza token entre productos y lo renueva antes de caducar', as
         currentSku = new URL(url).searchParams.get('sku');
         return Response.json({ outer: { products: [{ product_id: 7, sku: currentSku }] } });
       }
-      return Response.json({ outer: { product_id: 7, sku: currentSku, inventories: { total_available: 8 } } });
+      return Response.json({ outer: { product_id: 7, sku: currentSku, inventories: { total_available: 0, details: [{ product_location_id: 1, available_quantity: 8 }] } } });
     },
   });
   await reader('001'); await reader('002');
@@ -132,4 +132,5 @@ test('guardado produce JSON completo en el archivo final', async () => {
     assert.deepEqual(JSON.parse(await readFile(path, 'utf8')), snapshot);
   } finally { await rm(dir, { recursive: true, force: true }); }
 });
+
 

@@ -10,7 +10,7 @@ const inventory = {
   ],
   secret: 'PRIVATE-SECRET',
 };
-test('compara total cero con cinco en bodegas sin cambiarlo ni sumar dos veces', async () => {
+test('el cotizador devuelve cinco por bodegas y el diagnóstico conserva el total bruto cero', async () => {
   const calls = [];
   const responses = [
     { access_token: 'PRIVATE-TOKEN' },
@@ -21,8 +21,9 @@ test('compara total cero con cinco en bodegas sin cambiarlo ni sumar dos veces',
     credentials: {}, sku, expected: 5,
     fetchImpl: async (url, options) => { calls.push({ url, method: options.method });return Response.json(responses.shift()); },
   });
-  assert.match(message, /Cantidad leída por el cotizador: 0/);
+  assert.match(message, /Cantidad leída por el cotizador: 5/);
   assert.match(message, /Suma diagnóstica de available_quantity: 5/);
+  assert.match(message, /Coincide con la referencia: sí/);
   assert.match(message, /Total y suma del detalle coinciden: NO/);
   assert.ok(!message.includes('PRIVATE'));
   assert.deepEqual(calls.map(x => x.method), ['POST', 'GET', 'GET']);
@@ -61,4 +62,5 @@ test('no aprueba ni publica el detalle de otro SKU', async () => {
   await assert.rejects(audit({ credentials: {}, sku, expected: 5,
     fetchImpl: async () => Response.json(responses.shift()) }), /no corresponde/);
 });
+
 

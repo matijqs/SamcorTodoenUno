@@ -15,7 +15,7 @@ const listing = [{ sku: 'SKU-001', product_id: 7 }];
 const detail = total => ({
   product_id: 7, sku: 'SKU-001',
   inventories: { total_available: total, total_reserved: 3,
-    details: [{ available_quantity: 2 }, { available_quantity: 6 }] },
+    details: [{ product_location_id: 1, available_quantity: total }, { product_location_id: 2, available_quantity: 0 }] },
 });
 
 function mockFetch(responses) {
@@ -61,7 +61,7 @@ test('cero es válido, cadenas numéricas se interpretan y valores negativos se 
 test('stock ausente o inválido nunca se convierte en cero', async () => {
   for (const value of [null, undefined, '', ' ', true, [], {}, 'NaN', '12abc', '1,000']) {
     const mock = mockFetch([auth, listing, detail(value)]);
-    await assert.rejects(readStock({ credentials, sku: env.FACTO_TEST_SKU, ...mock }), /stock total válido/);
+    await assert.rejects(readStock({ credentials, sku: env.FACTO_TEST_SKU, ...mock }), /detalle por bodega válido/);
   }
 });
 
@@ -351,4 +351,55 @@ test('la conexión con envoltorios no publica metadatos, SKU ni cantidades', asy
   }
 });
 
+
+
+
+test('regresión ROADX: total_available cero y bodegas 5 + 0 producen cinco', async () => {
+  const product = detail(5);
+  product.inventories.total_available = 0;
+  delete product.inventories.total_reserved;
+  const mock = mockFetch([auth, listing, product]);
+  assert.equal((await readStock({ credentials, sku: env.FACTO_TEST_SKU, ...mock })).available, 5);
+});
+
+test('suma disponibles por bodega sin añadir total general ni restar reservas', async () => {
+  const product = detail(2);
+  product.inventories.total_available = 999;
+  product.inventories.total_reserved = 12;
+  product.inventories.details = [
+    { product_location_id: 'bodega-a', available_quantity: '2', reserved_quantity: 9 },
+    { product_location_id: 'bodega-b', available_quantity: 3, reserved_quantity: 3 },
+  ];
+  const mock = mockFetch([auth, listing, product]);
+  assert.equal((await readStock({ credentials, sku: env.FACTO_TEST_SKU, ...mock })).available, 5);
+});
+
+test('rechaza detalle vacío, ausente, malformado o incompleto aunque el total general exista', async () => {
+  for (const details of [undefined, [], null, {}, [null],
+    [{ available_quantity: 5 }], [{ product_location_id: 'a' }],
+    [{ product_location_id: 'a', available_quantity: 5 }, { product_location_id: 'b', available_quantity: null }],
+    [{ product_location_id: ' ', available_quantity: 5 }]]) {
+    const product = detail(5);
+    product.inventories.details = details;
+    const mock = mockFetch([auth, listing, product]);
+    await assert.rejects(readStock({ credentials, sku: env.FACTO_TEST_SKU, ...mock }), /Stock sin verificar/);
+  }
+});
+
+test('bodegas duplicadas no se suman, incluso con IDs numéricos en diferentes formatos', async () => {
+  for (const ids of [[7, '7'], ['7', '007'], ['a', ' a ']]) {
+    const product = detail(5);
+    product.inventories.details = ids.map(product_location_id => ({ product_location_id, available_quantity: 5 }));
+    const mock = mockFetch([auth, listing, product]);
+    await assert.rejects(readStock({ credentials, sku: env.FACTO_TEST_SKU, ...mock }), /sin duplicados/);
+  }
+});
+
+test('el agregado no usa el total general como respaldo cuando una bodega es inválida', async () => {
+  const product = detail(5);
+  product.inventories.total_available = 100;
+  product.inventories.details.push({ product_location_id: 3, available_quantity: '' });
+  const mock = mockFetch([auth, listing, product]);
+  await assert.rejects(readStock({ credentials, sku: env.FACTO_TEST_SKU, ...mock }), /Stock sin verificar/);
+});
 

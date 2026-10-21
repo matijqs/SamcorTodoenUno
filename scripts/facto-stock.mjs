@@ -206,6 +206,33 @@ async function authenticate(credentials, fetchImpl) {
   return auth;
 }
 
+function locationKey(value) {
+  if (typeof value === 'number') {
+    return Number.isSafeInteger(value) && value >= 0 ? String(value) : null;
+  }
+  if (typeof value !== 'string') return null;
+  const key = value.trim();
+  if (!key || key.length > 200 || /[\x00-\x1f\x7f]/.test(key)) return null;
+  return /^\d+$/.test(key) ? BigInt(key).toString() : key;
+}
+
+function availableAcrossLocations(inventories) {
+  if (!isObject(inventories) || !Array.isArray(inventories.details)
+      || inventories.details.length === 0) return null;
+  let total = 0;
+  const seen = new Set();
+  for (const row of inventories.details) {
+    if (!isObject(row)) return null;
+    const key = locationKey(row.product_location_id);
+    const available = quantity(row.available_quantity);
+    if (key === null || seen.has(key) || available === null) return null;
+    seen.add(key);
+    total += available;
+    if (!Number.isFinite(total)) return null;
+  }
+  return total;
+}
+
 async function stockWithToken(sku, token, fetchImpl) {
   const listingResponse = await request(fetchImpl, `/products?${new URLSearchParams({ sku })}`, { token });
   const products = productList(listingResponse);
@@ -221,10 +248,11 @@ async function stockWithToken(sku, token, fetchImpl) {
   if (!isObject(product) || product.sku !== sku || String(product.product_id) !== String(id)) {
     throw new FactoError(`El detalle recibido no corresponde al producto solicitado. Stock sin verificar. Estructura del detalle (solo tipos): ${responseShape(product)}.`);
   }
-  const total = isObject(product.inventories) ? quantity(product.inventories.total_available) : null;
-  if (total === null) throw new FactoError(`Facto no entregó un stock total válido. Stock sin verificar. Estructura de inventario (solo tipos): ${responseShape(product.inventories)}.`);
-  // Usar total_available tal como lo entrega Facto: no restar reservas otra vez
-  // ni sumar el total y los detalles de las bodegas (duplicaría las unidades).
+  const total = availableAcrossLocations(product.inventories);
+  if (total === null) throw new FactoError(`Facto no entregó un detalle por bodega válido, completo y sin duplicados. Stock sin verificar. Estructura de inventario (solo tipos): ${responseShape(product.inventories)}.`);
+  // Caso contrastado: total_available=0, pero details contiene 5+0 y Facto muestra 5.
+  // Sumar solo available_quantity por ubicación única. No añadir total_available
+  // ni restar reserved_quantity: ya se están usando cantidades disponibles.
   return { sku, available: total, checkedAt: new Date().toISOString() };
 }
 
@@ -280,6 +308,7 @@ if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1]
     process.exitCode = 1;
   }
 }
+
 
 
 
