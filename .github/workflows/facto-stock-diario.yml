@@ -2,7 +2,7 @@ name: Actualizar stock Facto diario
 
 on:
   schedule:
-    - cron: '17 7 * * *'
+    - cron: '17 0 * * *'
       timezone: 'America/Santiago'
   workflow_dispatch:
 
