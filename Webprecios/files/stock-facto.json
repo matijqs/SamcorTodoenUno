@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-28T10:09:31.349Z",
+  "generatedAt": "2026-10-29T10:27:31.056Z",
   "status": "partial",
   "total": 565,
   "verified": 389,
@@ -9,13 +9,13 @@
       "sku": "14513GODCR868",
       "status": "ok",
       "available": 3,
-      "checkedAt": "2026-10-28T09:46:44.501Z"
+      "checkedAt": "2026-10-29T10:04:40.589Z"
     },
     {
       "sku": "14513NEX321",
       "status": "ok",
       "available": 13,
-      "checkedAt": "2026-10-28T09:46:47.312Z"
+      "checkedAt": "2026-10-29T10:04:43.358Z"
     },
     {
       "sku": "14513LPOWER28G",
@@ -27,13 +27,13 @@
       "sku": "1457013TX5",
       "status": "ok",
       "available": 44,
-      "checkedAt": "2026-10-28T09:46:51.516Z"
+      "checkedAt": "2026-10-29T10:04:47.878Z"
     },
     {
       "sku": "15512SNSPS1",
       "status": "ok",
       "available": 11,
-      "checkedAt": "2026-10-28T09:46:54.237Z"
+      "checkedAt": "2026-10-29T10:04:50.748Z"
     },
     {
       "sku": "15512QUESTC31R",
@@ -50,44 +50,44 @@
     {
       "sku": "1556513MIRAMR16",
       "status": "ok",
-      "available": 3,
-      "checkedAt": "2026-10-28T09:46:59.738Z"
+      "available": 0,
+      "checkedAt": "2026-10-29T10:04:56.244Z"
     },
     {
       "sku": "1556513ROADH11",
       "status": "ok",
       "available": 1,
-      "checkedAt": "2026-10-28T09:47:02.495Z"
+      "checkedAt": "2026-10-29T10:04:59.023Z"
     },
     {
       "sku": "1556513NXGX",
       "status": "ok",
       "available": 8,
-      "checkedAt": "2026-10-28T09:47:05.243Z"
+      "checkedAt": "2026-10-29T10:05:01.948Z"
     },
     {
       "sku": "1556514ROADH11",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:47:08.045Z"
+      "checkedAt": "2026-10-29T10:05:04.734Z"
     },
     {
       "sku": "1556514ROADMEC99",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:47:10.821Z"
+      "checkedAt": "2026-10-29T10:05:07.494Z"
     },
     {
       "sku": "1557012SNEC99",
       "status": "ok",
       "available": 3,
-      "checkedAt": "2026-10-28T09:47:13.534Z"
+      "checkedAt": "2026-10-29T10:05:10.352Z"
     },
     {
       "sku": "1557013ROADH11",
       "status": "ok",
       "available": 5,
-      "checkedAt": "2026-10-28T09:47:16.276Z"
+      "checkedAt": "2026-10-29T10:05:13.093Z"
     },
     {
       "sku": "1557013RW581",
@@ -99,7 +99,7 @@
       "sku": "1557013SNEC99",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:47:20.412Z"
+      "checkedAt": "2026-10-29T10:05:17.144Z"
     },
     {
       "sku": "1557013NEXEN",
@@ -111,7 +111,7 @@
       "sku": "1557014TRACTX5",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:47:24.556Z"
+      "checkedAt": "2026-10-29T10:05:21.166Z"
     },
     {
       "sku": "1558013RRAINMTS",
@@ -135,7 +135,7 @@
       "sku": "1655015SNP66",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:47:31.353Z"
+      "checkedAt": "2026-10-29T10:05:28.049Z"
     },
     {
       "sku": "1655015RIFTINGXS",
@@ -153,49 +153,49 @@
       "sku": "1655515SNP66",
       "status": "ok",
       "available": 3,
-      "checkedAt": "2026-10-28T09:47:36.789Z"
+      "checkedAt": "2026-10-29T10:05:33.432Z"
     },
     {
       "sku": "1656014GODRP28",
       "status": "ok",
       "available": 3,
-      "checkedAt": "2026-10-28T09:47:39.555Z"
+      "checkedAt": "2026-10-29T10:05:36.177Z"
     },
     {
       "sku": "1656014GODZ107",
       "status": "ok",
       "available": 48,
-      "checkedAt": "2026-10-28T09:47:42.272Z"
+      "checkedAt": "2026-10-29T10:05:38.862Z"
     },
     {
       "sku": "1656014MIRAMR16",
       "status": "ok",
       "available": 7,
-      "checkedAt": "2026-10-28T09:47:45.199Z"
+      "checkedAt": "2026-10-29T10:05:41.515Z"
     },
     {
       "sku": "1656014NXGX",
       "status": "ok",
       "available": 8,
-      "checkedAt": "2026-10-28T09:47:47.896Z"
+      "checkedAt": "2026-10-29T10:05:44.287Z"
     },
     {
       "sku": "1656014SEC99",
       "status": "ok",
       "available": 2,
-      "checkedAt": "2026-10-28T09:47:50.589Z"
+      "checkedAt": "2026-10-29T10:05:47.008Z"
     },
     {
       "sku": "1656014LLCFM",
       "status": "ok",
       "available": 2,
-      "checkedAt": "2026-10-28T09:47:53.362Z"
+      "checkedAt": "2026-10-29T10:05:49.681Z"
     },
     {
       "sku": "1656014ROADH11",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T09:47:56.062Z"
+      "checkedAt": "2026-10-29T10:05:52.324Z"
     },
     {
       "sku": "1656015ROADH11",
@@ -207,13 +207,13 @@
       "sku": "1656513NXGX",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:48:00.217Z"
+      "checkedAt": "2026-10-29T10:05:56.343Z"
     },
     {
       "sku": "1656513ROADH11",
       "status": "ok",
       "available": 8,
-      "checkedAt": "2026-10-28T09:48:02.973Z"
+      "checkedAt": "2026-10-29T10:05:59.047Z"
     },
     {
       "sku": "1656513LITEECOA",
@@ -225,25 +225,25 @@
       "sku": "1656513SNXS7",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T09:48:07.062Z"
+      "checkedAt": "2026-10-29T10:06:03.099Z"
     },
     {
       "sku": "1656514NXGX",
       "status": "ok",
-      "available": 0,
-      "checkedAt": "2026-10-28T09:48:09.797Z"
+      "available": 4,
+      "checkedAt": "2026-10-29T10:06:05.820Z"
     },
     {
       "sku": "1656514ROADH11",
       "status": "ok",
       "available": 10,
-      "checkedAt": "2026-10-28T09:48:12.533Z"
+      "checkedAt": "2026-10-29T10:06:08.483Z"
     },
     {
       "sku": "1656514GODRP28",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T09:48:15.281Z"
+      "checkedAt": "2026-10-29T10:06:11.229Z"
     },
     {
       "sku": "1656514CKETRR11R",
@@ -255,25 +255,25 @@
       "sku": "1657013GODRP28",
       "status": "ok",
       "available": 2,
-      "checkedAt": "2026-10-28T09:48:19.411Z"
+      "checkedAt": "2026-10-29T10:06:15.233Z"
     },
     {
       "sku": "1657013ROADMP28",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:48:22.143Z"
+      "checkedAt": "2026-10-29T10:06:17.872Z"
     },
     {
       "sku": "1657013OURINGH7T",
       "status": "ok",
       "available": 9,
-      "checkedAt": "2026-10-28T09:48:24.903Z"
+      "checkedAt": "2026-10-29T10:06:20.547Z"
     },
     {
       "sku": "1657013NXGX",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:48:27.636Z"
+      "checkedAt": "2026-10-29T10:06:23.298Z"
     },
     {
       "sku": "1657013ROADX",
@@ -285,19 +285,19 @@
       "sku": "1657014GDRP28",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T09:48:31.736Z"
+      "checkedAt": "2026-10-29T10:06:27.366Z"
     },
     {
       "sku": "1657014NXGX",
       "status": "ok",
       "available": 8,
-      "checkedAt": "2026-10-28T09:48:34.512Z"
+      "checkedAt": "2026-10-29T10:06:30.017Z"
     },
     {
       "sku": "1657014MIRAMR16",
       "status": "ok",
       "available": 12,
-      "checkedAt": "2026-10-28T09:48:37.219Z"
+      "checkedAt": "2026-10-29T10:06:32.694Z"
     },
     {
       "sku": "1657014RISEN",
@@ -309,7 +309,7 @@
       "sku": "1657014SNXS7",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T09:48:41.303Z"
+      "checkedAt": "2026-10-29T10:06:36.751Z"
     },
     {
       "sku": "1658014OTIONH11R",
@@ -327,7 +327,7 @@
       "sku": "1755015ROADH03",
       "status": "ok",
       "available": 7,
-      "checkedAt": "2026-10-28T09:48:46.824Z"
+      "checkedAt": "2026-10-29T10:06:42.120Z"
     },
     {
       "sku": "1755515OURINGH7T",
@@ -339,7 +339,7 @@
       "sku": "1755516APT022",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:48:50.990Z"
+      "checkedAt": "2026-10-29T10:06:46.235Z"
     },
     {
       "sku": "1756013R29W",
@@ -351,7 +351,7 @@
       "sku": "1756014MR166",
       "status": "ok",
       "available": 2,
-      "checkedAt": "2026-10-28T09:48:55.063Z"
+      "checkedAt": "2026-10-29T10:06:50.278Z"
     },
     {
       "sku": "1756015GODRP28",
@@ -369,13 +369,13 @@
       "sku": "1756016ROADH12",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:49:00.511Z"
+      "checkedAt": "2026-10-29T10:06:55.659Z"
     },
     {
       "sku": "1756513LLGMAXECO",
       "status": "ok",
       "available": 2,
-      "checkedAt": "2026-10-28T09:49:03.278Z"
+      "checkedAt": "2026-10-29T10:06:58.438Z"
     },
     {
       "sku": "1756514OTIONH11R",
@@ -387,7 +387,7 @@
       "sku": "1756514NXGX",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:49:07.386Z"
+      "checkedAt": "2026-10-29T10:07:02.545Z"
     },
     {
       "sku": "1756514FM601F",
@@ -399,7 +399,7 @@
       "sku": "1756515ROADH12",
       "status": "ok",
       "available": 2,
-      "checkedAt": "2026-10-28T09:49:11.504Z"
+      "checkedAt": "2026-10-29T10:07:06.566Z"
     },
     {
       "sku": "1756515OURINGH7T",
@@ -411,25 +411,25 @@
       "sku": "1757013NXGX",
       "status": "ok",
       "available": 5,
-      "checkedAt": "2026-10-28T09:49:15.585Z"
+      "checkedAt": "2026-10-29T10:07:10.595Z"
     },
     {
       "sku": "1757013ROADH11",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:49:18.326Z"
+      "checkedAt": "2026-10-29T10:07:13.278Z"
     },
     {
       "sku": "1757013TRMUSECOT",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T09:49:21.041Z"
+      "checkedAt": "2026-10-29T10:07:15.945Z"
     },
     {
       "sku": "1757014GODG118",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:49:23.754Z"
+      "checkedAt": "2026-10-29T10:07:18.667Z"
     },
     {
       "sku": "1757014ROADH1184",
@@ -441,19 +441,19 @@
       "sku": "1757014GODSL369AT",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:49:27.812Z"
+      "checkedAt": "2026-10-29T10:07:22.736Z"
     },
     {
       "sku": "1757014CF1100C",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:49:30.491Z"
+      "checkedAt": "2026-10-29T10:07:25.403Z"
     },
     {
       "sku": "1757014NXGX",
       "status": "ok",
       "available": 8,
-      "checkedAt": "2026-10-28T09:49:33.430Z"
+      "checkedAt": "2026-10-29T10:07:28.108Z"
     },
     {
       "sku": "1757014AOTELI",
@@ -471,31 +471,31 @@
       "sku": "1757014MIRA200",
       "status": "ok",
       "available": 6,
-      "checkedAt": "2026-10-28T09:49:38.810Z"
+      "checkedAt": "2026-10-29T10:07:33.577Z"
     },
     {
       "sku": "1757014NXAH8",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:49:41.523Z"
+      "checkedAt": "2026-10-29T10:07:36.417Z"
     },
     {
       "sku": "1757014NXCT8",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:49:44.193Z"
+      "checkedAt": "2026-10-29T10:07:39.084Z"
     },
     {
       "sku": "1758014GODSL369AT",
       "status": "ok",
       "available": 8,
-      "checkedAt": "2026-10-28T09:49:46.922Z"
+      "checkedAt": "2026-10-29T10:07:41.748Z"
     },
     {
       "sku": "1758014SUMAALLTE",
       "status": "ok",
       "available": 3,
-      "checkedAt": "2026-10-28T09:49:49.735Z"
+      "checkedAt": "2026-10-29T10:07:44.505Z"
     },
     {
       "sku": "18514MIRAMR30",
@@ -537,7 +537,7 @@
       "sku": "1855515TRANECO",
       "status": "ok",
       "available": 8,
-      "checkedAt": "2026-10-28T09:50:00.715Z"
+      "checkedAt": "2026-10-29T10:07:55.480Z"
     },
     {
       "sku": "1855515ROADH1292",
@@ -549,55 +549,55 @@
       "sku": "1855515GODRP28",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:50:05.314Z"
+      "checkedAt": "2026-10-29T10:07:59.539Z"
     },
     {
       "sku": "1855515NXGX",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:50:08.249Z"
+      "checkedAt": "2026-10-29T10:08:02.248Z"
     },
     {
       "sku": "1855516ROADH12",
       "status": "ok",
       "available": 10,
-      "checkedAt": "2026-10-28T09:50:11.078Z"
+      "checkedAt": "2026-10-29T10:08:04.891Z"
     },
     {
       "sku": "1855516SNEC99",
       "status": "ok",
       "available": 1,
-      "checkedAt": "2026-10-28T09:50:13.861Z"
+      "checkedAt": "2026-10-29T10:08:07.544Z"
     },
     {
       "sku": "1855516SNXCS7",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T09:50:16.580Z"
+      "checkedAt": "2026-10-29T10:08:10.222Z"
     },
     {
       "sku": "1855516NXNFSU1",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:50:19.323Z"
+      "checkedAt": "2026-10-29T10:08:12.958Z"
     },
     {
       "sku": "1856013GRENCOLO",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:50:22.085Z"
+      "checkedAt": "2026-10-29T10:08:15.637Z"
     },
     {
       "sku": "1856014GDRP28",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:50:24.873Z"
+      "checkedAt": "2026-10-29T10:08:18.497Z"
     },
     {
       "sku": "1856014GODG118",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:50:27.652Z"
+      "checkedAt": "2026-10-29T10:08:21.177Z"
     },
     {
       "sku": "1856014OURINGH7T",
@@ -609,31 +609,31 @@
       "sku": "1856014SNEC99",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:50:32.068Z"
+      "checkedAt": "2026-10-29T10:08:25.237Z"
     },
     {
       "sku": "1856014SNXCS7",
       "status": "ok",
-      "available": 0,
-      "checkedAt": "2026-10-28T09:50:34.934Z"
+      "available": 4,
+      "checkedAt": "2026-10-29T10:08:27.937Z"
     },
     {
       "sku": "1856014NXGX",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T09:50:37.771Z"
+      "checkedAt": "2026-10-29T10:08:30.627Z"
     },
     {
       "sku": "1856015GDRP28",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T09:50:41.755Z"
+      "checkedAt": "2026-10-29T10:08:33.380Z"
     },
     {
       "sku": "1856015NXGX",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T09:50:44.594Z"
+      "checkedAt": "2026-10-29T10:08:36.208Z"
     },
     {
       "sku": "1856015RENUSECOT",
@@ -651,19 +651,19 @@
       "sku": "1856514NXGX",
       "status": "ok",
       "available": 8,
-      "checkedAt": "2026-10-28T09:50:50.231Z"
+      "checkedAt": "2026-10-29T10:08:41.538Z"
     },
     {
       "sku": "1856514ROADH11",
       "status": "ok",
       "available": 5,
-      "checkedAt": "2026-10-28T09:50:53.119Z"
+      "checkedAt": "2026-10-29T10:08:44.331Z"
     },
     {
       "sku": "1856514ROADMAS",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T09:50:55.837Z"
+      "checkedAt": "2026-10-29T10:08:47.024Z"
     },
     {
       "sku": "1856514AOTELI",
@@ -675,43 +675,43 @@
       "sku": "1856514RSRP68",
       "status": "ok",
       "available": 18,
-      "checkedAt": "2026-10-28T09:51:00.032Z"
+      "checkedAt": "2026-10-29T10:08:51.074Z"
     },
     {
       "sku": "1856515DOUBDK768",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:51:03.060Z"
+      "checkedAt": "2026-10-29T10:08:53.812Z"
     },
     {
       "sku": "1856515NXGX",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:51:05.808Z"
+      "checkedAt": "2026-10-29T10:08:56.460Z"
     },
     {
       "sku": "1856515NXNBHD",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:51:08.524Z"
+      "checkedAt": "2026-10-29T10:08:59.117Z"
     },
     {
       "sku": "1856515GODG118",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T09:51:11.223Z"
+      "checkedAt": "2026-10-29T10:09:01.756Z"
     },
     {
       "sku": "1856515GODRP28",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T09:51:14.097Z"
+      "checkedAt": "2026-10-29T10:09:04.398Z"
     },
     {
       "sku": "1856515ROADH1292",
       "status": "ok",
       "available": 20,
-      "checkedAt": "2026-10-28T09:51:16.857Z"
+      "checkedAt": "2026-10-29T10:09:07.041Z"
     },
     {
       "sku": "1856515COMAXW",
@@ -723,7 +723,7 @@
       "sku": "1856515ECOSPORTC",
       "status": "ok",
       "available": 8,
-      "checkedAt": "2026-10-28T09:51:21.251Z"
+      "checkedAt": "2026-10-29T10:09:11.142Z"
     },
     {
       "sku": "1857013OTIONH11R",
@@ -741,31 +741,31 @@
       "sku": "1857013WESTZ108",
       "status": "ok",
       "available": 8,
-      "checkedAt": "2026-10-28T09:51:26.914Z"
+      "checkedAt": "2026-10-29T10:09:16.434Z"
     },
     {
       "sku": "1857014NXGX",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:51:29.706Z"
+      "checkedAt": "2026-10-29T10:09:19.095Z"
     },
     {
       "sku": "1857014ROADH11",
       "status": "ok",
       "available": 8,
-      "checkedAt": "2026-10-28T09:51:32.508Z"
+      "checkedAt": "2026-10-29T10:09:21.783Z"
     },
     {
       "sku": "1857014SNEC99",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T09:51:35.268Z"
+      "checkedAt": "2026-10-29T10:09:24.479Z"
     },
     {
       "sku": "1857014SNXS7",
       "status": "ok",
       "available": 8,
-      "checkedAt": "2026-10-28T09:51:38.029Z"
+      "checkedAt": "2026-10-29T10:09:27.146Z"
     },
     {
       "sku": "1857014RRAINATS",
@@ -789,19 +789,19 @@
       "sku": "19515SUMAALL",
       "status": "ok",
       "available": 2,
-      "checkedAt": "2026-10-28T09:51:45.129Z"
+      "checkedAt": "2026-10-29T10:09:33.883Z"
     },
     {
       "sku": "19515ROADC31",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:51:48.257Z"
+      "checkedAt": "2026-10-29T10:09:36.601Z"
     },
     {
       "sku": "1954017OTIONU11R",
       "status": "ok",
       "available": 7,
-      "checkedAt": "2026-10-28T09:51:50.967Z"
+      "checkedAt": "2026-10-29T10:09:39.332Z"
     },
     {
       "sku": "1954017COMFORSER",
@@ -813,19 +813,19 @@
       "sku": "1954515ROADH12",
       "status": "ok",
       "available": 14,
-      "checkedAt": "2026-10-28T09:51:55.125Z"
+      "checkedAt": "2026-10-29T10:09:43.411Z"
     },
     {
       "sku": "1954515TXHT",
       "status": "ok",
       "available": 2,
-      "checkedAt": "2026-10-28T09:51:57.877Z"
+      "checkedAt": "2026-10-29T10:09:46.097Z"
     },
     {
       "sku": "1954516ROADH12",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:52:00.587Z"
+      "checkedAt": "2026-10-29T10:09:49.092Z"
     },
     {
       "sku": "1954516SPORTD1T",
@@ -837,151 +837,151 @@
       "sku": "1954517SNUHP08",
       "status": "ok",
       "available": 2,
-      "checkedAt": "2026-10-28T09:52:04.665Z"
+      "checkedAt": "2026-10-29T10:09:53.135Z"
     },
     {
       "sku": "1955015NXGX",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:52:07.354Z"
+      "checkedAt": "2026-10-29T10:09:55.830Z"
     },
     {
       "sku": "1955015ROADH12",
       "status": "ok",
       "available": 12,
-      "checkedAt": "2026-10-28T09:52:10.096Z"
+      "checkedAt": "2026-10-29T10:09:58.535Z"
     },
     {
       "sku": "1955015SNEC99",
       "status": "ok",
       "available": 6,
-      "checkedAt": "2026-10-28T09:52:12.782Z"
+      "checkedAt": "2026-10-29T10:10:01.424Z"
     },
     {
       "sku": "1955015SUMADR1",
       "status": "ok",
       "available": 8,
-      "checkedAt": "2026-10-28T09:52:15.470Z"
+      "checkedAt": "2026-10-29T10:10:04.174Z"
     },
     {
       "sku": "1955015SUMADRIFTX",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:52:18.184Z"
+      "checkedAt": "2026-10-29T10:10:06.867Z"
     },
     {
       "sku": "1955015WLSPRAC",
       "status": "ok",
       "available": 8,
-      "checkedAt": "2026-10-28T09:52:20.969Z"
+      "checkedAt": "2026-10-29T10:10:09.608Z"
     },
     {
       "sku": "1955016ROADH12",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:52:23.703Z"
+      "checkedAt": "2026-10-29T10:10:12.356Z"
     },
     {
       "sku": "1955016OURINGH7T",
       "status": "ok",
       "available": 8,
-      "checkedAt": "2026-10-28T09:52:26.385Z"
+      "checkedAt": "2026-10-29T10:10:15.021Z"
     },
     {
       "sku": "1955016SNXCS7",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T09:52:29.074Z"
+      "checkedAt": "2026-10-29T10:10:17.726Z"
     },
     {
       "sku": "1955016SUMADRIFTX",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T09:52:31.799Z"
+      "checkedAt": "2026-10-29T10:10:20.498Z"
     },
     {
       "sku": "1955510WR301W",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:52:34.533Z"
+      "checkedAt": "2026-10-29T10:10:23.201Z"
     },
     {
       "sku": "1955515ASTRARR2R",
       "status": "ok",
       "available": 12,
-      "checkedAt": "2026-10-28T09:52:37.235Z"
+      "checkedAt": "2026-10-29T10:10:25.893Z"
     },
     {
       "sku": "1955515GODRP28",
       "status": "ok",
       "available": 8,
-      "checkedAt": "2026-10-28T09:52:39.972Z"
+      "checkedAt": "2026-10-29T10:10:28.587Z"
     },
     {
       "sku": "1955515NXGX",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:52:42.693Z"
+      "checkedAt": "2026-10-29T10:10:31.243Z"
     },
     {
       "sku": "1955515SNEC99",
       "status": "ok",
       "available": 6,
-      "checkedAt": "2026-10-28T09:52:45.521Z"
+      "checkedAt": "2026-10-29T10:10:33.947Z"
     },
     {
       "sku": "1955515SUMADR1",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:52:48.277Z"
+      "checkedAt": "2026-10-29T10:10:36.591Z"
     },
     {
       "sku": "1955515SUMADRIFTX",
       "status": "ok",
       "available": 2,
-      "checkedAt": "2026-10-28T09:52:51.086Z"
+      "checkedAt": "2026-10-29T10:10:39.319Z"
     },
     {
       "sku": "1955515WLSPRAC",
       "status": "ok",
       "available": 10,
-      "checkedAt": "2026-10-28T09:52:53.942Z"
+      "checkedAt": "2026-10-29T10:10:42.053Z"
     },
     {
       "sku": "1955516FK310R",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T09:52:56.810Z"
+      "checkedAt": "2026-10-29T10:10:44.701Z"
     },
     {
       "sku": "1955516NXGX",
       "status": "ok",
       "available": 6,
-      "checkedAt": "2026-10-28T09:52:59.663Z"
+      "checkedAt": "2026-10-29T10:10:47.482Z"
     },
     {
       "sku": "1955516ASTRARR2R",
       "status": "ok",
       "available": 2,
-      "checkedAt": "2026-10-28T09:53:02.562Z"
+      "checkedAt": "2026-10-29T10:10:50.537Z"
     },
     {
       "sku": "1955516ROADH1291V",
       "status": "ok",
       "available": 12,
-      "checkedAt": "2026-10-28T09:53:05.277Z"
+      "checkedAt": "2026-10-29T10:10:53.476Z"
     },
     {
       "sku": "1955516SNEC99",
       "status": "ok",
-      "available": 0,
-      "checkedAt": "2026-10-28T09:53:08.043Z"
+      "available": 6,
+      "checkedAt": "2026-10-29T10:10:56.245Z"
     },
     {
       "sku": "1955516GODRP28",
       "status": "ok",
       "available": 8,
-      "checkedAt": "2026-10-28T09:53:10.785Z"
+      "checkedAt": "2026-10-29T10:10:59.176Z"
     },
     {
       "sku": "1955520SNLZ56",
@@ -993,7 +993,7 @@
       "sku": "1956014ROADH11",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:53:16.276Z"
+      "checkedAt": "2026-10-29T10:11:05.169Z"
     },
     {
       "sku": "1956014OURIGNH7T",
@@ -1005,61 +1005,61 @@
       "sku": "1956015NXGX",
       "status": "ok",
       "available": 7,
-      "checkedAt": "2026-10-28T09:53:20.431Z"
+      "checkedAt": "2026-10-29T10:11:09.495Z"
     },
     {
       "sku": "1956015GODRP28",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:53:23.188Z"
+      "checkedAt": "2026-10-29T10:11:12.249Z"
     },
     {
       "sku": "1956015SNEC99",
       "status": "ok",
       "available": 2,
-      "checkedAt": "2026-10-28T09:53:25.887Z"
+      "checkedAt": "2026-10-29T10:11:15.434Z"
     },
     {
       "sku": "1956015ROADH12",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:53:28.586Z"
+      "checkedAt": "2026-10-29T10:11:18.177Z"
     },
     {
       "sku": "1956016TRANTOURH7",
       "status": "ok",
       "available": 8,
-      "checkedAt": "2026-10-28T09:53:31.314Z"
+      "checkedAt": "2026-10-29T10:11:21.267Z"
     },
     {
       "sku": "1956016ROADMP9",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T09:53:34.042Z"
+      "checkedAt": "2026-10-29T10:11:24.071Z"
     },
     {
       "sku": "1956514NXGX",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T09:53:36.747Z"
+      "checkedAt": "2026-10-29T10:11:27.190Z"
     },
     {
       "sku": "1956515NXAH5",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T09:53:39.430Z"
+      "checkedAt": "2026-10-29T10:11:30.058Z"
     },
     {
       "sku": "1956515NXGX",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:53:42.124Z"
+      "checkedAt": "2026-10-29T10:11:32.909Z"
     },
     {
       "sku": "1956515ROADH12V",
       "status": "ok",
       "available": 8,
-      "checkedAt": "2026-10-28T09:53:44.819Z"
+      "checkedAt": "2026-10-29T10:11:35.612Z"
     },
     {
       "sku": "1956515GODG118",
@@ -1071,13 +1071,13 @@
       "sku": "1956515CONTI",
       "status": "ok",
       "available": 1,
-      "checkedAt": "2026-10-28T09:53:48.855Z"
+      "checkedAt": "2026-10-29T10:11:39.838Z"
     },
     {
       "sku": "1956515ROADMAS",
       "status": "ok",
       "available": 1,
-      "checkedAt": "2026-10-28T09:53:51.578Z"
+      "checkedAt": "2026-10-29T10:11:43.314Z"
     },
     {
       "sku": "1956515ADIALP03M",
@@ -1088,32 +1088,32 @@
     {
       "sku": "1957014SNXS7",
       "status": "ok",
-      "available": 4,
-      "checkedAt": "2026-10-28T09:53:55.652Z"
+      "available": 2,
+      "checkedAt": "2026-10-29T10:11:47.812Z"
     },
     {
       "sku": "1957015COMF350",
       "status": "ok",
       "available": 10,
-      "checkedAt": "2026-10-28T09:53:58.343Z"
+      "checkedAt": "2026-10-29T10:11:50.740Z"
     },
     {
       "sku": "1957516MRR30",
       "status": "ok",
       "available": 9,
-      "checkedAt": "2026-10-28T09:54:01.036Z"
+      "checkedAt": "2026-10-29T10:11:53.680Z"
     },
     {
       "sku": "2054017ROADMPAS",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:54:03.755Z"
+      "checkedAt": "2026-10-29T10:11:56.629Z"
     },
     {
       "sku": "2054017ROADU11",
       "status": "ok",
       "available": 8,
-      "checkedAt": "2026-10-28T09:54:06.442Z"
+      "checkedAt": "2026-10-29T10:11:59.426Z"
     },
     {
       "sku": "2054017SPORTD1T",
@@ -1125,37 +1125,37 @@
       "sku": "2054018ROTRU01",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:54:10.484Z"
+      "checkedAt": "2026-10-29T10:12:03.777Z"
     },
     {
       "sku": "2054516SNUHP08",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:54:13.189Z"
+      "checkedAt": "2026-10-29T10:12:06.541Z"
     },
     {
       "sku": "2054516GODSA57",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:54:15.874Z"
+      "checkedAt": "2026-10-29T10:12:09.246Z"
     },
     {
       "sku": "2054516ROADH12",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:54:18.586Z"
+      "checkedAt": "2026-10-29T10:12:11.925Z"
     },
     {
       "sku": "2054517GODSA57",
       "status": "ok",
       "available": 5,
-      "checkedAt": "2026-10-28T09:54:21.295Z"
+      "checkedAt": "2026-10-29T10:12:15.082Z"
     },
     {
       "sku": "2054517ROADU11",
       "status": "ok",
       "available": 6,
-      "checkedAt": "2026-10-28T09:54:24.062Z"
+      "checkedAt": "2026-10-29T10:12:18.153Z"
     },
     {
       "sku": "2054517PURESPEEDC",
@@ -1166,32 +1166,32 @@
     {
       "sku": "2055015GRENCOLO",
       "status": "ok",
-      "available": 4,
-      "checkedAt": "2026-10-28T09:54:28.098Z"
+      "available": 0,
+      "checkedAt": "2026-10-29T10:12:22.844Z"
     },
     {
       "sku": "2055016ROADU11",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:54:30.849Z"
+      "checkedAt": "2026-10-29T10:12:26.030Z"
     },
     {
       "sku": "2055016SNEC99",
       "status": "ok",
       "available": 8,
-      "checkedAt": "2026-10-28T09:54:33.568Z"
+      "checkedAt": "2026-10-29T10:12:28.895Z"
     },
     {
       "sku": "2055016SUMADRIFTX",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:54:36.242Z"
+      "checkedAt": "2026-10-29T10:12:32.038Z"
     },
     {
       "sku": "2055017ROADRFT",
       "status": "ok",
       "available": 1,
-      "checkedAt": "2026-10-28T09:54:38.931Z"
+      "checkedAt": "2026-10-29T10:12:34.967Z"
     },
     {
       "sku": "2055017PURESPEEDC",
@@ -1209,19 +1209,19 @@
       "sku": "2055515GRENCOLO",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:54:44.350Z"
+      "checkedAt": "2026-10-29T10:12:40.557Z"
     },
     {
       "sku": "2055516NXAH5",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:54:47.052Z"
+      "checkedAt": "2026-10-29T10:12:43.547Z"
     },
     {
       "sku": "2055516NXGX",
       "status": "ok",
       "available": 8,
-      "checkedAt": "2026-10-28T09:54:49.810Z"
+      "checkedAt": "2026-10-29T10:12:46.596Z"
     },
     {
       "sku": "2055516APTA302",
@@ -1233,7 +1233,7 @@
       "sku": "2055516NXCX",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T09:54:53.954Z"
+      "checkedAt": "2026-10-29T10:12:51.041Z"
     },
     {
       "sku": "2055516ELITEECOA",
@@ -1244,8 +1244,8 @@
     {
       "sku": "2055516SNEC99",
       "status": "ok",
-      "available": 0,
-      "checkedAt": "2026-10-28T09:54:57.996Z"
+      "available": 14,
+      "checkedAt": "2026-10-29T10:12:55.476Z"
     },
     {
       "sku": "2055516SNXCS7",
@@ -1257,25 +1257,25 @@
       "sku": "2055516GODG118",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:55:02.072Z"
+      "checkedAt": "2026-10-29T10:13:00.190Z"
     },
     {
       "sku": "2055516MICHP5",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:55:04.781Z"
+      "checkedAt": "2026-10-29T10:13:03.069Z"
     },
     {
       "sku": "2055517ROADU11",
       "status": "ok",
       "available": 2,
-      "checkedAt": "2026-10-28T09:55:07.470Z"
+      "checkedAt": "2026-10-29T10:13:06.174Z"
     },
     {
       "sku": "2055517SNUHP08",
       "status": "ok",
       "available": 2,
-      "checkedAt": "2026-10-28T09:55:10.229Z"
+      "checkedAt": "2026-10-29T10:13:09.033Z"
     },
     {
       "sku": "2055519SNLZ56",
@@ -1293,7 +1293,7 @@
       "sku": "2056015NXGX",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:55:17.077Z"
+      "checkedAt": "2026-10-29T10:13:15.735Z"
     },
     {
       "sku": "2056015ASTRARR2R",
@@ -1311,43 +1311,43 @@
       "sku": "2056015GODG118",
       "status": "ok",
       "available": 6,
-      "checkedAt": "2026-10-28T09:55:22.524Z"
+      "checkedAt": "2026-10-29T10:13:21.193Z"
     },
     {
       "sku": "2056015GOODYEAR",
       "status": "ok",
       "available": 5,
-      "checkedAt": "2026-10-28T09:55:25.251Z"
+      "checkedAt": "2026-10-29T10:13:23.903Z"
     },
     {
       "sku": "2056015SUMAAT",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:55:28.026Z"
+      "checkedAt": "2026-10-29T10:13:26.667Z"
     },
     {
       "sku": "2056016ROADH12",
       "status": "ok",
       "available": 10,
-      "checkedAt": "2026-10-28T09:55:30.878Z"
+      "checkedAt": "2026-10-29T10:13:29.374Z"
     },
     {
       "sku": "2056016GODG118",
       "status": "ok",
       "available": 8,
-      "checkedAt": "2026-10-28T09:55:33.625Z"
+      "checkedAt": "2026-10-29T10:13:32.090Z"
     },
     {
       "sku": "2056016NDERPH08P",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:55:36.584Z"
+      "checkedAt": "2026-10-29T10:13:34.905Z"
     },
     {
       "sku": "2056016COMFCF1100",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T09:55:40.689Z"
+      "checkedAt": "2026-10-29T10:13:37.634Z"
     },
     {
       "sku": "2056016NXGX",
@@ -1359,19 +1359,19 @@
       "sku": "2056016NXNBDHP",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:55:45.168Z"
+      "checkedAt": "2026-10-29T10:13:41.671Z"
     },
     {
       "sku": "2056016SNEC99",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T09:55:47.881Z"
+      "checkedAt": "2026-10-29T10:13:44.427Z"
     },
     {
       "sku": "2056515ROADH12",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:55:50.586Z"
+      "checkedAt": "2026-10-29T10:13:47.111Z"
     },
     {
       "sku": "2056515RENUSECOT",
@@ -1389,19 +1389,19 @@
       "sku": "2056515SUMAALLTE",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T09:55:56.078Z"
+      "checkedAt": "2026-10-29T10:13:52.487Z"
     },
     {
       "sku": "2056516APTRL106",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:55:58.804Z"
+      "checkedAt": "2026-10-29T10:13:55.170Z"
     },
     {
       "sku": "2056516NXCT8",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:56:01.547Z"
+      "checkedAt": "2026-10-29T10:13:57.979Z"
     },
     {
       "sku": "2056516ECOSPORTC",
@@ -1413,43 +1413,43 @@
       "sku": "2056516NDERPH08P",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:56:05.676Z"
+      "checkedAt": "2026-10-29T10:14:02.025Z"
     },
     {
       "sku": "2056516NXCX",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:56:08.364Z"
+      "checkedAt": "2026-10-29T10:14:04.721Z"
     },
     {
       "sku": "2057014NDERPH08P",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:56:11.085Z"
+      "checkedAt": "2026-10-29T10:14:07.539Z"
     },
     {
       "sku": "2057015MIRAMR30",
       "status": "ok",
       "available": 6,
-      "checkedAt": "2026-10-28T09:56:13.798Z"
+      "checkedAt": "2026-10-29T10:14:10.356Z"
     },
     {
       "sku": "2057015SUMAAIN",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:56:16.509Z"
+      "checkedAt": "2026-10-29T10:14:13.063Z"
     },
     {
       "sku": "2057015STMT",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:56:19.204Z"
+      "checkedAt": "2026-10-29T10:14:15.740Z"
     },
     {
       "sku": "2057015SNXS7",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:56:22.047Z"
+      "checkedAt": "2026-10-29T10:14:18.467Z"
     },
     {
       "sku": "2057514COMF350",
@@ -1485,13 +1485,13 @@
       "sku": "2153518ROADU11",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:56:31.653Z"
+      "checkedAt": "2026-10-29T10:14:27.996Z"
     },
     {
       "sku": "2153518ROADMUHP08",
       "status": "ok",
       "available": 1,
-      "checkedAt": "2026-10-28T09:56:34.353Z"
+      "checkedAt": "2026-10-29T10:14:30.692Z"
     },
     {
       "sku": "2153519SNUHP08",
@@ -1509,55 +1509,55 @@
       "sku": "2154018ROADU11",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:56:41.095Z"
+      "checkedAt": "2026-10-29T10:14:37.527Z"
     },
     {
       "sku": "2154516ROADMUHP08",
       "status": "ok",
       "available": 3,
-      "checkedAt": "2026-10-28T09:56:43.841Z"
+      "checkedAt": "2026-10-29T10:14:40.198Z"
     },
     {
       "sku": "2154517COMFPS",
       "status": "ok",
-      "available": 20,
-      "checkedAt": "2026-10-28T09:56:46.580Z"
+      "available": 16,
+      "checkedAt": "2026-10-29T10:14:42.861Z"
     },
     {
       "sku": "2154517NXNFSUR4G",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:56:49.292Z"
+      "checkedAt": "2026-10-29T10:14:45.587Z"
     },
     {
       "sku": "2154517DZ102",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T09:56:51.981Z"
+      "checkedAt": "2026-10-29T10:14:48.336Z"
     },
     {
       "sku": "2154517ROADU11",
       "status": "ok",
       "available": 8,
-      "checkedAt": "2026-10-28T09:56:54.665Z"
+      "checkedAt": "2026-10-29T10:14:51.089Z"
     },
     {
       "sku": "2154517SUMADRIFTX",
       "status": "ok",
       "available": 2,
-      "checkedAt": "2026-10-28T09:56:57.359Z"
+      "checkedAt": "2026-10-29T10:14:53.770Z"
     },
     {
       "sku": "2154517WNSPRAC",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:57:00.061Z"
+      "checkedAt": "2026-10-29T10:14:56.481Z"
     },
     {
       "sku": "2154518ROADU11",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:57:02.810Z"
+      "checkedAt": "2026-10-29T10:14:59.274Z"
     },
     {
       "sku": "2154518TIODU71R",
@@ -1569,13 +1569,13 @@
       "sku": "2154518SNUHP08",
       "status": "ok",
       "available": 3,
-      "checkedAt": "2026-10-28T09:57:06.873Z"
+      "checkedAt": "2026-10-29T10:15:03.364Z"
     },
     {
       "sku": "2155013ROADH03",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:57:09.632Z"
+      "checkedAt": "2026-10-29T10:15:06.036Z"
     },
     {
       "sku": "2155017NXPQX",
@@ -1587,7 +1587,7 @@
       "sku": "2155017RENUSECOT",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T09:57:13.701Z"
+      "checkedAt": "2026-10-29T10:15:10.214Z"
     },
     {
       "sku": "2155017OTIONDU71R",
@@ -1599,13 +1599,13 @@
       "sku": "2155018SNLZ56",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:57:17.764Z"
+      "checkedAt": "2026-10-29T10:15:14.242Z"
     },
     {
       "sku": "2155516NXNFSU4",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:57:20.505Z"
+      "checkedAt": "2026-10-29T10:15:16.950Z"
     },
     {
       "sku": "2155516NGPROONEG",
@@ -1617,13 +1617,13 @@
       "sku": "2155516ROADU11",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:57:24.585Z"
+      "checkedAt": "2026-10-29T10:15:21.009Z"
     },
     {
       "sku": "2155517ROADU11",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T09:57:27.287Z"
+      "checkedAt": "2026-10-29T10:15:23.700Z"
     },
     {
       "sku": "2155517WARRIOR",
@@ -1635,7 +1635,7 @@
       "sku": "2155517NXNFSU1",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:57:31.380Z"
+      "checkedAt": "2026-10-29T10:15:27.726Z"
     },
     {
       "sku": "2155518PURESPEEDC",
@@ -1647,25 +1647,25 @@
       "sku": "2155518ROADH12",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T09:57:35.449Z"
+      "checkedAt": "2026-10-29T10:15:31.736Z"
     },
     {
       "sku": "2155518SR1HPW",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T09:57:38.148Z"
+      "checkedAt": "2026-10-29T10:15:34.420Z"
     },
     {
       "sku": "2156015SNP66",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:57:40.844Z"
+      "checkedAt": "2026-10-29T10:15:37.155Z"
     },
     {
       "sku": "2156016NXPV",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:57:43.560Z"
+      "checkedAt": "2026-10-29T10:15:39.970Z"
     },
     {
       "sku": "2156016APT",
@@ -1683,13 +1683,13 @@
       "sku": "2156016SNP9",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:57:49.009Z"
+      "checkedAt": "2026-10-29T10:15:45.478Z"
     },
     {
       "sku": "2156017COMFCF11",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:57:51.700Z"
+      "checkedAt": "2026-10-29T10:15:48.168Z"
     },
     {
       "sku": "2156017WR9001R",
@@ -1701,7 +1701,7 @@
       "sku": "2156017COMFCF35",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:57:55.761Z"
+      "checkedAt": "2026-10-29T10:15:52.225Z"
     },
     {
       "sku": "2156017SR1HPW",
@@ -1713,49 +1713,49 @@
       "sku": "2156017NXGTX",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:57:59.902Z"
+      "checkedAt": "2026-10-29T10:15:56.250Z"
     },
     {
       "sku": "2156017ROADT01",
       "status": "ok",
       "available": 2,
-      "checkedAt": "2026-10-28T09:58:02.905Z"
+      "checkedAt": "2026-10-29T10:15:58.907Z"
     },
     {
       "sku": "2156017SNXCS7",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T09:58:05.775Z"
+      "checkedAt": "2026-10-29T10:16:01.592Z"
     },
     {
       "sku": "2156515SNSPS1",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T09:58:08.503Z"
+      "checkedAt": "2026-10-29T10:16:04.356Z"
     },
     {
       "sku": "2156516GRENMAGA",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:58:11.447Z"
+      "checkedAt": "2026-10-29T10:16:07.023Z"
     },
     {
       "sku": "2156516ROADCO2",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:58:14.564Z"
+      "checkedAt": "2026-10-29T10:16:09.771Z"
     },
     {
       "sku": "2156516NXCT8",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:58:17.379Z"
+      "checkedAt": "2026-10-29T10:16:12.448Z"
     },
     {
       "sku": "2156516ROADH12",
       "status": "ok",
       "available": 7,
-      "checkedAt": "2026-10-28T09:58:20.440Z"
+      "checkedAt": "2026-10-29T10:16:15.098Z"
     },
     {
       "sku": "2156516TRANTOURH7",
@@ -1767,67 +1767,67 @@
       "sku": "2156516SNXS7",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:58:24.899Z"
+      "checkedAt": "2026-10-29T10:16:19.217Z"
     },
     {
       "sku": "2156516NXGX",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:58:27.642Z"
+      "checkedAt": "2026-10-29T10:16:21.898Z"
     },
     {
       "sku": "2156517NXCTX",
       "status": "ok",
       "available": 2,
-      "checkedAt": "2026-10-28T09:58:30.500Z"
+      "checkedAt": "2026-10-29T10:16:24.916Z"
     },
     {
       "sku": "2156517ROADH12",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:58:33.254Z"
+      "checkedAt": "2026-10-29T10:16:27.669Z"
     },
     {
       "sku": "2157015SNXS7",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:58:35.954Z"
+      "checkedAt": "2026-10-29T10:16:30.329Z"
     },
     {
       "sku": "2157015SUMAT",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:58:39.002Z"
+      "checkedAt": "2026-10-29T10:16:33.071Z"
     },
     {
       "sku": "2157015ROADMP9",
       "status": "ok",
       "available": 1,
-      "checkedAt": "2026-10-28T09:58:41.865Z"
+      "checkedAt": "2026-10-29T10:16:35.765Z"
     },
     {
       "sku": "2157016ROADT01",
       "status": "ok",
-      "available": 8,
-      "checkedAt": "2026-10-28T09:58:44.578Z"
+      "available": 4,
+      "checkedAt": "2026-10-29T10:16:38.809Z"
     },
     {
       "sku": "2157016WZR505T",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:58:47.429Z"
+      "checkedAt": "2026-10-29T10:16:41.527Z"
     },
     {
       "sku": "2157016LMAX9G",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T09:58:50.271Z"
+      "checkedAt": "2026-10-29T10:16:44.277Z"
     },
     {
       "sku": "2157016NXCP521",
       "status": "ok",
       "available": 2,
-      "checkedAt": "2026-10-28T09:58:53.206Z"
+      "checkedAt": "2026-10-29T10:16:46.990Z"
     },
     {
       "sku": "2157016PUMAL500L",
@@ -1839,7 +1839,7 @@
       "sku": "2157514MIL818AT",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:58:57.397Z"
+      "checkedAt": "2026-10-29T10:16:51.342Z"
     },
     {
       "sku": "2157514WR078W",
@@ -1851,7 +1851,7 @@
       "sku": "2157515MR",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:59:01.713Z"
+      "checkedAt": "2026-10-29T10:16:55.500Z"
     },
     {
       "sku": "2157515AT21R",
@@ -1863,25 +1863,25 @@
       "sku": "2157515ONAT887",
       "status": "ok",
       "available": 8,
-      "checkedAt": "2026-10-28T09:59:06.036Z"
+      "checkedAt": "2026-10-29T10:16:59.783Z"
     },
     {
       "sku": "2157516RACERF19R",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:59:08.804Z"
+      "checkedAt": "2026-10-29T10:17:03.373Z"
     },
     {
       "sku": "2157516CF350C",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:59:11.746Z"
+      "checkedAt": "2026-10-29T10:17:06.139Z"
     },
     {
       "sku": "2157516NXCTX",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:59:14.450Z"
+      "checkedAt": "2026-10-29T10:17:09.028Z"
     },
     {
       "sku": "21575175MF126M",
@@ -1899,7 +1899,7 @@
       "sku": "2254018ROADRFT",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:59:21.581Z"
+      "checkedAt": "2026-10-29T10:17:16.053Z"
     },
     {
       "sku": "2254018SAFYM06M",
@@ -1911,7 +1911,7 @@
       "sku": "2254018ROADU11",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:59:25.825Z"
+      "checkedAt": "2026-10-29T10:17:20.268Z"
     },
     {
       "sku": "2254018PURESPEEDC",
@@ -1923,7 +1923,7 @@
       "sku": "2254018SNUH08",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:59:30.103Z"
+      "checkedAt": "2026-10-29T10:17:24.492Z"
     },
     {
       "sku": "2254018R35W",
@@ -1935,31 +1935,31 @@
       "sku": "2254018WLSPRAC",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:59:34.465Z"
+      "checkedAt": "2026-10-29T10:17:29.359Z"
     },
     {
       "sku": "2254019ROADRXRFT",
       "status": "ok",
       "available": 2,
-      "checkedAt": "2026-10-28T09:59:37.452Z"
+      "checkedAt": "2026-10-29T10:17:32.215Z"
     },
     {
       "sku": "2254019TIODU71R",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T09:59:40.256Z"
+      "checkedAt": "2026-10-29T10:17:35.000Z"
     },
     {
       "sku": "2254517ROADMRFT",
       "status": "ok",
       "available": 2,
-      "checkedAt": "2026-10-28T09:59:42.961Z"
+      "checkedAt": "2026-10-29T10:17:37.812Z"
     },
     {
       "sku": "2254517ROADU11",
       "status": "ok",
-      "available": 2,
-      "checkedAt": "2026-10-28T09:59:45.812Z"
+      "available": 0,
+      "checkedAt": "2026-10-29T10:17:40.557Z"
     },
     {
       "sku": "2254517PURESPEEDC",
@@ -1977,19 +1977,19 @@
       "sku": "2254517ZE310TH",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T09:59:51.426Z"
+      "checkedAt": "2026-10-29T10:17:46.040Z"
     },
     {
       "sku": "2254518BRRFT",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:59:54.428Z"
+      "checkedAt": "2026-10-29T10:17:48.709Z"
     },
     {
       "sku": "2254518GLEL300L",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T09:59:57.371Z"
+      "checkedAt": "2026-10-29T10:17:51.472Z"
     },
     {
       "sku": "2254518ROADRFT",
@@ -2007,7 +2007,7 @@
       "sku": "2254518ROADU11",
       "status": "ok",
       "available": 2,
-      "checkedAt": "2026-10-28T10:00:03.668Z"
+      "checkedAt": "2026-10-29T10:17:57.058Z"
     },
     {
       "sku": "2254519SAFYFM06M",
@@ -2019,13 +2019,13 @@
       "sku": "2254519R35W",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T10:00:07.777Z"
+      "checkedAt": "2026-10-29T10:18:01.114Z"
     },
     {
       "sku": "2254519ROADU01",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T10:00:10.520Z"
+      "checkedAt": "2026-10-29T10:18:03.856Z"
     },
     {
       "sku": "2255015RRAINTAS",
@@ -2037,25 +2037,25 @@
       "sku": "2255016SNUHP08",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:00:14.645Z"
+      "checkedAt": "2026-10-29T10:18:08.256Z"
     },
     {
       "sku": "2255017ROADMUHP08",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T10:00:17.373Z"
+      "checkedAt": "2026-10-29T10:18:11.015Z"
     },
     {
       "sku": "2255017ROADU11",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:00:20.151Z"
+      "checkedAt": "2026-10-29T10:18:13.682Z"
     },
     {
       "sku": "2255017ROADU11RFT",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T10:00:22.868Z"
+      "checkedAt": "2026-10-29T10:18:16.448Z"
     },
     {
       "sku": "2255017SNLZRFT",
@@ -2079,7 +2079,7 @@
       "sku": "2255018NXGTX",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:00:31.072Z"
+      "checkedAt": "2026-10-29T10:18:24.671Z"
     },
     {
       "sku": "2255019ACERU01R",
@@ -2103,31 +2103,31 @@
       "sku": "2255517ROADU11",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:00:37.907Z"
+      "checkedAt": "2026-10-29T10:18:31.431Z"
     },
     {
       "sku": "2255517NXNFQX",
       "status": "ok",
       "available": 8,
-      "checkedAt": "2026-10-28T10:00:41.549Z"
+      "checkedAt": "2026-10-29T10:18:34.239Z"
     },
     {
       "sku": "2255518COMF100",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:00:44.482Z"
+      "checkedAt": "2026-10-29T10:18:36.963Z"
     },
     {
       "sku": "2255518SNUHP08",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T10:00:47.284Z"
+      "checkedAt": "2026-10-29T10:18:39.655Z"
     },
     {
       "sku": "2255518ROADU01",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T10:00:50.163Z"
+      "checkedAt": "2026-10-29T10:18:42.309Z"
     },
     {
       "sku": "2255518NXNFRU5",
@@ -2139,13 +2139,13 @@
       "sku": "2255519NXGTX",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:00:54.640Z"
+      "checkedAt": "2026-10-29T10:18:46.355Z"
     },
     {
       "sku": "2255519ROADU01",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T10:00:57.613Z"
+      "checkedAt": "2026-10-29T10:18:49.017Z"
     },
     {
       "sku": "2255519FORZARR4R",
@@ -2157,25 +2157,25 @@
       "sku": "2256016SNEC99",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:01:02.140Z"
+      "checkedAt": "2026-10-29T10:18:53.136Z"
     },
     {
       "sku": "2256017COMFCF11",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:01:05.059Z"
+      "checkedAt": "2026-10-29T10:18:55.995Z"
     },
     {
       "sku": "2256017ROADT02",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T10:01:07.849Z"
+      "checkedAt": "2026-10-29T10:18:58.637Z"
     },
     {
       "sku": "2256017GRENMAGA",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:01:10.633Z"
+      "checkedAt": "2026-10-29T10:19:01.345Z"
     },
     {
       "sku": "2256017ASTRARR2R",
@@ -2193,31 +2193,31 @@
       "sku": "2256018ROADRXQU",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:01:16.202Z"
+      "checkedAt": "2026-10-29T10:19:06.818Z"
     },
     {
       "sku": "2256018COMF100",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:01:18.933Z"
+      "checkedAt": "2026-10-29T10:19:09.579Z"
     },
     {
       "sku": "2256018NXGTX",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:01:21.705Z"
+      "checkedAt": "2026-10-29T10:19:12.350Z"
     },
     {
       "sku": "2256516SNP66",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:01:24.463Z"
+      "checkedAt": "2026-10-29T10:19:15.013Z"
     },
     {
       "sku": "2256516G326",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T10:01:27.204Z"
+      "checkedAt": "2026-10-29T10:19:17.746Z"
     },
     {
       "sku": "2256517COLOH02G",
@@ -2229,25 +2229,25 @@
       "sku": "2256517SNXS7",
       "status": "ok",
       "available": 2,
-      "checkedAt": "2026-10-28T10:01:31.342Z"
+      "checkedAt": "2026-10-29T10:19:22.054Z"
     },
     {
       "sku": "2256517NXGTX",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:01:34.080Z"
+      "checkedAt": "2026-10-29T10:19:24.753Z"
     },
     {
       "sku": "2256517SUMAAT",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:01:36.842Z"
+      "checkedAt": "2026-10-29T10:19:27.450Z"
     },
     {
       "sku": "2257015ROADMP9",
       "status": "ok",
       "available": 2,
-      "checkedAt": "2026-10-28T10:01:39.574Z"
+      "checkedAt": "2026-10-29T10:19:30.129Z"
     },
     {
       "sku": "2257016MINNEL",
@@ -2259,13 +2259,13 @@
       "sku": "2257016WZR505T",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:01:43.640Z"
+      "checkedAt": "2026-10-29T10:19:34.380Z"
     },
     {
       "sku": "2257016NXHDPL",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:01:46.392Z"
+      "checkedAt": "2026-10-29T10:19:37.142Z"
     },
     {
       "sku": "2257016NXTAPRO",
@@ -2277,61 +2277,61 @@
       "sku": "2257017DAT20",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T10:01:50.472Z"
+      "checkedAt": "2026-10-29T10:19:41.232Z"
     },
     {
       "sku": "2257017KMAT52",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:01:53.499Z"
+      "checkedAt": "2026-10-29T10:19:43.982Z"
     },
     {
       "sku": "2257515ZXAT",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:01:56.207Z"
+      "checkedAt": "2026-10-29T10:19:47.061Z"
     },
     {
       "sku": "2257516UESTAT21R",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:01:58.883Z"
+      "checkedAt": "2026-10-29T10:19:49.912Z"
     },
     {
       "sku": "2257516APTA007",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:02:01.582Z"
+      "checkedAt": "2026-10-29T10:19:52.607Z"
     },
     {
       "sku": "2257516MR300M",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:02:04.324Z"
+      "checkedAt": "2026-10-29T10:19:55.380Z"
     },
     {
       "sku": "2257516NXATPRO",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:02:07.023Z"
+      "checkedAt": "2026-10-29T10:19:58.227Z"
     },
     {
       "sku": "2353519ROADMUHP08",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:02:09.740Z"
+      "checkedAt": "2026-10-29T10:20:01.248Z"
     },
     {
       "sku": "2354018ROADMUHP08",
       "status": "ok",
       "available": 2,
-      "checkedAt": "2026-10-28T10:02:12.444Z"
+      "checkedAt": "2026-10-29T10:20:03.994Z"
     },
     {
       "sku": "2354018ROADU11",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:02:15.167Z"
+      "checkedAt": "2026-10-29T10:20:06.659Z"
     },
     {
       "sku": "2354018WNLSPRAC",
@@ -2343,31 +2343,31 @@
       "sku": "2354517ROADRXMO",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:02:19.224Z"
+      "checkedAt": "2026-10-29T10:20:10.789Z"
     },
     {
       "sku": "2354517COSILENCYW",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:02:21.944Z"
+      "checkedAt": "2026-10-29T10:20:13.753Z"
     },
     {
       "sku": "2354518ROADU11",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:02:24.651Z"
+      "checkedAt": "2026-10-29T10:20:16.523Z"
     },
     {
       "sku": "2354518SNUHP08",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T10:02:27.362Z"
+      "checkedAt": "2026-10-29T10:20:19.226Z"
     },
     {
       "sku": "2354520TIODU71R",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:02:30.080Z"
+      "checkedAt": "2026-10-29T10:20:22.039Z"
     },
     {
       "sku": "2355018ROADMUHP08",
@@ -2379,7 +2379,7 @@
       "sku": "2355019ROADU02",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T10:02:34.122Z"
+      "checkedAt": "2026-10-29T10:20:26.329Z"
     },
     {
       "sku": "2355019SR1HPW",
@@ -2403,13 +2403,13 @@
       "sku": "2355518SNUHP08",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T10:02:42.253Z"
+      "checkedAt": "2026-10-29T10:20:35.536Z"
     },
     {
       "sku": "2355518ROADT02",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:02:44.946Z"
+      "checkedAt": "2026-10-29T10:20:38.473Z"
     },
     {
       "sku": "2355519COSILENCYW",
@@ -2421,19 +2421,19 @@
       "sku": "2355519ROADT02",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:02:49.019Z"
+      "checkedAt": "2026-10-29T10:20:43.988Z"
     },
     {
       "sku": "2355519COMF1100",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:02:51.727Z"
+      "checkedAt": "2026-10-29T10:20:46.939Z"
     },
     {
       "sku": "2356016COMF000",
       "status": "ok",
       "available": 2,
-      "checkedAt": "2026-10-28T10:02:54.723Z"
+      "checkedAt": "2026-10-29T10:20:49.785Z"
     },
     {
       "sku": "2356016WR9001W",
@@ -2445,19 +2445,19 @@
       "sku": "2356016ROADH12",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T10:02:58.800Z"
+      "checkedAt": "2026-10-29T10:20:53.936Z"
     },
     {
       "sku": "2356016SNXS7",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T10:03:01.496Z"
+      "checkedAt": "2026-10-29T10:20:56.664Z"
     },
     {
       "sku": "2356017APTA25Y",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:03:04.210Z"
+      "checkedAt": "2026-10-29T10:20:59.961Z"
     },
     {
       "sku": "2356017ROADHT02",
@@ -2469,7 +2469,7 @@
       "sku": "2356017COMFCF35",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:03:08.294Z"
+      "checkedAt": "2026-10-29T10:21:04.309Z"
     },
     {
       "sku": "2356018NXGTX",
@@ -2481,7 +2481,7 @@
       "sku": "2356018ROADT01",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T10:03:12.519Z"
+      "checkedAt": "2026-10-29T10:21:08.735Z"
     },
     {
       "sku": "2356018UESTAT21R",
@@ -2499,19 +2499,19 @@
       "sku": "2356018COMFCF11",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:03:17.948Z"
+      "checkedAt": "2026-10-29T10:21:15.066Z"
     },
     {
       "sku": "2356516NXCT8",
       "status": "ok",
       "available": 2,
-      "checkedAt": "2026-10-28T10:03:20.710Z"
+      "checkedAt": "2026-10-29T10:21:18.153Z"
     },
     {
       "sku": "2356516COMF350",
       "status": "ok",
-      "available": 4,
-      "checkedAt": "2026-10-28T10:03:23.413Z"
+      "available": 2,
+      "checkedAt": "2026-10-29T10:21:21.133Z"
     },
     {
       "sku": "2356517KMKL33",
@@ -2523,19 +2523,19 @@
       "sku": "2356517NXGTX",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:03:27.503Z"
+      "checkedAt": "2026-10-29T10:21:25.747Z"
     },
     {
       "sku": "2356517ROADT01",
       "status": "ok",
       "available": 8,
-      "checkedAt": "2026-10-28T10:03:30.259Z"
+      "checkedAt": "2026-10-29T10:21:28.577Z"
     },
     {
       "sku": "2356517ROADT21",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T10:03:32.986Z"
+      "checkedAt": "2026-10-29T10:21:31.561Z"
     },
     {
       "sku": "2356517PIRITGTXT",
@@ -2547,13 +2547,13 @@
       "sku": "2356518SR1HPW",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:03:37.125Z"
+      "checkedAt": "2026-10-29T10:21:35.912Z"
     },
     {
       "sku": "2357016ROADT01",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:03:39.876Z"
+      "checkedAt": "2026-10-29T10:21:39.049Z"
     },
     {
       "sku": "2357016ROADRXQU",
@@ -2565,19 +2565,19 @@
       "sku": "2357016NXATPRO",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T10:03:44.170Z"
+      "checkedAt": "2026-10-29T10:21:43.942Z"
     },
     {
       "sku": "2357017MAHO77G",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:03:47.148Z"
+      "checkedAt": "2026-10-29T10:21:46.902Z"
     },
     {
       "sku": "2357515SNAT1",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T10:03:49.903Z"
+      "checkedAt": "2026-10-29T10:21:49.751Z"
     },
     {
       "sku": "2357515SNAT2",
@@ -2589,37 +2589,37 @@
       "sku": "2357515SUMAAIN",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:03:55.429Z"
+      "checkedAt": "2026-10-29T10:21:55.701Z"
     },
     {
       "sku": "2357515XBHT",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:03:58.147Z"
+      "checkedAt": "2026-10-29T10:21:58.438Z"
     },
     {
       "sku": "2357515XBMT2",
       "status": "ok",
       "available": 2,
-      "checkedAt": "2026-10-28T10:04:00.900Z"
+      "checkedAt": "2026-10-29T10:22:01.091Z"
     },
     {
       "sku": "2453020SNLZ56",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T10:04:03.615Z"
+      "checkedAt": "2026-10-29T10:22:03.761Z"
     },
     {
       "sku": "2453518ROADU11",
       "status": "ok",
       "available": 2,
-      "checkedAt": "2026-10-28T10:04:06.305Z"
+      "checkedAt": "2026-10-29T10:22:06.565Z"
     },
     {
       "sku": "2453518ROADU11RF",
       "status": "ok",
       "available": 2,
-      "checkedAt": "2026-10-28T10:04:09.071Z"
+      "checkedAt": "2026-10-29T10:22:09.235Z"
     },
     {
       "sku": "2453519ROADU11",
@@ -2643,61 +2643,61 @@
       "sku": "2454017ROADU11",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T10:04:18.607Z"
+      "checkedAt": "2026-10-29T10:22:18.642Z"
     },
     {
       "sku": "2454018ROADRFT",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T10:04:21.370Z"
+      "checkedAt": "2026-10-29T10:22:21.300Z"
     },
     {
       "sku": "2454018ROADU11",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:04:24.105Z"
+      "checkedAt": "2026-10-29T10:22:23.972Z"
     },
     {
       "sku": "2454018SNLZ56RFT",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T10:04:26.814Z"
+      "checkedAt": "2026-10-29T10:22:26.658Z"
     },
     {
       "sku": "2454019ROADU11",
       "status": "ok",
       "available": 5,
-      "checkedAt": "2026-10-28T10:04:29.532Z"
+      "checkedAt": "2026-10-29T10:22:29.341Z"
     },
     {
       "sku": "2454517SNLZ56",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:04:32.230Z"
+      "checkedAt": "2026-10-29T10:22:32.084Z"
     },
     {
       "sku": "2454518ROADMUHP08",
       "status": "ok",
       "available": 2,
-      "checkedAt": "2026-10-28T10:04:34.964Z"
+      "checkedAt": "2026-10-29T10:22:34.896Z"
     },
     {
       "sku": "2454518ROADU11",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:04:37.657Z"
+      "checkedAt": "2026-10-29T10:22:37.625Z"
     },
     {
       "sku": "2454518ROADU11RFT",
       "status": "ok",
       "available": 2,
-      "checkedAt": "2026-10-28T10:04:40.350Z"
+      "checkedAt": "2026-10-29T10:22:40.830Z"
     },
     {
       "sku": "2454519SNUHP08",
       "status": "ok",
       "available": 3,
-      "checkedAt": "2026-10-28T10:04:43.073Z"
+      "checkedAt": "2026-10-29T10:22:44.013Z"
     },
     {
       "sku": "2454520ONDERGYEVW",
@@ -2721,7 +2721,7 @@
       "sku": "2455020SNLZ56",
       "status": "ok",
       "available": 1,
-      "checkedAt": "2026-10-28T10:04:52.748Z"
+      "checkedAt": "2026-10-29T10:22:54.035Z"
     },
     {
       "sku": "2456018ROADMHT79",
@@ -2733,7 +2733,7 @@
       "sku": "2456517ROADT01",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:04:56.830Z"
+      "checkedAt": "2026-10-29T10:22:58.409Z"
     },
     {
       "sku": "2456517RRAINATS",
@@ -2745,31 +2745,31 @@
       "sku": "2456517MRAT172",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T10:05:00.920Z"
+      "checkedAt": "2026-10-29T10:23:02.878Z"
     },
     {
       "sku": "2457016ROADMMT2",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T10:05:03.849Z"
+      "checkedAt": "2026-10-29T10:23:06.037Z"
     },
     {
       "sku": "2457016ROADT21",
       "status": "ok",
       "available": 7,
-      "checkedAt": "2026-10-28T10:05:06.657Z"
+      "checkedAt": "2026-10-29T10:23:08.974Z"
     },
     {
       "sku": "2457016SNAT1",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:05:09.595Z"
+      "checkedAt": "2026-10-29T10:23:11.765Z"
     },
     {
       "sku": "2457016SUMAAIN",
       "status": "ok",
       "available": 8,
-      "checkedAt": "2026-10-28T10:05:12.319Z"
+      "checkedAt": "2026-10-29T10:23:14.464Z"
     },
     {
       "sku": "2457016ROADT01",
@@ -2811,25 +2811,25 @@
       "sku": "2457516ROADT21",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:05:24.604Z"
+      "checkedAt": "2026-10-29T10:23:27.089Z"
     },
     {
       "sku": "2457516SUMAAT",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:05:27.330Z"
+      "checkedAt": "2026-10-29T10:23:29.865Z"
     },
     {
       "sku": "2457516SNAT2",
       "status": "ok",
-      "available": 2,
-      "checkedAt": "2026-10-28T10:05:30.276Z"
+      "available": 4,
+      "checkedAt": "2026-10-29T10:23:33.240Z"
     },
     {
       "sku": "2457516SNRT",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:05:33.009Z"
+      "checkedAt": "2026-10-29T10:23:36.039Z"
     },
     {
       "sku": "2457516ROADAT21LT",
@@ -2853,13 +2853,13 @@
       "sku": "2554520COSILENCYW",
       "status": "ok",
       "available": 3,
-      "checkedAt": "2026-10-28T10:05:41.549Z"
+      "checkedAt": "2026-10-29T10:23:44.581Z"
     },
     {
       "sku": "2555019ROADT02",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:05:44.246Z"
+      "checkedAt": "2026-10-29T10:23:47.491Z"
     },
     {
       "sku": "2555020ROADU01",
@@ -2877,13 +2877,13 @@
       "sku": "2555518NXGTX",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:05:49.744Z"
+      "checkedAt": "2026-10-29T10:23:53.384Z"
     },
     {
       "sku": "2555519ROADU01",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:05:52.450Z"
+      "checkedAt": "2026-10-29T10:23:56.455Z"
     },
     {
       "sku": "2555519PIRELLI",
@@ -2895,7 +2895,7 @@
       "sku": "2555520SOLITUDET",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:05:56.529Z"
+      "checkedAt": "2026-10-29T10:24:01.194Z"
     },
     {
       "sku": "2556018ROADAT21",
@@ -2907,25 +2907,25 @@
       "sku": "2556018ROADU01",
       "status": "ok",
       "available": 2,
-      "checkedAt": "2026-10-28T10:06:00.640Z"
+      "checkedAt": "2026-10-29T10:24:05.377Z"
     },
     {
       "sku": "2556018COMFCF11",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:06:03.402Z"
+      "checkedAt": "2026-10-29T10:24:08.111Z"
     },
     {
       "sku": "2556018RAUFFTHT",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:06:06.109Z"
+      "checkedAt": "2026-10-29T10:24:11.349Z"
     },
     {
       "sku": "2556517UESTAT21R",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T10:06:08.785Z"
+      "checkedAt": "2026-10-29T10:24:14.312Z"
     },
     {
       "sku": "2557015SNAT2",
@@ -2937,37 +2937,37 @@
       "sku": "2557016NXAT",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T10:06:14.271Z"
+      "checkedAt": "2026-10-29T10:24:20.245Z"
     },
     {
       "sku": "2557016BRAT",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T10:06:17.105Z"
+      "checkedAt": "2026-10-29T10:24:23.108Z"
     },
     {
       "sku": "2557016MRAT172",
       "status": "ok",
       "available": 6,
-      "checkedAt": "2026-10-28T10:06:19.856Z"
+      "checkedAt": "2026-10-29T10:24:26.096Z"
     },
     {
       "sku": "2557016SNRT",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:06:22.571Z"
+      "checkedAt": "2026-10-29T10:24:28.767Z"
     },
     {
       "sku": "2557016SUMAAIN",
       "status": "ok",
       "available": 6,
-      "checkedAt": "2026-10-28T10:06:25.539Z"
+      "checkedAt": "2026-10-29T10:24:31.721Z"
     },
     {
       "sku": "2557016MRHT172",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:06:28.291Z"
+      "checkedAt": "2026-10-29T10:24:34.528Z"
     },
     {
       "sku": "2557017BRAT",
@@ -2991,19 +2991,19 @@
       "sku": "2656018SUMAAIN",
       "status": "ok",
       "available": 5,
-      "checkedAt": "2026-10-28T10:06:38.047Z"
+      "checkedAt": "2026-10-29T10:24:44.339Z"
     },
     {
       "sku": "2656018ROADT02",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:06:41.047Z"
+      "checkedAt": "2026-10-29T10:24:47.006Z"
     },
     {
       "sku": "2656018AATTWOG",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:06:43.776Z"
+      "checkedAt": "2026-10-29T10:24:49.837Z"
     },
     {
       "sku": "2656018LANDRF10R",
@@ -3015,13 +3015,13 @@
       "sku": "2656018COOPAT",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:06:48.520Z"
+      "checkedAt": "2026-10-29T10:24:53.816Z"
     },
     {
       "sku": "2656517COMFCF11",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:06:51.665Z"
+      "checkedAt": "2026-10-29T10:24:56.484Z"
     },
     {
       "sku": "2656517NXTAPRO",
@@ -3033,7 +3033,7 @@
       "sku": "2656517PRATR",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T10:06:57.609Z"
+      "checkedAt": "2026-10-29T10:25:01.953Z"
     },
     {
       "sku": "2656517BRAT693",
@@ -3045,13 +3045,13 @@
       "sku": "2656517ROADT21",
       "status": "ok",
       "available": 9,
-      "checkedAt": "2026-10-28T10:07:02.557Z"
+      "checkedAt": "2026-10-29T10:25:06.209Z"
     },
     {
       "sku": "2656517SNAT2",
       "status": "ok",
-      "available": 4,
-      "checkedAt": "2026-10-28T10:07:05.583Z"
+      "available": 0,
+      "checkedAt": "2026-10-29T10:25:08.917Z"
     },
     {
       "sku": "2656517SNRT",
@@ -3063,13 +3063,13 @@
       "sku": "2656517SUMAAIN",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:07:11.838Z"
+      "checkedAt": "2026-10-29T10:25:14.428Z"
     },
     {
       "sku": "2656517WINDAT2",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T10:07:14.580Z"
+      "checkedAt": "2026-10-29T10:25:17.154Z"
     },
     {
       "sku": "2656517ROADMMT2",
@@ -3081,37 +3081,37 @@
       "sku": "2656518SUMAALLTE",
       "status": "ok",
       "available": 5,
-      "checkedAt": "2026-10-28T10:07:18.982Z"
+      "checkedAt": "2026-10-29T10:25:21.201Z"
     },
     {
       "sku": "2656518WESTSU318",
       "status": "ok",
       "available": 2,
-      "checkedAt": "2026-10-28T10:07:22.093Z"
+      "checkedAt": "2026-10-29T10:25:23.868Z"
     },
     {
       "sku": "2656518GITI",
       "status": "ok",
       "available": 3,
-      "checkedAt": "2026-10-28T10:07:25.057Z"
+      "checkedAt": "2026-10-29T10:25:26.568Z"
     },
     {
       "sku": "2657016AT21R",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:07:27.853Z"
+      "checkedAt": "2026-10-29T10:25:29.272Z"
     },
     {
       "sku": "2657016BR684",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:07:30.710Z"
+      "checkedAt": "2026-10-29T10:25:31.953Z"
     },
     {
       "sku": "2657016SUMAAIN",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:07:33.527Z"
+      "checkedAt": "2026-10-29T10:25:34.615Z"
     },
     {
       "sku": "2657016MIR",
@@ -3123,37 +3123,37 @@
       "sku": "2657017ROADMMT2",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T10:07:37.601Z"
+      "checkedAt": "2026-10-29T10:25:38.981Z"
     },
     {
       "sku": "2657017SNAT2",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:07:40.541Z"
+      "checkedAt": "2026-10-29T10:25:41.911Z"
     },
     {
       "sku": "2657017UESTAT21R",
       "status": "ok",
-      "available": 4,
-      "checkedAt": "2026-10-28T10:07:43.729Z"
+      "available": 0,
+      "checkedAt": "2026-10-29T10:25:44.593Z"
     },
     {
       "sku": "2657516MRAT172",
       "status": "ok",
       "available": 1,
-      "checkedAt": "2026-10-28T10:07:46.478Z"
+      "checkedAt": "2026-10-29T10:25:47.312Z"
     },
     {
       "sku": "2657516SNRT",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:07:49.481Z"
+      "checkedAt": "2026-10-29T10:25:50.078Z"
     },
     {
       "sku": "2657516SUMAAIN",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:07:52.186Z"
+      "checkedAt": "2026-10-29T10:25:53.001Z"
     },
     {
       "sku": "2657516RTISMT01T",
@@ -3165,7 +3165,7 @@
       "sku": "2657516WINDAT2",
       "status": "ok",
       "available": 3,
-      "checkedAt": "2026-10-28T10:07:56.377Z"
+      "checkedAt": "2026-10-29T10:25:57.098Z"
     },
     {
       "sku": "2753021SNNLZ56",
@@ -3189,7 +3189,7 @@
       "sku": "2754521SNUHP08",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:08:06.448Z"
+      "checkedAt": "2026-10-29T10:26:06.551Z"
     },
     {
       "sku": "2755021SNLZ56",
@@ -3225,31 +3225,31 @@
       "sku": "2785014STAT",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:08:22.037Z"
+      "checkedAt": "2026-10-29T10:26:21.714Z"
     },
     {
       "sku": "2785014STMT",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:08:24.799Z"
+      "checkedAt": "2026-10-29T10:26:24.526Z"
     },
     {
       "sku": "2853522SNLZ56",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T10:08:27.545Z"
+      "checkedAt": "2026-10-29T10:26:27.279Z"
     },
     {
       "sku": "2854022SNUHP07",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T10:08:30.258Z"
+      "checkedAt": "2026-10-29T10:26:30.006Z"
     },
     {
       "sku": "2854522SNUHP07",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:08:32.956Z"
+      "checkedAt": "2026-10-29T10:26:32.687Z"
     },
     {
       "sku": "2857017SNRT",
@@ -3261,7 +3261,7 @@
       "sku": "2857516SNRT",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T10:08:38.334Z"
+      "checkedAt": "2026-10-29T10:26:38.119Z"
     },
     {
       "sku": "2954020ACERS01R",
@@ -3273,37 +3273,37 @@
       "sku": "2954021SNUHP08",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T10:08:42.414Z"
+      "checkedAt": "2026-10-29T10:26:42.512Z"
     },
     {
       "sku": "2954022SNLZ56",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T10:08:45.151Z"
+      "checkedAt": "2026-10-29T10:26:45.321Z"
     },
     {
       "sku": "2954520SNUHP07",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T10:08:47.876Z"
+      "checkedAt": "2026-10-29T10:26:48.009Z"
     },
     {
       "sku": "3054020SNLZ56",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T10:08:50.609Z"
+      "checkedAt": "2026-10-29T10:26:50.705Z"
     },
     {
       "sku": "31105015SUMAAIN",
       "status": "ok",
       "available": 1,
-      "checkedAt": "2026-10-28T10:08:53.328Z"
+      "checkedAt": "2026-10-29T10:26:53.540Z"
     },
     {
       "sku": "31105015XBHT",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T10:08:56.030Z"
+      "checkedAt": "2026-10-29T10:26:56.244Z"
     },
     {
       "sku": "3115015MRQ",
@@ -3315,7 +3315,7 @@
       "sku": "3153520SONIX",
       "status": "ok",
       "available": 0,
-      "checkedAt": "2026-10-28T10:09:00.089Z"
+      "checkedAt": "2026-10-29T10:27:00.259Z"
     },
     {
       "sku": "33125020SNRT",
@@ -3339,31 +3339,31 @@
       "sku": "50012DIAMDM346",
       "status": "ok",
       "available": 8,
-      "checkedAt": "2026-10-28T10:09:10.999Z"
+      "checkedAt": "2026-10-29T10:27:10.913Z"
     },
     {
       "sku": "50012SNP28",
       "status": "ok",
       "available": 8,
-      "checkedAt": "2026-10-28T10:09:13.713Z"
+      "checkedAt": "2026-10-29T10:27:13.576Z"
     },
     {
       "sku": "55012BCTBL808",
       "status": "ok",
       "available": 8,
-      "checkedAt": "2026-10-28T10:09:16.410Z"
+      "checkedAt": "2026-10-29T10:27:16.345Z"
     },
     {
       "sku": "55013LONGZT80",
       "status": "ok",
       "available": 4,
-      "checkedAt": "2026-10-28T10:09:19.146Z"
+      "checkedAt": "2026-10-29T10:27:19.023Z"
     },
     {
       "sku": "65016DK259",
       "status": "ok",
       "available": 3,
-      "checkedAt": "2026-10-28T10:09:21.856Z"
+      "checkedAt": "2026-10-29T10:27:21.671Z"
     },
     {
       "sku": "70015AL4000D",
