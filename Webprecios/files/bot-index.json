@@ -1,0 +1,753 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-11-19T00:56:45.411Z",
+  "stockGeneratedAt": "2026-11-18T12:14:12.403Z",
+  "stockStatus": "partial",
+  "tires": {
+    "145R13C": {
+      "reply": "145R13C — precios por 4 en efectivo o transferencia:\n• 145R13C NEXEN CP321: $200.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-19T23:50:59.984Z",
+      "optionCount": 1
+    },
+    "155/65R13": {
+      "reply": "155/65R13 — precios por 4 en efectivo o transferencia:\n• 155/65R13 ROADX H11 73T: $125.000\n• 155/65R13 NEXEN NPRIZ GX 73T: $190.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-19T23:51:15.582Z",
+      "optionCount": 2
+    },
+    "155/65R14": {
+      "reply": "155/65R14 — precios por 4 en efectivo o transferencia:\n• 155/65R14 ROADMARCH ECOPRO 99: $125.000\n• 155/65R14 ROADX H11 75T: $145.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-19T23:51:21.178Z",
+      "optionCount": 2
+    },
+    "155/70R13": {
+      "reply": "155/70R13 — precios por 4 en efectivo o transferencia:\n• 155/70R13 75T SONIX ECOPRO 99: $120.000\n• 155/70R13 ROADX H11 75T: $130.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-19T23:51:29.556Z",
+      "optionCount": 2
+    },
+    "155/70R14": {
+      "reply": "155/70R14 — precios por 4 en efectivo o transferencia:\n• 155/70R14 TRACMAX TX5 77T: $130.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-19T23:51:38.123Z",
+      "optionCount": 1
+    },
+    "155R12C": {
+      "reply": "155R12C — precios por 4 en efectivo o transferencia:\n• 155R12C SONIX SUPERVAN S1 86S: $132.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-19T23:51:07.050Z",
+      "optionCount": 1
+    },
+    "165/50R15": {
+      "reply": "165/50R15 — precios por 4 en efectivo o transferencia:\n• 165/50R15 SONIX PRIMESTAR P66 73V: $160.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-19T23:51:45.050Z",
+      "optionCount": 1
+    },
+    "165/60R14": {
+      "reply": "165/60R14 — precios por 4 en efectivo o transferencia:\n• 165/60R14 MIRAGE MR166 75H: $120.000\n• 165/60R14 75H GOODRIDE Z107: $140.000\n• 165/60R14 NEXEN NPRIZ GX 79H: $185.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-19T23:51:56.399Z",
+      "optionCount": 3
+    },
+    "165/65R13": {
+      "reply": "165/65R13 — precios por 4 en efectivo o transferencia:\n• 165/65R13 ROADX H11 77T: $145.000\n• 165/65R13 NEXEN NPRIZ GX 81T: $180.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-19T23:52:14.426Z",
+      "optionCount": 2
+    },
+    "165/65R14": {
+      "reply": "165/65R14 — precios por 4 en efectivo o transferencia:\n• 165/65R14 ROADX H11 79T: $145.000\n• 165/65R14 NEXEN NPRIZ GX: $185.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-19T23:52:23.828Z",
+      "optionCount": 2
+    },
+    "165/70R13": {
+      "reply": "165/70R13 — precios por 4 en efectivo o transferencia:\n• 165/70R13 TRANSMATE TOURING H7 79T: $125.000\n• 165/70R13 NEXEN NPRIZ GX 79T: $190.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-19T23:52:39.467Z",
+      "optionCount": 2
+    },
+    "165/70R13C": {
+      "reply": "165/70R13C — precios por 4 en efectivo o transferencia:\n• 165/70R13C ROADMARCH PRIMEVAN 28 88/86R: $160.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-19T23:52:36.447Z",
+      "optionCount": 1
+    },
+    "165/70R14": {
+      "reply": "165/70R14 — precios por 4 en efectivo o transferencia:\n• 165/70R14 MIRAGE MR166 81T: $130.000\n• 165/70R14 NEXEN NPRIZ GX 81T: $185.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-19T23:52:49.214Z",
+      "optionCount": 2
+    },
+    "175/50R15": {
+      "reply": "175/50R15 — precios por 4 en efectivo o transferencia:\n• 175/50R15 ROADX H03 75H: $200.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-19T23:53:01.869Z",
+      "optionCount": 1
+    },
+    "175/55R16": {
+      "reply": "175/55R16 — precios por 4 en efectivo o transferencia:\n• 175/55R16 APTANY RP022 80H: $240.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-19T23:53:06.060Z",
+      "optionCount": 1
+    },
+    "175/60R15": {
+      "reply": "175/60R15 — precios por 4 en efectivo o transferencia:\n• 175/60R15 GOODRIDE RP28: $200.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-19T23:53:13.255Z",
+      "optionCount": 1
+    },
+    "175/60R16": {
+      "reply": "175/60R16 — precios por 4 en efectivo o transferencia:\n• 175/60R16 ROADX H12 82H: $210.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-19T23:53:17.446Z",
+      "optionCount": 1
+    },
+    "175/65R14": {
+      "reply": "175/65R14 — precios por 4 en efectivo o transferencia:\n• 175/65R14 NEXEN NPRIZ GX 82H: $185.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-19T23:53:24.326Z",
+      "optionCount": 1
+    },
+    "175/70R13": {
+      "reply": "175/70R13 — precios por 4 en efectivo o transferencia:\n• 175/70R13 ROADX H11 82T: $145.000\n• 175/70R13 NEXEN NPRIZ GX 82T: $175.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-19T23:53:32.877Z",
+      "optionCount": 2
+    },
+    "175/70R14C": {
+      "reply": "175/70R14C — precios por 4 en efectivo o transferencia:\n• 175/70R14C MIRAGE MR200 95/9S: $170.000\n• 175/70R14C COMFORSER CF1100 AT 98/96S: $280.000\n• 175/70R14C NEXEN CT8: $285.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-19T23:53:48.452Z",
+      "optionCount": 3
+    },
+    "175/80R14": {
+      "reply": "175/80R14 — precios por 4 en efectivo o transferencia:\n• 175/80R14 GOODRIDE SL369 AT 88T: $250.000\n• 175/80R14 SUMAXX AT 92T: $280.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-19T23:54:05.592Z",
+      "optionCount": 2
+    },
+    "185/55R15": {
+      "reply": "185/55R15 — precios por 4 en efectivo o transferencia:\n• 185/55R15 GOODRIDE RP28: $190.000\n• 185/55R15 NEXEN NPRIZ GX: $260.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-19T23:54:23.919Z",
+      "optionCount": 2
+    },
+    "185/55R16": {
+      "reply": "185/55R16 — precios por 4 en efectivo o transferencia:\n• 185/55R16 ROADX H12 83V: $210.000\n• 185/55R16 NEXEN NFERA SU1: $350.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-19T23:54:29.736Z",
+      "optionCount": 2
+    },
+    "185/60R13": {
+      "reply": "185/60R13 — precios por 4 en efectivo o transferencia:\n• 185/60R13 GREENLANDER COLO H01 80H: $180.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-19T23:54:41.217Z",
+      "optionCount": 1
+    },
+    "185/60R14": {
+      "reply": "185/60R14 — precios por 4 en efectivo o transferencia:\n• 185/60R14 SONIX ECOPRO 99 82H: $140.000\n• 185/60R14 NEXEN NPRIZ GX: $195.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-19T23:54:50.996Z",
+      "optionCount": 2
+    },
+    "185/65R14": {
+      "reply": "185/65R14 — precios por 4 en efectivo o transferencia:\n• 185/65R14 86H RISEN RP68: $150.000\n• 185/65R14 NEXEN NPRIZ GX 86H: $210.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-19T23:55:07.899Z",
+      "optionCount": 2
+    },
+    "185/65R15": {
+      "reply": "185/65R15 — precios por 4 en efectivo o transferencia:\n• 185/65R15 COMFORSER ECOSPORT 88H: $180.000\n• 185/65R15 ROADX H12: $190.000\n• 185/65R15 NEXEN NBLUE HD 88T: $290.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-19T23:55:26.498Z",
+      "optionCount": 3
+    },
+    "185/65R15C": {
+      "reply": "185/65R15C — precios por 4 en efectivo o transferencia:\n• 185/65R15C DOUBLE KING DK768 94/91R: $240.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-19T23:55:20.740Z",
+      "optionCount": 1
+    },
+    "185/70R13": {
+      "reply": "185/70R13 — precios por 4 en efectivo o transferencia:\n• 185/70R13 WESTLAKE Z108: $130.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-19T23:55:45.840Z",
+      "optionCount": 1
+    },
+    "185/70R14": {
+      "reply": "185/70R14 — precios por 4 en efectivo o transferencia:\n• 185/70R14 SONIX XCOMFORT S7 88T: $170.000\n• 185/70R14 ROADX H11: $180.000\n• 185/70R14 NEXEN NPRIZ GX 88T: $215.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-19T23:55:48.580Z",
+      "optionCount": 3
+    },
+    "195/45R15": {
+      "reply": "195/45R15 — precios por 4 en efectivo o transferencia:\n• 195/45R15 ROADX H12 78W: $185.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-19T23:56:13.649Z",
+      "optionCount": 1
+    },
+    "195/45R16": {
+      "reply": "195/45R16 — precios por 4 en efectivo o transferencia:\n• NEUMÁTICO 195/45R16 ROADX H12: $200.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-19T23:56:19.524Z",
+      "optionCount": 1
+    },
+    "195/45R17": {
+      "reply": "195/45R17 — precios por 4 en efectivo o transferencia:\n• 195/45R17 SONIX UHP 08 85W XL: $215.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-19T23:56:23.826Z",
+      "optionCount": 1
+    },
+    "195/50R15": {
+      "reply": "195/50R15 — precios por 4 en efectivo o transferencia:\n• 195/50R15 SONIX ECOPRO 99 82V: $150.000\n• 195/50R15 ROADX H12 82V: $180.000\n• 195/50R15 WANLI SPORT RACING: $190.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-19T23:56:29.431Z",
+      "optionCount": 6
+    },
+    "195/50R16": {
+      "reply": "195/50R16 — precios por 4 en efectivo o transferencia:\n• 195/50R16 TRANSMATE TOURING H7: $180.000\n• 195/50R16 SUMAXX MAX DRIFTING X 88V: $225.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-19T23:56:45.918Z",
+      "optionCount": 2
+    },
+    "195/55R10": {
+      "reply": "195/55R10 — precios por 4 en efectivo o transferencia:\n• 195/55R10 WANDA 98/96P: $180.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-19T23:56:54.063Z",
+      "optionCount": 1
+    },
+    "195/55R15": {
+      "reply": "195/55R15 — precios por 4 en efectivo o transferencia:\n• 195/55R15 SONIX ECOPRO 99 85V: $170.000\n• 195/55R15 WANLI SPORT RACING 85V: $190.000\n• 195/55R15 GOODRIDE RP28 85V: $200.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-19T23:56:59.599Z",
+      "optionCount": 5
+    },
+    "195/55R16": {
+      "reply": "195/55R16 — precios por 4 en efectivo o transferencia:\n• 195/55R16 SONIX ECOPRO 99 91V XL: $180.000\n• NEUMÁTICO 195/55R16 ROADX H12 91V XL: $205.000\n• 195/55R16 87V GOODRIDE RP28: $215.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-19T23:57:24.340Z",
+      "optionCount": 4
+    },
+    "195/60R14": {
+      "reply": "195/60R14 — precios por 4 en efectivo o transferencia:\n• 195/60R14 ROADX H11 86H: $180.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-19T23:57:35.284Z",
+      "optionCount": 1
+    },
+    "195/60R15": {
+      "reply": "195/60R15 — precios por 4 en efectivo o transferencia:\n• 195/60R15 88H ROADX H12: $190.000\n• 195/60R15 GOODRIDE RP28 88H: $190.000\n• 195/60R15 NEXEN NPRIZ GX: $225.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-19T23:57:39.645Z",
+      "optionCount": 3
+    },
+    "195/60R16": {
+      "reply": "195/60R16 — precios por 4 en efectivo o transferencia:\n• 195/60R16 TRANSMATE TOURING H7: $190.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-19T23:57:50.593Z",
+      "optionCount": 1
+    },
+    "195/65R15": {
+      "reply": "195/65R15 — precios por 4 en efectivo o transferencia:\n• 195/65R15 NEXEN NPRIZ GX: $250.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-19T23:58:02.044Z",
+      "optionCount": 1
+    },
+    "195/70R15C": {
+      "reply": "195/70R15C — precios por 4 en efectivo o transferencia:\n• 195/70R15C COMFORSER CF350: $240.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-19T23:58:19.819Z",
+      "optionCount": 1
+    },
+    "195R15C": {
+      "reply": "195R15C — precios por 4 en efectivo o transferencia:\n• 195R15C ROADX C31 106/104R: $300.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-19T23:56:06.561Z",
+      "optionCount": 1
+    },
+    "205/40R17": {
+      "reply": "205/40R17 — precios por 4 en efectivo o transferencia:\n• 205/40R17 ROADMARCH PRIME AS: $210.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-19T23:58:25.250Z",
+      "optionCount": 1
+    },
+    "205/40R18": {
+      "reply": "205/40R18 — precios por 4 en efectivo o transferencia:\n• 205/40R18 ROTALLA RU01: $260.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-19T23:58:32.193Z",
+      "optionCount": 1
+    },
+    "205/45R16": {
+      "reply": "205/45R16 — precios por 4 en efectivo o transferencia:\n• 205/45R16 SONIX UHP08 87W XL: $180.000\n• NEUMÁTICO 205/45R16 ROADX H12: $210.000\n• 205/45R16 GOODRIDE SA57 87W: $250.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-19T23:58:34.898Z",
+      "optionCount": 3
+    },
+    "205/45R17": {
+      "reply": "205/45R17 — precios por 4 en efectivo o transferencia:\n• 205/45R17 GOODRIDE SA57 88W: $270.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-19T23:58:43.466Z",
+      "optionCount": 1
+    },
+    "205/45ZR17": {
+      "reply": "205/45ZR17 — precios por 4 en efectivo o transferencia:\n• NEUMÁTICO 205/45ZR17 ROADX U11 88W: $195.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-19T23:58:46.168Z",
+      "optionCount": 1
+    },
+    "205/50R16": {
+      "reply": "205/50R16 — precios por 4 en efectivo o transferencia:\n• 205/50R16 SONIX ECOPRO99 91W: $180.000\n• 205/50R16 SUMAXX MAX DRIFTING X: $285.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-19T23:58:55.748Z",
+      "optionCount": 2
+    },
+    "205/50ZR16": {
+      "reply": "205/50ZR16 — precios por 4 en efectivo o transferencia:\n• NEUMÁTICO 205/50ZR16 ROADX U11: $215.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-19T23:58:52.929Z",
+      "optionCount": 1
+    },
+    "205/55R16": {
+      "reply": "205/55R16 — precios por 4 en efectivo o transferencia:\n• 205/55R16 91V SONIX ECOPRO 99: $180.000\n• 205/55R16 GOODRIDE G118 94W: $215.000\n• 205/55R16 NEXEN NPRIZ GX 91V: $270.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-19T23:59:12.664Z",
+      "optionCount": 5
+    },
+    "205/60R15": {
+      "reply": "205/60R15 — precios por 4 en efectivo o transferencia:\n• 205/60R15 GOODRIDE G118 91H: $215.000\n• 205/60R15 NEXEN NPRIZ GX: $270.000\n• 205/60R15 SUMAXX AT 91H: $270.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-19T23:59:39.936Z",
+      "optionCount": 4
+    },
+    "205/60R16": {
+      "reply": "205/60R16 — precios por 4 en efectivo o transferencia:\n• 205/60R16 PRAXENT PH08 92H: $180.000\n• 205/60R16 ROADX H12 91V: $215.000\n• 205/60R16 GOODRIDE G118 92V: $235.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-19T23:59:53.517Z",
+      "optionCount": 4
+    },
+    "205/65R15": {
+      "reply": "205/65R15 — precios por 4 en efectivo o transferencia:\n• 205/65R15 ROADX H12 94V: $210.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:00:11.973Z",
+      "optionCount": 1
+    },
+    "205/65R16": {
+      "reply": "205/65R16 — precios por 4 en efectivo o transferencia:\n• 205/65R16 PRAXENT PH08 95H: $195.000\n• 205/65R16 95H NEXEN NPRIZ CX: $360.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:00:27.636Z",
+      "optionCount": 2
+    },
+    "205/65R16C": {
+      "reply": "205/65R16C — precios por 4 en efectivo o transferencia:\n• 205/65R16C APTANY RL 106 105T: $270.000\n• 205/65R16C NEXEN ROADIAN CT8: $395.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:00:20.591Z",
+      "optionCount": 2
+    },
+    "205/70R14": {
+      "reply": "205/70R14 — precios por 4 en efectivo o transferencia:\n• 205/70R14 PRAXENT PH08 95H: $215.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:00:33.306Z",
+      "optionCount": 1
+    },
+    "205/70R15": {
+      "reply": "205/70R15 — precios por 4 en efectivo o transferencia:\n• 205/70R15 SUNSET MT: $320.000\n• 205/70R15 SUMAXX AT: $345.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:00:38.948Z",
+      "optionCount": 2
+    },
+    "205/70R15C": {
+      "reply": "205/70R15C — precios por 4 en efectivo o transferencia:\n• 205/70R15C MIRAGE MR300: $260.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:00:36.068Z",
+      "optionCount": 1
+    },
+    "215/35ZR18": {
+      "reply": "215/35ZR18 — precios por 4 en efectivo o transferencia:\n• NEUMÁTICO 215/35ZR18 ROADX U11 84Y: $270.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:00:54.163Z",
+      "optionCount": 1
+    },
+    "215/45R17": {
+      "reply": "215/45R17 — precios por 4 en efectivo o transferencia:\n• 215/45R17 COMFORSER PURESPEED: $180.000\n• 215/45R17 91W DUNLOP DZ102: $425.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:01:09.794Z",
+      "optionCount": 2
+    },
+    "215/45R18": {
+      "reply": "215/45R18 — precios por 4 en efectivo o transferencia:\n• 215/45R18 SONIX UHP 08 93W XL: $240.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:01:30.744Z",
+      "optionCount": 1
+    },
+    "215/45ZR17": {
+      "reply": "215/45ZR17 — precios por 4 en efectivo o transferencia:\n• NEUMÁTICO 215/45ZR17 ROADX U11 91W: $230.000\n• NEUMÁTICO 215/45ZR17 SUMAXX MAX DRIFTING X: $285.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:01:18.009Z",
+      "optionCount": 2
+    },
+    "215/50R13": {
+      "reply": "215/50R13 — precios por 4 en efectivo o transferencia:\n• 215/50R13 ROADX RXMOTION H03 LETRA BLANCA 84H: $225.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:01:33.785Z",
+      "optionCount": 1
+    },
+    "215/50ZR18": {
+      "reply": "215/50ZR18 — precios por 4 en efectivo o transferencia:\n• 215/50ZR18 SONIX LZEAL 56 92W: $270.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:01:42.491Z",
+      "optionCount": 1
+    },
+    "215/55R16": {
+      "reply": "215/55R16 — precios por 4 en efectivo o transferencia:\n• NEUMÁTICO 215/55R16 ROADX U11: $240.000\n• 215/55R16 NEXEN NFERA SU4: $305.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:01:45.355Z",
+      "optionCount": 2
+    },
+    "215/55R17": {
+      "reply": "215/55R17 — precios por 4 en efectivo o transferencia:\n• 215/55R17 NEXEN NFERA SU1: $430.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:01:56.576Z",
+      "optionCount": 1
+    },
+    "215/60R15": {
+      "reply": "215/60R15 — precios por 4 en efectivo o transferencia:\n• 215/60R15 SONIX PRIMESTAR 66 94H: $215.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:02:06.428Z",
+      "optionCount": 1
+    },
+    "215/60R17": {
+      "reply": "215/60R17 — precios por 4 en efectivo o transferencia:\n• NEUMÁTICO 215/60R17 100T COMFORSER CF1100: $360.000\n• 215/60R17 NEXEN ROADIAN GTX: $395.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:02:17.720Z",
+      "optionCount": 2
+    },
+    "215/60R17C": {
+      "reply": "215/60R17C — precios por 4 en efectivo o transferencia:\n• NEUMÁTICO 215/60R17C 109/107T COMFORSER CF350: $340.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:02:21.952Z",
+      "optionCount": 1
+    },
+    "215/65R16": {
+      "reply": "215/65R16 — precios por 4 en efectivo o transferencia:\n• 215/65R16 SONIX XCOMFORT S7 98H: $220.000\n• NEUMÁTICO 215/65R16 ROADX H12 98H: $245.000\n• 215/65R16 GREENLANDER AT2: $320.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:02:37.439Z",
+      "optionCount": 4
+    },
+    "215/65R16C": {
+      "reply": "215/65R16C — precios por 4 en efectivo o transferencia:\n• 215/65R16C ROADX CO2 8PR: $320.000\n• 215/65R16C NEXEN ROADIAN CT8: $465.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:02:40.217Z",
+      "optionCount": 2
+    },
+    "215/65R17": {
+      "reply": "215/65R17 — precios por 4 en efectivo o transferencia:\n• 215/65R17 ROADX H12 103V: $320.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:02:58.462Z",
+      "optionCount": 1
+    },
+    "215/70R15": {
+      "reply": "215/70R15 — precios por 4 en efectivo o transferencia:\n• 215/70R15 SONIX XCOMFORT S7 98T: $225.000\n• 215/70R15 SUMAXX AT 103T: $330.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:03:01.265Z",
+      "optionCount": 2
+    },
+    "215/70R16": {
+      "reply": "215/70R16 — precios por 4 en efectivo o transferencia:\n• 215/70R16 TRANSMATE AT 99T: $285.000\n• 215/70R16 ROADX HT01: $310.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:03:09.626Z",
+      "optionCount": 2
+    },
+    "215/75R15": {
+      "reply": "215/75R15 — precios por 4 en efectivo o transferencia:\n• 215/75R15 MIRAGE MR AT172 100S: $270.000\n• 215/75R15 ONYX AT 887 100S: $285.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:03:26.538Z",
+      "optionCount": 2
+    },
+    "215/75R16C": {
+      "reply": "215/75R16C — precios por 4 en efectivo o transferencia:\n• 215/75R16C ROTALLA RF19 116/114R: $295.000\n• 215/75R16C COMFORSER CF350 116/114S: $330.000\n• 215/75R16C 116/114R NEXEN ROADIAN CTX: $490.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:03:33.567Z",
+      "optionCount": 3
+    },
+    "225/40R18": {
+      "reply": "225/40R18 — precios por 4 en efectivo o transferencia:\n• 225/40R18 SONIX UHP08 92W: $270.000\n• 225/40R18 WANLI SPORT RACING: $305.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:03:55.945Z",
+      "optionCount": 2
+    },
+    "225/45R18": {
+      "reply": "225/45R18 — precios por 4 en efectivo o transferencia:\n• 225/45R18 LENSTONE RUNFLAT: $430.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:04:23.347Z",
+      "optionCount": 1
+    },
+    "225/45ZR17": {
+      "reply": "225/45ZR17 — precios por 4 en efectivo o transferencia:\n• NEUMÁTICO 225/45ZR17 ROADX U11 94W: $250.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:04:11.432Z",
+      "optionCount": 1
+    },
+    "225/50R16": {
+      "reply": "225/50R16 — precios por 4 en efectivo o transferencia:\n• 225/50R16 SONIX UHP 08 96W: $270.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:04:40.386Z",
+      "optionCount": 1
+    },
+    "225/50R18": {
+      "reply": "225/50R18 — precios por 4 en efectivo o transferencia:\n• 225/50R18 NEXEN ROADIAN GTX: $470.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:04:57.461Z",
+      "optionCount": 1
+    },
+    "225/55R17": {
+      "reply": "225/55R17 — precios por 4 en efectivo o transferencia:\n• 225/55R17 ROADX U11 101W: $300.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:05:04.591Z",
+      "optionCount": 1
+    },
+    "225/55R18": {
+      "reply": "225/55R18 — precios por 4 en efectivo o transferencia:\n• NEUMÁTICO 225/55R18 108/105S COMFORSER CF1100 AT: $440.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:05:10.318Z",
+      "optionCount": 1
+    },
+    "225/55R19": {
+      "reply": "225/55R19 — precios por 4 en efectivo o transferencia:\n• 225/55R19 NEXEN ROADIAN GTX 99W: $470.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:05:20.897Z",
+      "optionCount": 1
+    },
+    "225/55ZR17": {
+      "reply": "225/55ZR17 — precios por 4 en efectivo o transferencia:\n• 225/55ZR17 101W NEXEN NFERA PRIMUS QX: $400.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:05:07.471Z",
+      "optionCount": 1
+    },
+    "225/60R16": {
+      "reply": "225/60R16 — precios por 4 en efectivo o transferencia:\n• 225/60R16 SONIX ECOPRO 99: $230.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:05:27.940Z",
+      "optionCount": 1
+    },
+    "225/60R17": {
+      "reply": "225/60R17 — precios por 4 en efectivo o transferencia:\n• NEUMÁTICO 225/60R17 ROADX RXQUEST HT02: $300.000\n• 225/60R17 GREENLANDER AT 99H: $320.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:05:33.729Z",
+      "optionCount": 2
+    },
+    "225/60R18": {
+      "reply": "225/60R18 — precios por 4 en efectivo o transferencia:\n• 225/60R18 ROADX HT02 100H: $310.000\n• 225/60R18 COMFORSER CF1100 AT 104T: $430.000\n• 225/60R18 100H NEXEN ROADIAN GTX: $450.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:05:42.352Z",
+      "optionCount": 3
+    },
+    "225/65R16": {
+      "reply": "225/65R16 — precios por 4 en efectivo o transferencia:\n• 225/65R16 SONIX PRIMESTAR 66: $270.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:05:50.805Z",
+      "optionCount": 1
+    },
+    "225/70R16": {
+      "reply": "225/70R16 — precios por 4 en efectivo o transferencia:\n• 225/70R16 103T NEXEN NBLUE HD PLUS: $485.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:06:14.219Z",
+      "optionCount": 1
+    },
+    "225/70R17C": {
+      "reply": "225/70R17C — precios por 4 en efectivo o transferencia:\n• NEUMÁTICO 225/70R17C DUNLOP AT20 108/106S: $430.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:06:18.641Z",
+      "optionCount": 1
+    },
+    "225/75R15": {
+      "reply": "225/75R15 — precios por 4 en efectivo o transferencia:\n• 225/75R15 ZEXTOUR HIGHLANDER AT: $300.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:06:24.362Z",
+      "optionCount": 1
+    },
+    "225/75R16": {
+      "reply": "225/75R16 — precios por 4 en efectivo o transferencia:\n• 225/75R16 115/112S APTANY AT: $375.000\n• 225/75R16 ROADX AT21 10 PR: $405.000\n• 225/75R16 NEXEN AT PRO: $465.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:06:27.185Z",
+      "optionCount": 3
+    },
+    "225/75R16C": {
+      "reply": "225/75R16C — precios por 4 en efectivo o transferencia:\n• 225/75R16C 121/120R MIRAGE MR300: $325.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:06:32.900Z",
+      "optionCount": 1
+    },
+    "235/40ZR18": {
+      "reply": "235/40ZR18 — precios por 4 en efectivo o transferencia:\n• NEUMÁTICO 235/40ZR18 ROADX U11 95W XL: $275.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:06:44.247Z",
+      "optionCount": 1
+    },
+    "235/45R17": {
+      "reply": "235/45R17 — precios por 4 en efectivo o transferencia:\n• 235/45R17 RARRIOR COSILENCY 97W: $260.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:06:51.439Z",
+      "optionCount": 1
+    },
+    "235/45R18": {
+      "reply": "235/45R18 — precios por 4 en efectivo o transferencia:\n• NEUMÁTICO 235/45R18 ROADX U11 98Y: $325.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:06:54.391Z",
+      "optionCount": 1
+    },
+    "235/45R20": {
+      "reply": "235/45R20 — precios por 4 en efectivo o transferencia:\n• 235/45R20 100W ROADX DU71: $470.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:07:00.180Z",
+      "optionCount": 1
+    },
+    "235/55R18": {
+      "reply": "235/55R18 — precios por 4 en efectivo o transferencia:\n• 235/55R18 ROADX HT02 104V: $340.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:07:15.985Z",
+      "optionCount": 1
+    },
+    "235/55R19": {
+      "reply": "235/55R19 — precios por 4 en efectivo o transferencia:\n• NEUMÁTICO 235/55R19 ROADX HT02: $370.000\n• 235/55R19 COMFORSER CF1100 AT 111/108S: $525.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:07:20.276Z",
+      "optionCount": 2
+    },
+    "235/60R17": {
+      "reply": "235/60R17 — precios por 4 en efectivo o transferencia:\n• NEUMÁTICO 235/60R17 APTANY RU25 102H: $300.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:07:36.012Z",
+      "optionCount": 1
+    },
+    "235/60R17C": {
+      "reply": "235/60R17C — precios por 4 en efectivo o transferencia:\n• 235/60R17C 117/115T COMFORSER CF350: $415.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:07:40.374Z",
+      "optionCount": 1
+    },
+    "235/60R18": {
+      "reply": "235/60R18 — precios por 4 en efectivo o transferencia:\n• 235/60R18 COMFORSER CF1100 AT 103T: $470.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:07:50.354Z",
+      "optionCount": 1
+    },
+    "235/65R17": {
+      "reply": "235/65R17 — precios por 4 en efectivo o transferencia:\n• 235/65R17 ROADX HT01: $335.000\n• 235/65R17 NEXEN GTX 104H: $540.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:08:00.563Z",
+      "optionCount": 2
+    },
+    "235/65R18": {
+      "reply": "235/65R18 — precios por 4 en efectivo o transferencia:\n• 235/65R18 WARRIOR SR1HP 106H: $320.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:08:10.404Z",
+      "optionCount": 1
+    },
+    "235/70R16": {
+      "reply": "235/70R16 — precios por 4 en efectivo o transferencia:\n• 235/70R16 ROADX HT01: $360.000\n• 235/70R16 NEXEN AT PRO: $450.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:08:13.275Z",
+      "optionCount": 2
+    },
+    "235/70R17": {
+      "reply": "235/70R17 — precios por 4 en efectivo o transferencia:\n• 235/70R17 GREENLANDER HT: $400.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:08:20.258Z",
+      "optionCount": 1
+    },
+    "235/75R15": {
+      "reply": "235/75R15 — precios por 4 en efectivo o transferencia:\n• 235/75R15 SONIX AT2 104/101S LT W: $340.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:08:25.819Z",
+      "optionCount": 1
+    },
+    "245/40ZR18": {
+      "reply": "245/40ZR18 — precios por 4 en efectivo o transferencia:\n• NEUMÁTICO 245/40ZR18 ROADX U11 97Y XL: $325.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:08:58.129Z",
+      "optionCount": 1
+    },
+    "245/45R17": {
+      "reply": "245/45R17 — precios por 4 en efectivo o transferencia:\n• 245/45R17 SONIX LZEAL 56 99W: $300.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:09:06.784Z",
+      "optionCount": 1
+    },
+    "245/45R19": {
+      "reply": "245/45R19 — precios por 4 en efectivo o transferencia:\n• 245/45R19 SONIX UHP 08 102W XL: $305.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:09:18.174Z",
+      "optionCount": 1
+    },
+    "245/45ZR18": {
+      "reply": "245/45ZR18 — precios por 4 en efectivo o transferencia:\n• NEUMÁTICO 245/45ZR18 ROADX U11: $345.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:09:12.564Z",
+      "optionCount": 1
+    },
+    "245/65R17": {
+      "reply": "245/65R17 — precios por 4 en efectivo o transferencia:\n• NEUMÁTICO 245/65R17 ROADX HT01 107S: $360.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:09:32.168Z",
+      "optionCount": 1
+    },
+    "245/70R16": {
+      "reply": "245/70R16 — precios por 4 en efectivo o transferencia:\n• NEUMÁTICO 245/70R16 SONIX AT1 107T: $330.000\n• NEUMÁTICO 245/70R16 ROADX AT21: $360.000\n• NEUMÁTICO 245/70R16 SUMAXX AT: $395.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:09:42.046Z",
+      "optionCount": 3
+    },
+    "245/75R16": {
+      "reply": "245/75R16 — precios por 4 en efectivo o transferencia:\n• 245/75R16 111T W SONIX AT2: $340.000\n• 245/75R16 SONIX RT 120/116Q W LT: $450.000\n• 245/75R16 SUMAXX AT 120/116S: $500.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:10:03.112Z",
+      "optionCount": 3
+    },
+    "255/50R19": {
+      "reply": "255/50R19 — precios por 4 en efectivo o transferencia:\n• NEUMÁTICO 255/50R19 ROADX HT02: $415.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:10:20.203Z",
+      "optionCount": 1
+    },
+    "255/55R18": {
+      "reply": "255/55R18 — precios por 4 en efectivo o transferencia:\n• 255/55R18 105V NEXEN ROADIAN GTX: $490.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:10:25.850Z",
+      "optionCount": 1
+    },
+    "255/55R19": {
+      "reply": "255/55R19 — precios por 4 en efectivo o transferencia:\n• NEUMÁTICO 255/55R19 ROADX SU01 111Y: $395.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:10:28.800Z",
+      "optionCount": 1
+    },
+    "255/55R20": {
+      "reply": "255/55R20 — precios por 4 en efectivo o transferencia:\n• 255/55R20 TRANSMATE SOLITUDE HT 110V: $380.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:10:33.000Z",
+      "optionCount": 1
+    },
+    "255/60R18": {
+      "reply": "255/60R18 — precios por 4 en efectivo o transferencia:\n• 255/60R18 RAUFAN HT 112Y: $355.000\n• NEUMÁTICO 255/60R18 ROADX SU01: $380.000\n• 255/60R18 COMFORSER CF1100 112/108S: $590.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:10:37.194Z",
+      "optionCount": 3
+    },
+    "255/65R17": {
+      "reply": "255/65R17 — precios por 4 en efectivo o transferencia:\n• 255/65R17 ROADX AT21 114T: $450.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:10:45.833Z",
+      "optionCount": 1
+    },
+    "255/70R16": {
+      "reply": "255/70R16 — precios por 4 en efectivo o transferencia:\n• 255/70R16 MIRAGE AT 111T: $340.000\n• 255/70R16 MIRAGE HT 172 111T: $340.000\n• 255/70R16 SONIX RT 111Q W: $430.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:10:57.042Z",
+      "optionCount": 5
+    },
+    "265/60R18": {
+      "reply": "265/60R18 — precios por 4 en efectivo o transferencia:\n• 265/60R18 ROADX HT02 110H: $400.000\n• NEUMÁTICO 265/60R18 SUMAXX AT: $460.000\n• 265/60R18 COOPER AT: $600.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:11:15.225Z",
+      "optionCount": 3
+    },
+    "265/65R17": {
+      "reply": "265/65R17 — precios por 4 en efectivo o transferencia:\n• NEUMÁTICO 265/65R17 SUMAXX AT: $450.000\n• NEUMÁTICO 265/65R17 COMFORSER CF1100: $500.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:11:28.226Z",
+      "optionCount": 2
+    },
+    "265/70R16": {
+      "reply": "265/70R16 — precios por 4 en efectivo o transferencia:\n• NEUMÁTICO 265/70R16 BRIDGESTONE HT684: $430.000\n• NEUMÁTICO 265/70R16 ROADX AT21 112H: $450.000\n• NEUMÁTICO 265/70R16 SUMAXX AT: $470.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:12:02.863Z",
+      "optionCount": 3
+    },
+    "265/70R17": {
+      "reply": "265/70R17 — precios por 4 en efectivo o transferencia:\n• 265/70R17 SONIX AT2 115S: $395.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:12:16.789Z",
+      "optionCount": 1
+    },
+    "265/75R16": {
+      "reply": "265/75R16 — precios por 4 en efectivo o transferencia:\n• 265/75R16 SONIX RT 119/116Q W LT: $500.000\n• NEUMÁTICO 265/75R16 SUMAXX AT: $500.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:12:25.600Z",
+      "optionCount": 2
+    },
+    "275/45R21": {
+      "reply": "275/45R21 — precios por 4 en efectivo o transferencia:\n• 275/45R21 SONIX UHP 08 110W: $650.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:12:42.926Z",
+      "optionCount": 1
+    },
+    "500R12": {
+      "reply": "500R12 — precios por 4 en efectivo o transferencia:\n• 500R12 SONIX PRIMEVAN 28 83/81Q: $125.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:13:53.748Z",
+      "optionCount": 1
+    },
+    "550R12": {
+      "reply": "550R12 — precios por 4 en efectivo o transferencia:\n• 550R12 BCT AT 90P: $180.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:13:56.598Z",
+      "optionCount": 1
+    },
+    "550R13C": {
+      "reply": "550R13C — precios por 4 en efectivo o transferencia:\n• 550R13C LONGWAY ZT801 92P: $198.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:13:59.445Z",
+      "optionCount": 1
+    },
+    "750R16": {
+      "reply": "750R16 — precios por 4 en efectivo o transferencia:\n• 750R16 DURABLE DR601 MIXTO: $450.000\n• 750R16 DURABLE DR816 TRACCIONAL: $490.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:14:09.549Z",
+      "optionCount": 2
+    },
+    "850R14": {
+      "reply": "850R14 — precios por 4 en efectivo o transferencia:\n• 27/850R14 SUNSET AT 95Q: $285.000\n• 27/850R14 SUNSET MT: $320.000\nDisponibilidad sujeta a confirmación final.",
+      "validUntil": "2026-11-20T00:12:58.770Z",
+      "optionCount": 2
+    }
+  },
+  "rims": {
+    "13|4x100": "https://www.samcor.cl/llantas/aro13/4x100",
+    "13|4x108": "https://www.samcor.cl/llantas/aro13/4x108",
+    "13|4x114": "https://www.samcor.cl/llantas/aro13/4x114",
+    "13|4x98": "https://www.samcor.cl/llantas/aro13/4x98",
+    "14|4x100": "https://www.samcor.cl/llantas/aro14/4x100",
+    "14|4x108": "https://www.samcor.cl/llantas/aro14/4x108",
+    "14|4x114": "https://www.samcor.cl/llantas/aro14/4x114",
+    "14|5x114": "https://www.samcor.cl/llantas/aro14/5x114",
+    "14|6x139": "https://www.samcor.cl/llantas/aro14/6x139",
+    "15|4x100": "https://www.samcor.cl/llantas/aro15/4x100",
+    "15|4x108": "https://www.samcor.cl/llantas/aro15/4x108",
+    "15|4x114": "https://www.samcor.cl/llantas/aro15/4x114",
+    "15|5x100": "https://www.samcor.cl/llantas/aro15/5x100",
+    "15|5x112": "https://www.samcor.cl/llantas/aro15/llantas-15-5x112",
+    "15|5x114": "https://www.samcor.cl/llantas/aro15/5x114",
+    "15|5x130": "https://www.samcor.cl/llantas/aro15/5x130",
+    "15|5x139": "https://www.samcor.cl/llantas/aro15/5x139",
+    "15|6x114": "https://www.samcor.cl/llantas/aro15/6x114",
+    "15|6x139": "https://www.samcor.cl/llantas/aro15/6x139",
+    "16|4x100": "https://www.samcor.cl/llantas/aro16/4x100",
+    "16|4x108": "https://www.samcor.cl/llantas/aro16/4x108",
+    "16|4x114": "https://www.samcor.cl/llantas/aro16/4x114",
+    "16|5x100": "https://www.samcor.cl/llantas/aro16/5x100",
+    "16|5x108": "https://www.samcor.cl/llantas/aro16/5x108",
+    "16|5x112": "https://www.samcor.cl/llantas/aro16/llantas-16-5x112",
+    "16|5x114": "https://www.samcor.cl/llantas/aro16/5x114",
+    "16|5x120": "https://www.samcor.cl/llantas/aro16/llantas-16-5x120",
+    "16|5x130": "https://www.samcor.cl/llantas/aro16/5x130",
+    "16|5x160": "https://www.samcor.cl/llantas/aro16/5x160",
+    "16|6x114": "https://www.samcor.cl/llantas/aro16/6x114",
+    "16|6x130": "https://www.samcor.cl/llantas/aro16/6x130",
+    "16|6x139": "https://www.samcor.cl/llantas/aro16/6x139",
+    "17|4x100": "https://www.samcor.cl/llantas/aro17/4x100",
+    "17|4x108": "https://www.samcor.cl/llantas/aro17/4x108",
+    "17|4x114": "https://www.samcor.cl/llantas/aro17/4x114",
+    "17|5x100": "https://www.samcor.cl/llantas/aro17/5x100",
+    "17|5x105": "https://www.samcor.cl/llantas/aro17/llantas-17-5x105",
+    "17|5x108": "https://www.samcor.cl/llantas/aro17/5x108",
+    "17|5x110": "https://www.samcor.cl/llantas/aro17/5x110",
+    "17|5x112": "https://www.samcor.cl/llantas/aro17/5x112",
+    "17|5x114": "https://www.samcor.cl/llantas/aro17/5x114",
+    "17|5x120": "https://www.samcor.cl/llantas/aro17/5x120-2",
+    "17|5x130": "https://www.samcor.cl/llantas/aro17/5x130",
+    "17|5x139": "https://www.samcor.cl/llantas/aro17/llantas-17-5x139",
+    "17|6x114": "https://www.samcor.cl/llantas/aro17/6x114",
+    "17|6x130": "https://www.samcor.cl/llantas/aro17/6x130",
+    "17|6x135": "https://www.samcor.cl/llantas/aro17/6x135",
+    "17|6x139": "https://www.samcor.cl/llantas/aro17/6x139-1",
+    "18|4x100": "https://www.samcor.cl/llantas/aro18/llantas-18-4x100",
+    "18|4x114": "https://www.samcor.cl/llantas/aro18/llantas-18-4x114",
+    "18|5x100": "https://www.samcor.cl/llantas/aro18/llantas-18-5x100",
+    "18|5x108": "https://www.samcor.cl/llantas/aro18/5x108",
+    "18|5x112": "https://www.samcor.cl/llantas/aro18/llantas-18-5x112",
+    "18|5x114": "https://www.samcor.cl/llantas/aro18/llantas-18-5x114",
+    "18|5x120": "https://www.samcor.cl/llantas/aro18/5x120",
+    "18|5x130": "https://www.samcor.cl/llantas/aro18/5x130",
+    "18|6x114": "https://www.samcor.cl/llantas/aro18/6x114",
+    "18|6x139": "https://www.samcor.cl/llantas/aro18/6x139",
+    "19|5x112": "https://www.samcor.cl/llantas/aro19/5x112",
+    "19|5x114": "https://www.samcor.cl/llantas/aro19/llantas-19-5x114",
+    "19|5x120": "https://www.samcor.cl/llantas/aro19/5x120",
+    "20|5x112": "https://www.samcor.cl/llantas/aro20/5x112",
+    "20|5x114": "https://www.samcor.cl/llantas/aro20/llantas-20-5x114",
+    "20|6x114": "https://www.samcor.cl/llantas/aro20/6x114",
+    "20|6x135": "https://www.samcor.cl/llantas/aro20/6x135",
+    "20|6x139": "https://www.samcor.cl/llantas/aro20/6x139",
+    "22|6x135": "https://www.samcor.cl/llantas/aro-22/6x135",
+    "22|6x139": "https://www.samcor.cl/llantas/aro-22/6x139"
+  }
+}

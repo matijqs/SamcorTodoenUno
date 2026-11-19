@@ -1,0 +1,41 @@
+name: Actualizar índice del bot para Make
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - 'Webprecios/files/stock-bodega.csv'
+      - 'bot/llantas-rutas.json'
+      - 'scripts/bot-index.mjs'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: bot-index
+  cancel-in-progress: false
+
+jobs:
+  generar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          ref: master
+      - name: Generar índice de precios y rutas
+        run: node scripts/bot-index.mjs
+      - name: Publicar índice
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- Webprecios/files/bot-index.json
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m "Actualizar índice del bot para Make"
+          git pull --rebase origin master
+          git push origin HEAD:master

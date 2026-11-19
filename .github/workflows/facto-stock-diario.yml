@@ -45,4 +45,18 @@ jobs:
           git pull --rebase origin master
           git push origin HEAD:master
           echo "Archivo de stock publicado correctamente." >> "$GITHUB_STEP_SUMMARY"
-
+      - name: Generar índice del bot para Make
+        run: node scripts/bot-index.mjs
+      - name: Publicar índice del bot
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- Webprecios/files/bot-index.json
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m "Actualizar índice del bot para Make"
+          git pull --rebase origin master
+          git push origin HEAD:master
